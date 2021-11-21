@@ -1,35 +1,27 @@
-import subprocess
-import os
+#!/usr/bin/python3
+import gps
+from datetime import datetime
 
-# round robin player
-def playVideo(queue, folderPath, video_points):
-    print("current queue: {0}".format(queue))
-    video = queue.pop(0)    # remove from queue
+file1 = open("gpslog.txt","a")
 
-    if video.endswith(".mp4"):
-        path = os.path.join(folderPath, video)
+session = gps.gps("localhost", "2947")
+session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
 
-        print("now playing: {0}".format(video))
-        omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
+file1.write(f'gpstest started at {datetime.now()} \n')
+file1.close()
 
-        queue.append(video)     # add played video to end of queue
-        video_points[video] += 1    # increment point of video
-
-    for video in queue:
-        print("{0}: {1} points".format(video, video_points[video]))
-
-    print()
-
-
-folderPath = "/home/pi/Videos"
-queue = []
-video_points = {}
-
-for filename in os.listdir(folderPath):
-    queue.append(filename)
-    # start counter for each file
-    video_points[filename] = 0
-	
-while len(queue) > 0:
-    playVideo(queue, folderPath, video_points)
-
+while True:
+    try:
+        report = session.next()
+        if report['class'] == 'TPV':
+            if hasattr(report, 'time') and hasattr(report, 'lat') and hasattr(report, 'lon'):
+                file1 = open("gpslog.txt","a")
+                file1.write(f'time: {report.time}, lat: {report.lat}, lon: {report.lon}\n')
+                file1.close()
+    except KeyError:
+        pass
+    except KeyboardInterrupt:
+        quit()
+    except StopIteration:
+        session = None
+        print("GPSD has terminated")
