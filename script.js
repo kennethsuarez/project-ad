@@ -11,59 +11,19 @@ new L.GPX(gpx, {async: true}).on('loaded', function(e) {
     map.fitBounds(e.target.getBounds());
 }).addTo(map);*/
 
-// generate grid
-var countX = 10; //cells by x
-var countY = 10; //cells by y
-var cellWidth = 1000 / countX;
-var cellHeight = 800 / countY;
-var coordinates = [],
-    c = {x: 0, y: 800}, //cursor
-    //top-left/top-right/bottom-right/bottom-left
-    tLx, tLy,   tRx, tRy,
-    bRx, bRy,   bLx, bLy;
+L.GridLayer.GridDebug = L.GridLayer.extend({
+  createTile: function (coords) {
+    const tile = document.createElement('div');
+    tile.style.outline = '1px solid green';
+    tile.style.fontWeight = 'bold';
+    tile.style.fontSize = '14pt';
+    tile.innerHTML = [coords.z, coords.x, coords.y].join('/');
+    return tile;
+  },
+});
 
-tLy = 14.723779494561555;
-tLx = 120.94121867396767;
-tRy = 14.763607518009065;
-tRx = 121.11351929376644;
-bRy = 14.511847718676204;
-bRx = 121.08341607774038;
-bLy = 14.50810787559866;
-bLx = 120.98275298975963;
-// build coordinates array, from top-left to bottom-right
-// count by row
-
-for(var iY = 0; iY < countY; iY++){
-  // count by cell in row
-  for(var iX = 0; iX < countX; iX++){
-    tLx = bLx = c.x;
-    tLy = tRy = c.y;
-    tRx = bRx = c.x + cellWidth;
-    bRy = bLy = c.y - cellHeight;
-    var cell = [
-      // top-left/top-right/bottom-right/bottom-left/top-left
-      [tLx, tLy], [tRx, tRy], [bRx, bRy], [bLx, bLy], [tLx, tLy]
-    ];
-    coordinates.push(cell);
-    // refresh cusror for cell
-    c.x = c.x + cellWidth;
-  }
-  // refresh cursor for row
-  c.x = 0;
-  c.y = c.y - cellHeight;
-}
-
-var grid = {
-  type: 'FeatureCollection',
-  features: [
-    {
-      type: 'Feature',
-      geometry: {
-        type:  'MultiPolygon',
-        coordinates: [coordinates]
-      }
-    }
-  ]
+L.gridLayer.gridDebug = function (opts) {
+  return new L.GridLayer.GridDebug(opts);
 };
-// add grid to map
-L.geoJson(grid).addTo(map);
+
+map.addLayer(L.gridLayer.gridDebug());
