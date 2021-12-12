@@ -27,3 +27,17 @@ L.gridLayer.gridDebug = function (opts) {
 };
 
 map.addLayer(L.gridLayer.gridDebug());
+
+function drawMetroManilaBoundary()
+{
+    url = 'https://nominatim.openstreetmap.org/search.php?q=Metro_Manila+Philippines&polygon_geojson=1&format=json'
+    fetch(url).then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    geojsonFeature = json[0].geojson;
+    L.geoJSON(geojsonFeature).addTo(map);
+  });
+}
+
+drawMetroManilaBoundary()
