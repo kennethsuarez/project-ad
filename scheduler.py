@@ -1,5 +1,6 @@
 import subprocess
 import os
+import json
 
 KFC_fence = [(120.99726, 14.55372), (120.99833, 14.55434)]
 
@@ -21,8 +22,10 @@ def playVideo(queue, folderPath, video_points, x_pos, y_pos):
         path = os.path.join(folderPath, video)
 
         video_points[video] += 1    # increment point before playing
-        if (checkGeoFence(KFC_fence[0], KFC_fence[1], x_pos, y_pos)):
-            video_points[video] += 2    # add extra point for geo-fenced locations
+        for priority_zone in priority_zones[video]:
+            if (checkGeoFence(KFC_fence[0], KFC_fence[1], x_pos, y_pos)):
+                video_points[video] += 2    # add extra point for geo-fenced locations
+                break
 
         print("now playing: {0}".format(video))
         omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
@@ -41,16 +44,30 @@ proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=subprocess.PIP
 folderPath = "/home/pi/Videos"
 queue = []
 video_points = {}
+priority_zones = {}
+
+priority_zones_json = open('priority_zones.json')
+priority_zones_data = json.load(priority_zones_json)
 
 for filename in os.listdir(folderPath):
     queue.append(filename)
     # start counter for each file
     video_points[filename] = 0
-	
+    priority_zones[filename] = []
+
+for ad in priority_zones_data['ads']: 
+    for zone in ad['zones']:
+        priority_zones[ad['name']].append([(zone['point1']['lat'],zone['point1']['lon']),(zone['point2']['lat'],zone['point2']['lon'])])
+
+print(priority_zones)
+
+
 while len(queue) > 0:
     curr_loc = proc.stdout.readline().decode("utf-8")
+    print(curr_loc)
     parsed_loc = curr_loc.split(" ")
     lon_lan = parsed_loc[0].split(",")
+    print('lon_lan' + str(lon_lan))
     y_pos = lon_lan[0][1:]
     x_pos = lon_lan[1][0:-1]
     print(y_pos)
