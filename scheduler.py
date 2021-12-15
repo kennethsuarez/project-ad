@@ -4,11 +4,10 @@ import json
 
 KFC_fence = [(120.99726, 14.55372), (120.99833, 14.55434)]
 
-def checkGeoFence(point1, point2, x_pos, y_pos):
-    x1, y1 = point1
-    x2, y2 = point2
-    if ((x1 < x_pos < x2) and (y1 < y_pos < y2)):
-        print("now inside KFC fence")
+def checkGeoFence(point, x_pos, y_pos):
+    x1, y1 = point
+    if ((x1 < x_pos < x1+0.002747) and (y1-0.002657 < y_pos < y1)):
+        print("now inside priority  fence")
         return True
     return False
     
@@ -23,7 +22,7 @@ def playVideo(queue, folderPath, video_points, x_pos, y_pos):
 
         video_points[video] += 1    # increment point before playing
         for priority_zone in priority_zones[video]:
-            if (checkGeoFence(KFC_fence[0], KFC_fence[1], x_pos, y_pos)):
+            if (checkGeoFence(priority_zone, x_pos, y_pos)):
                 video_points[video] += 2    # add extra point for geo-fenced locations
                 break
 
@@ -57,17 +56,15 @@ for filename in os.listdir(folderPath):
 
 for ad in priority_zones_data['ads']: 
     for zone in ad['zones']:
-        priority_zones[ad['name']].append([(zone['point1']['lat'],zone['point1']['lon']),(zone['point2']['lat'],zone['point2']['lon'])])
+        priority_zones[ad['name']].append((zone['lat'],zone['lon']))
 
 print(priority_zones)
 
 
 while len(queue) > 0:
     curr_loc = proc.stdout.readline().decode("utf-8")
-    print(curr_loc)
     parsed_loc = curr_loc.split(" ")
     lon_lan = parsed_loc[0].split(",")
-    print('lon_lan' + str(lon_lan))
     y_pos = lon_lan[0][1:]
     x_pos = lon_lan[1][0:-1]
     print(y_pos)
