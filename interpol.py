@@ -1,3 +1,5 @@
+from audioop import avg
+from fileinput import filename
 import subprocess
 import os
 import json
@@ -13,24 +15,22 @@ DIFF_Y = 0.002657
 
 # LAT = Y LON = X
 
-# parse
-gpx_file = open('DS2-0420.gpx', 'r')
+def load_sts(filename):
+    gpx_file = open(filename, 'r')
+    gpx = gpxpy.parse(gpx_file)
+    sts = []
 
-gpx = gpxpy.parse(gpx_file)
+    for track in gpx.tracks:
+        for segment in track.segments:
+            prevtime = segment.points[0].time
+            for point in segment.points:
+                #extracted = '({0},{1}) {2}'.format(point.longitude, point.latitude, point.time)
+                #print(extracted)
+                #sts += [(point.longitude,point.latitude,point.time.strftime("%H:%M:%S"))]
+                sts += [(point.longitude,point.latitude,point.time)]
+    
+    return sts
 
-sts = []
-
-for track in gpx.tracks:
-    for segment in track.segments:
-        prevtime = segment.points[0].time
-        for point in segment.points:
-            #extracted = '({0},{1}) {2}'.format(point.longitude, point.latitude, point.time)
-            #print(extracted)
-            #sts += [(point.longitude,point.latitude,point.time.strftime("%H:%M:%S"))]
-            sts += [(point.longitude,point.latitude,point.time)]
-
-#print(sts)
-#sts should be an array with elements that contain: lon,lat,time
 
 # for x, we subtract reference 120.904541 from current
 # for y, we subtract current from reference 14.785505
@@ -47,33 +47,59 @@ def interpolation(sts):
 
         x_grid =  (x_pos - UPPER_LEFT_X) // DIFF_X
         y_grid =  (UPPER_LEFT_Y - y_pos) // DIFF_Y
-        #xy_grid = str(int(x_grid)) + "-" + str(int(y_grid))
+        xy_grid = str(int(x_grid)) + "-" + str(int(y_grid))
 
         #for verification
-        xy_grid = str(UPPER_LEFT_X + x_grid * DIFF_X) + "-" + str(UPPER_LEFT_Y - y_grid * DIFF_Y) 
+        #xy_grid = str(UPPER_LEFT_X + x_grid * DIFF_X) + "-" + str(UPPER_LEFT_Y - y_grid * DIFF_Y) 
         
         if len(cts) == 0:
             cts.append((xy_grid,(point[2],point[2])))
         elif cts[-1][0] != xy_grid:
             cts[-1] = (cts[-1][0],(cts[-1][1][0],point[2]))
             cts.append((xy_grid,(point[2],point[2])))
-        
-
     return cts
+
+def avg_cell_time(cts):
+    gaps = []
+    #gapswithzone = []
+
+    for cell in cts:
+        gaps += [(cell[1][1] - cell[1][0]).seconds]
+    #   gapswithzone += [(cell[0],(cell[1][1] - cell[1][0]).seconds)]
+    #   filtered = filter(lambda item: item[1] >= 120, gapswithzone)
+
+    #print(list(filtered))
+    return sum(gaps)/len(gaps)
+
+def divide_cts(cts,seq_thresh):
     
+    cts_list = []
+    curr_cts = []
+    for cell in cts:
+        cur_val = (cell[0],(cell[1][1] - cell[1][0]).seconds)
+        curr_cts.append(cur_val)
+        if (cell[1][1] - cell[1][0]).seconds > seq_thresh:
+            cts_list.append(list(curr_cts))
+            curr_cts.clear()
+            curr_cts.append(cur_val)
+    return cts_list
+
+
+# main code
+
+sts = load_sts('DS2-0420.gpx')
+#print(sts)
 cts1 = interpolation(sts)
-print(cts1)
+#print(cts1)
+avg_cell = avg_cell_time(cts1)
+seq_thresh = 2*avg_cell
+divided_cts_1 = divide_cts(cts1,seq_thresh)
 
+for cts in divided_cts_1:
+    print("Seq " + str(cts))
 
-# experimental: get average
-gaps = []
-gapswithzone = []
-
-for cell in cts1:
-    gaps += [(cell[1][1] - cell[1][0]).seconds]
-    gapswithzone += [(cell[0],(cell[1][1] - cell[1][0]).seconds)]
-    filtered = filter(lambda item: item[1] >= 120, gapswithzone)
-
-print(list(filtered))
-print(sum(gaps)/len(gaps))
-
+print("Average time per cell: " + str(avg_cell))
+print("Number of sequences: " + str(len(divided_cts_1)))
+print("Sequence threshold: " + str(seq_thresh))
+lengths = [len(i) for i in divided_cts_1]
+print("Average sequence length: " + str(float(sum(lengths)) / len(lengths))) 
