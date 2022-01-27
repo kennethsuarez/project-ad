@@ -14,7 +14,7 @@ DIFF_Y = 0.002657
 # LAT = Y LON = X
 
 # parse
-gpx_file = open('DS2-0420-trim.gpx', 'r')
+gpx_file = open('DS2-0420.gpx', 'r')
 
 gpx = gpxpy.parse(gpx_file)
 
@@ -26,7 +26,8 @@ for track in gpx.tracks:
         for point in segment.points:
             #extracted = '({0},{1}) {2}'.format(point.longitude, point.latitude, point.time)
             #print(extracted)
-            sts += [(point.longitude,point.latitude,point.time.strftime("%H:%M:%S"))]
+            #sts += [(point.longitude,point.latitude,point.time.strftime("%H:%M:%S"))]
+            sts += [(point.longitude,point.latitude,point.time)]
 
 #print(sts)
 #sts should be an array with elements that contain: lon,lat,time
@@ -46,10 +47,10 @@ def interpolation(sts):
 
         x_grid =  (x_pos - UPPER_LEFT_X) // DIFF_X
         y_grid =  (UPPER_LEFT_Y - y_pos) // DIFF_Y
-        xy_grid = str(int(x_grid)) + "-" + str(int(y_grid))
+        #xy_grid = str(int(x_grid)) + "-" + str(int(y_grid))
 
         #for verification
-        #xy_grid = str(UPPER_LEFT_X + x_grid * DIFF_X) + "-" + str(UPPER_LEFT_Y - y_grid * DIFF_Y) 
+        xy_grid = str(UPPER_LEFT_X + x_grid * DIFF_X) + "-" + str(UPPER_LEFT_Y - y_grid * DIFF_Y) 
         
         if len(cts) == 0:
             cts.append((xy_grid,(point[2],point[2])))
@@ -62,3 +63,17 @@ def interpolation(sts):
     
 cts1 = interpolation(sts)
 print(cts1)
+
+
+# experimental: get average
+gaps = []
+gapswithzone = []
+
+for cell in cts1:
+    gaps += [(cell[1][1] - cell[1][0]).seconds]
+    gapswithzone += [(cell[0],(cell[1][1] - cell[1][0]).seconds)]
+    filtered = filter(lambda item: item[1] >= 120, gapswithzone)
+
+print(list(filtered))
+print(sum(gaps)/len(gaps))
+
