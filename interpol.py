@@ -47,7 +47,7 @@ def interpolation(sts):
 
         x_grid =  (x_pos - UPPER_LEFT_X) // DIFF_X
         y_grid =  (UPPER_LEFT_Y - y_pos) // DIFF_Y
-        xy_grid = str(int(x_grid)) + "-" + str(int(y_grid))
+        xy_grid = str(int(x_grid)) + "$" + str(int(y_grid))
 
         #for verification
         #xy_grid = str(UPPER_LEFT_X + x_grid * DIFF_X) + "-" + str(UPPER_LEFT_Y - y_grid * DIFF_Y) 
@@ -76,7 +76,7 @@ def divide_cts(cts,seq_thresh):
     cts_list = []
     curr_cts = []
     for cell in cts:
-        cur_val = (cell[0],(cell[1][1] - cell[1][0]).seconds)
+        cur_val = (cell[0],int(cell[1][0].timestamp()*1000))
         curr_cts.append(cur_val)
         if (cell[1][1] - cell[1][0]).seconds > seq_thresh:
             cts_list.append(list(curr_cts))
@@ -86,8 +86,9 @@ def divide_cts(cts,seq_thresh):
 
 
 # main code
+file = 'DS2-0420.gpx'
 
-sts = load_sts('DS2-0420.gpx')
+sts = load_sts(file)
 #print(sts)
 cts1 = interpolation(sts)
 #print(cts1)
@@ -96,8 +97,12 @@ seq_thresh = 2*avg_cell
 divided_cts_1 = divide_cts(cts1,seq_thresh)
 
 for cts in divided_cts_1:
-    print("Seq " + str(cts))
+    print("20000005", end = '')
+    for cell in cts:
+        print("," + str(cell[0]) + "@" + str(cell[1]) , end = '')
+    print('')   
 
+print("file used: " + file)
 print("Average time per cell: " + str(avg_cell))
 print("Number of sequences: " + str(len(divided_cts_1)))
 print("Sequence threshold: " + str(seq_thresh))

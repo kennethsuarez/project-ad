@@ -1,0 +1,5759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx version="1.0">
+<trk>
+<trkseg>
+<trkpt lat="14.551738" lon="120.997452">
+	<time>2021-04-24T06:58:52</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.551873" lon="120.997847">
+	<time>2021-04-24T07:18:10</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.551895" lon="120.997813">
+	<time>2021-04-24T07:23:08</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.55232" lon="120.997695">
+	<time>2021-04-24T09:09:12</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.552403" lon="120.997645">
+	<time>2021-04-24T09:31:22</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.552403" lon="120.997645">
+	<time>2021-04-24T09:31:22</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.553635" lon="120.997378">
+	<time>2021-04-24T09:31:43</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.553635" lon="120.997378">
+	<time>2021-04-24T09:31:50</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.553965" lon="120.997445">
+	<time>2021-04-24T09:32:02</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.55406" lon="120.997688">
+	<time>2021-04-24T09:32:04</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.554178" lon="120.998032">
+	<time>2021-04-24T09:32:09</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.554472" lon="120.999095">
+	<time>2021-04-24T09:32:22</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.55468" lon="120.999777">
+	<time>2021-04-24T09:32:33</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.55468" lon="120.999777">
+	<time>2021-04-24T09:32:37</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.554807" lon="120.999482">
+	<time>2021-04-24T09:32:57</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.554738" lon="120.999223">
+	<time>2021-04-24T09:33:02</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.55459" lon="120.998728">
+	<time>2021-04-24T09:33:09</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.554353" lon="120.997823">
+	<time>2021-04-24T09:33:21</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.554353" lon="120.997823">
+	<time>2021-04-24T09:33:28</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.554235" lon="120.997392">
+	<time>2021-04-24T09:33:48</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.554148" lon="120.997125">
+	<time>2021-04-24T09:33:54</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.554052" lon="120.996743">
+	<time>2021-04-24T09:34:00</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.553728" lon="120.995147">
+	<time>2021-04-24T09:34:21</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.553642" lon="120.994275">
+	<time>2021-04-24T09:34:33</time>
+	<speed>25.48</speed>
+</trkpt>
+<trkpt lat="14.553642" lon="120.994275">
+	<time>2021-04-24T09:34:41</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.553453" lon="120.992918">
+	<time>2021-04-24T09:35:01</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.553212" lon="120.992002">
+	<time>2021-04-24T09:35:21</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.552537" lon="120.98981">
+	<time>2021-04-24T09:35:41</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.552235" lon="120.98871">
+	<time>2021-04-24T09:36:01</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.551708" lon="120.986915">
+	<time>2021-04-24T09:36:21</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.551708" lon="120.986915">
+	<time>2021-04-24T09:36:29</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.551512" lon="120.986302">
+	<time>2021-04-24T09:36:53</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.551438" lon="120.986128">
+	<time>2021-04-24T09:36:57</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.551408" lon="120.98608">
+	<time>2021-04-24T09:37:00</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.551223" lon="120.985918">
+	<time>2021-04-24T09:37:03</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.55094" lon="120.985963">
+	<time>2021-04-24T09:37:08</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.55053" lon="120.986063">
+	<time>2021-04-24T09:37:13</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.550138" lon="120.986165">
+	<time>2021-04-24T09:37:17</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.549832" lon="120.986242">
+	<time>2021-04-24T09:37:20</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.547633" lon="120.9868">
+	<time>2021-04-24T09:37:40</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.545252" lon="120.987398">
+	<time>2021-04-24T09:37:59</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.543267" lon="120.987858">
+	<time>2021-04-24T09:38:20</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.543267" lon="120.987858">
+	<time>2021-04-24T09:38:25</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.54286" lon="120.987898">
+	<time>2021-04-24T09:38:29</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.54286" lon="120.987898">
+	<time>2021-04-24T09:38:40</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.54213" lon="120.987957">
+	<time>2021-04-24T09:39:06</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.540992" lon="120.988155">
+	<time>2021-04-24T09:39:19</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.540107" lon="120.98831">
+	<time>2021-04-24T09:39:30</time>
+	<speed>41.48</speed>
+</trkpt>
+<trkpt lat="14.538987" lon="120.988492">
+	<time>2021-04-24T09:39:38</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.536233" lon="120.988913">
+	<time>2021-04-24T09:39:59</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.532322" lon="120.989448">
+	<time>2021-04-24T09:40:59</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.532322" lon="120.989448">
+	<time>2021-04-24T09:41:19</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.532185" lon="120.989463">
+	<time>2021-04-24T09:41:57</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.532132" lon="120.98947">
+	<time>2021-04-24T09:41:58</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.53052" lon="120.989655">
+	<time>2021-04-24T09:42:18</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.529683" lon="120.989728">
+	<time>2021-04-24T09:42:38</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.529683" lon="120.989728">
+	<time>2021-04-24T09:42:57</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.529237" lon="120.989765">
+	<time>2021-04-24T09:43:37</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.522522" lon="120.99059">
+	<time>2021-04-24T09:45:17</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.522522" lon="120.99059">
+	<time>2021-04-24T09:45:37</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.522417" lon="120.990597">
+	<time>2021-04-24T09:46:09</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.522217" lon="120.990622">
+	<time>2021-04-24T09:46:13</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.52208" lon="120.99064">
+	<time>2021-04-24T09:46:15</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.521853" lon="120.990668">
+	<time>2021-04-24T09:46:18</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.520315" lon="120.990752">
+	<time>2021-04-24T09:46:36</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.518337" lon="120.99065">
+	<time>2021-04-24T09:46:55</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.516635" lon="120.990588">
+	<time>2021-04-24T09:47:16</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.514147" lon="120.990223">
+	<time>2021-04-24T09:47:36</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.51294" lon="120.990017">
+	<time>2021-04-24T09:47:44</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.511295" lon="120.989547">
+	<time>2021-04-24T09:47:56</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.51115" lon="120.989513">
+	<time>2021-04-24T09:47:58</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.51115" lon="120.989513">
+	<time>2021-04-24T09:48:16</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510885" lon="120.989747">
+	<time>2021-04-24T09:48:23</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.510815" lon="120.99005">
+	<time>2021-04-24T09:48:29</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.510727" lon="120.990392">
+	<time>2021-04-24T09:48:34</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.510682" lon="120.990557">
+	<time>2021-04-24T09:48:36</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.51059" lon="120.990923">
+	<time>2021-04-24T09:48:41</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.510698" lon="120.99105">
+	<time>2021-04-24T09:48:46</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.510937" lon="120.991128">
+	<time>2021-04-24T09:48:51</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.511185" lon="120.991202">
+	<time>2021-04-24T09:48:55</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.51124" lon="120.991212">
+	<time>2021-04-24T09:48:56</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.512325" lon="120.991345">
+	<time>2021-04-24T09:49:12</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.512378" lon="120.99148">
+	<time>2021-04-24T09:49:15</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.512368" lon="120.991608">
+	<time>2021-04-24T09:49:17</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.512267" lon="120.991962">
+	<time>2021-04-24T09:49:22</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.512115" lon="120.99215">
+	<time>2021-04-24T09:49:27</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.511852" lon="120.9921">
+	<time>2021-04-24T09:49:32</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.511632" lon="120.992045">
+	<time>2021-04-24T09:49:35</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.51127" lon="120.99196">
+	<time>2021-04-24T09:49:39</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.5104" lon="120.991738">
+	<time>2021-04-24T09:49:47</time>
+	<speed>48.1</speed>
+</trkpt>
+<trkpt lat="14.507718" lon="120.99105">
+	<time>2021-04-24T09:50:15</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.507323" lon="120.990913">
+	<time>2021-04-24T09:50:22</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507347" lon="120.99069">
+	<time>2021-04-24T09:50:28</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.507478" lon="120.99036">
+	<time>2021-04-24T09:50:34</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.507495" lon="120.990322">
+	<time>2021-04-24T09:50:35</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.507543" lon="120.990213">
+	<time>2021-04-24T09:50:39</time>
+	<speed>7.41</speed>
+</trkpt>
+<trkpt lat="14.507543" lon="120.990213">
+	<time>2021-04-24T09:50:44</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.50779" lon="120.9902">
+	<time>2021-04-24T09:50:49</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.508187" lon="120.990318">
+	<time>2021-04-24T09:50:55</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.508267" lon="120.990345">
+	<time>2021-04-24T09:50:56</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.50909" lon="120.990655">
+	<time>2021-04-24T09:51:08</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.50909" lon="120.990655">
+	<time>2021-04-24T09:51:15</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.50936" lon="120.990752">
+	<time>2021-04-24T09:51:34</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.509463" lon="120.990778">
+	<time>2021-04-24T09:51:36</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.509822" lon="120.990882">
+	<time>2021-04-24T09:51:41</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.510485" lon="120.991093">
+	<time>2021-04-24T09:51:54</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.511328" lon="120.99134">
+	<time>2021-04-24T09:52:03</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.512028" lon="120.991392">
+	<time>2021-04-24T09:52:14</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.51226" lon="120.991438">
+	<time>2021-04-24T09:52:19</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.512245" lon="120.991618">
+	<time>2021-04-24T09:52:24</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.512172" lon="120.991895">
+	<time>2021-04-24T09:52:29</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.512172" lon="120.991895">
+	<time>2021-04-24T09:52:34</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511862" lon="120.992033">
+	<time>2021-04-24T09:52:44</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.511862" lon="120.992033">
+	<time>2021-04-24T09:52:49</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511422" lon="120.992563">
+	<time>2021-04-24T09:54:11</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510952" lon="120.991602">
+	<time>2021-04-24T09:59:42</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.510955" lon="120.991473">
+	<time>2021-04-24T09:59:47</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.510902" lon="120.991367">
+	<time>2021-04-24T09:59:51</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.510902" lon="120.991367">
+	<time>2021-04-24T10:00:08</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510432" lon="120.991313">
+	<time>2021-04-24T10:00:11</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.510252" lon="120.991598">
+	<time>2021-04-24T10:00:13</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.510252" lon="120.991598">
+	<time>2021-04-24T10:00:18</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.509343" lon="120.991497">
+	<time>2021-04-24T10:01:08</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.509343" lon="120.991497">
+	<time>2021-04-24T10:01:10</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.509103" lon="120.991525">
+	<time>2021-04-24T10:01:13</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.508705" lon="120.991437">
+	<time>2021-04-24T10:01:18</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.507608" lon="120.99109">
+	<time>2021-04-24T10:01:30</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.517023" lon="120.990782">
+	<time>2021-04-24T10:06:28</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.517023" lon="120.990782">
+	<time>2021-04-24T10:06:48</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.517053" lon="120.990798">
+	<time>2021-04-24T10:08:07</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.518652" lon="120.99094">
+	<time>2021-04-24T10:08:27</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.52079" lon="120.990993">
+	<time>2021-04-24T10:08:47</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.52115" lon="120.990985">
+	<time>2021-04-24T10:08:50</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.521703" lon="120.990927">
+	<time>2021-04-24T10:08:55</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.522575" lon="120.990817">
+	<time>2021-04-24T10:09:07</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.522768" lon="120.99077">
+	<time>2021-04-24T10:09:16</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.53683" lon="120.991633">
+	<time>2021-04-24T10:16:24</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.53683" lon="120.991633">
+	<time>2021-04-24T10:16:44</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.536863" lon="120.99172">
+	<time>2021-04-24T10:16:46</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.537025" lon="120.992587">
+	<time>2021-04-24T10:17:04</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.53734" lon="120.994133">
+	<time>2021-04-24T10:17:23</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.537602" lon="120.995282">
+	<time>2021-04-24T10:17:36</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.537653" lon="120.995822">
+	<time>2021-04-24T10:17:41</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.537653" lon="120.995943">
+	<time>2021-04-24T10:17:43</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.537668" lon="120.996313">
+	<time>2021-04-24T10:17:51</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.537673" lon="120.996942">
+	<time>2021-04-24T10:18:03</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.537583" lon="120.998113">
+	<time>2021-04-24T10:18:23</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.537435" lon="120.999213">
+	<time>2021-04-24T10:18:43</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.53742" lon="121.000085">
+	<time>2021-04-24T10:19:03</time>
+	<speed>5.56</speed>
+</trkpt>
+<trkpt lat="14.53742" lon="121.000085">
+	<time>2021-04-24T10:19:14</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537413" lon="121.000708">
+	<time>2021-04-24T10:19:30</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537478" lon="121.001438">
+	<time>2021-04-24T10:20:01</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537583" lon="121.002503">
+	<time>2021-04-24T10:20:22</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.537923" lon="121.00482">
+	<time>2021-04-24T10:20:42</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.538218" lon="121.007143">
+	<time>2021-04-24T10:21:01</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.538315" lon="121.007962">
+	<time>2021-04-24T10:21:12</time>
+	<speed>55.21</speed>
+</trkpt>
+<trkpt lat="14.538547" lon="121.009678">
+	<time>2021-04-24T10:21:21</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.539" lon="121.012693">
+	<time>2021-04-24T10:21:42</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.539585" lon="121.01493">
+	<time>2021-04-24T10:22:01</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.540418" lon="121.016965">
+	<time>2021-04-24T10:22:21</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.542232" lon="121.019893">
+	<time>2021-04-24T10:22:41</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.544193" lon="121.022287">
+	<time>2021-04-24T10:23:00</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.54609" lon="121.024542">
+	<time>2021-04-24T10:23:20</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.54757" lon="121.026168">
+	<time>2021-04-24T10:23:39</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.54757" lon="121.026168">
+	<time>2021-04-24T10:23:41</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.548162" lon="121.026877">
+	<time>2021-04-24T10:23:46</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.54924" lon="121.028202">
+	<time>2021-04-24T10:24:01</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.549757" lon="121.028892">
+	<time>2021-04-24T10:24:15</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.549757" lon="121.028892">
+	<time>2021-04-24T10:24:21</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.549757" lon="121.028892">
+	<time>2021-04-24T10:24:22</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.550468" lon="121.02986">
+	<time>2021-04-24T10:26:00</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.551008" lon="121.030495">
+	<time>2021-04-24T10:26:10</time>
+	<speed>36.65</speed>
+</trkpt>
+<trkpt lat="14.551633" lon="121.031237">
+	<time>2021-04-24T10:26:20</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.552438" lon="121.032217">
+	<time>2021-04-24T10:26:40</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.554353" lon="121.034425">
+	<time>2021-04-24T10:26:59</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.55539" lon="121.035705">
+	<time>2021-04-24T10:27:17</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.556417" lon="121.036865">
+	<time>2021-04-24T10:27:37</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.556488" lon="121.036942">
+	<time>2021-04-24T10:27:38</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.559613" lon="121.040593">
+	<time>2021-04-24T10:28:19</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.56183" lon="121.043165">
+	<time>2021-04-24T10:28:39</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.562352" lon="121.043617">
+	<time>2021-04-24T10:28:49</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.562523" lon="121.043753">
+	<time>2021-04-24T10:28:54</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.562712" lon="121.043895">
+	<time>2021-04-24T10:28:58</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.562712" lon="121.043895">
+	<time>2021-04-24T10:28:58</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.563045" lon="121.044127">
+	<time>2021-04-24T10:29:04</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.564065" lon="121.044703">
+	<time>2021-04-24T10:29:18</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.566225" lon="121.045428">
+	<time>2021-04-24T10:29:38</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.568005" lon="121.045943">
+	<time>2021-04-24T10:29:58</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.568005" lon="121.045943">
+	<time>2021-04-24T10:30:13</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.569142" lon="121.046207">
+	<time>2021-04-24T10:30:37</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.571275" lon="121.046883">
+	<time>2021-04-24T10:30:58</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.573058" lon="121.047765">
+	<time>2021-04-24T10:31:16</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.573058" lon="121.047765">
+	<time>2021-04-24T10:31:18</time>
+	<speed>46.69</speed>
+</trkpt>
+<trkpt lat="14.575163" lon="121.04933">
+	<time>2021-04-24T10:31:37</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.577442" lon="121.050995">
+	<time>2021-04-24T10:31:57</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.579653" lon="121.052645">
+	<time>2021-04-24T10:32:17</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.582765" lon="121.05471">
+	<time>2021-04-24T10:32:37</time>
+	<speed>64.82</speed>
+</trkpt>
+<trkpt lat="14.58337" lon="121.05511">
+	<time>2021-04-24T10:32:42</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.585075" lon="121.055897">
+	<time>2021-04-24T10:32:57</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.585645" lon="121.056072">
+	<time>2021-04-24T10:33:00</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.586765" lon="121.056455">
+	<time>2021-04-24T10:33:13</time>
+	<speed>7.41</speed>
+</trkpt>
+<trkpt lat="14.586765" lon="121.056455">
+	<time>2021-04-24T10:33:17</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.586987" lon="121.056578">
+	<time>2021-04-24T10:33:26</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.587842" lon="121.05686">
+	<time>2021-04-24T10:33:37</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.58902" lon="121.057208">
+	<time>2021-04-24T10:33:48</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.589655" lon="121.057423">
+	<time>2021-04-24T10:33:56</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.592443" lon="121.058332">
+	<time>2021-04-24T10:34:16</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.595263" lon="121.059255">
+	<time>2021-04-24T10:34:36</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.596668" lon="121.05966">
+	<time>2021-04-24T10:34:46</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.597723" lon="121.059815">
+	<time>2021-04-24T10:34:55</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.598795" lon="121.059855">
+	<time>2021-04-24T10:35:00</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.599858" lon="121.059775">
+	<time>2021-04-24T10:35:07</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.601035" lon="121.059533">
+	<time>2021-04-24T10:35:15</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.60377" lon="121.05841">
+	<time>2021-04-24T10:35:35</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.606682" lon="121.057065">
+	<time>2021-04-24T10:35:55</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.608722" lon="121.056112">
+	<time>2021-04-24T10:36:16</time>
+	<speed>23.87</speed>
+</trkpt>
+<trkpt lat="14.608722" lon="121.056112">
+	<time>2021-04-24T10:36:16</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.609133" lon="121.055927">
+	<time>2021-04-24T10:36:51</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.60936" lon="121.055837">
+	<time>2021-04-24T10:36:55</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.609428" lon="121.05581">
+	<time>2021-04-24T10:36:56</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.609798" lon="121.055638">
+	<time>2021-04-24T10:37:01</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.610497" lon="121.055315">
+	<time>2021-04-24T10:37:14</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.61311" lon="121.054123">
+	<time>2021-04-24T10:37:35</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.614187" lon="121.053642">
+	<time>2021-04-24T10:37:54</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.615082" lon="121.053233">
+	<time>2021-04-24T10:38:04</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.615625" lon="121.052968">
+	<time>2021-04-24T10:38:14</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.618222" lon="121.05175">
+	<time>2021-04-24T10:38:33</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.620975" lon="121.050475">
+	<time>2021-04-24T10:38:54</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.623175" lon="121.049437">
+	<time>2021-04-24T10:39:14</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.625758" lon="121.048312">
+	<time>2021-04-24T10:39:34</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.628132" lon="121.047217">
+	<time>2021-04-24T10:39:54</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.628132" lon="121.047217">
+	<time>2021-04-24T10:40:03</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.62867" lon="121.046908">
+	<time>2021-04-24T10:40:13</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.62884" lon="121.046852">
+	<time>2021-04-24T10:41:13</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.62884" lon="121.046852">
+	<time>2021-04-24T10:41:14</time>
+	<speed>22.24</speed>
+</trkpt>
+<trkpt lat="14.629257" lon="121.046683">
+	<time>2021-04-24T10:41:14</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.62964" lon="121.04653">
+	<time>2021-04-24T10:41:19</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.630655" lon="121.04608">
+	<time>2021-04-24T10:41:32</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.632975" lon="121.044982">
+	<time>2021-04-24T10:41:53</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.633175" lon="121.044848">
+	<time>2021-04-24T10:41:55</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.63528" lon="121.04346">
+	<time>2021-04-24T10:42:13</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.63789" lon="121.041755">
+	<time>2021-04-24T10:42:33</time>
+	<speed>66.67</speed>
+</trkpt>
+<trkpt lat="14.640675" lon="121.039937">
+	<time>2021-04-24T10:42:53</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.641825" lon="121.039197">
+	<time>2021-04-24T10:43:33</time>
+	<speed>3.7</speed>
+</trkpt>
+<trkpt lat="14.641825" lon="121.039197">
+	<time>2021-04-24T10:43:33</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.642137" lon="121.03899">
+	<time>2021-04-24T10:43:40</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.642542" lon="121.038692">
+	<time>2021-04-24T10:43:46</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.642898" lon="121.038383">
+	<time>2021-04-24T10:43:52</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.64373" lon="121.037862">
+	<time>2021-04-24T10:44:12</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.647045" lon="121.035735">
+	<time>2021-04-24T10:44:32</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.649543" lon="121.03412">
+	<time>2021-04-24T10:44:51</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.65139" lon="121.032897">
+	<time>2021-04-24T10:45:11</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.65139" lon="121.032897">
+	<time>2021-04-24T10:45:31</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.651733" lon="121.032725">
+	<time>2021-04-24T10:45:39</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.652675" lon="121.032033">
+	<time>2021-04-24T10:45:52</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.654807" lon="121.030678">
+	<time>2021-04-24T10:46:11</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.655578" lon="121.030087">
+	<time>2021-04-24T10:46:20</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.655578" lon="121.030087">
+	<time>2021-04-24T10:46:21</time>
+	<speed>33.95</speed>
+</trkpt>
+<trkpt lat="14.655795" lon="121.029445">
+	<time>2021-04-24T10:46:27</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.655795" lon="121.029445">
+	<time>2021-04-24T10:46:31</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.656347" lon="121.026978">
+	<time>2021-04-24T10:46:48</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.656417" lon="121.026695">
+	<time>2021-04-24T10:46:51</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.656417" lon="121.026695">
+	<time>2021-04-24T10:47:11</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65665" lon="121.026127">
+	<time>2021-04-24T10:47:51</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65683" lon="121.025288">
+	<time>2021-04-24T10:49:10</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.65732" lon="121.022933">
+	<time>2021-04-24T10:49:30</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.657722" lon="121.020452">
+	<time>2021-04-24T10:49:50</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.657722" lon="121.020452">
+	<time>2021-04-24T10:50:10</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65776" lon="121.019768">
+	<time>2021-04-24T10:50:45</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.657755" lon="121.019567">
+	<time>2021-04-24T10:50:49</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.657708" lon="121.017507">
+	<time>2021-04-24T10:51:09</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.657678" lon="121.016203">
+	<time>2021-04-24T10:51:19</time>
+	<speed>48.99</speed>
+</trkpt>
+<trkpt lat="14.657663" lon="121.014895">
+	<time>2021-04-24T10:51:29</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.657623" lon="121.012642">
+	<time>2021-04-24T10:51:49</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.657587" lon="121.01107">
+	<time>2021-04-24T10:52:09</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.657558" lon="121.008547">
+	<time>2021-04-24T10:52:29</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.657517" lon="121.00593">
+	<time>2021-04-24T10:52:49</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.657492" lon="121.004665">
+	<time>2021-04-24T10:53:09</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657492" lon="121.004665">
+	<time>2021-04-24T10:53:15</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65751" lon="121.003802">
+	<time>2021-04-24T10:53:28</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.657417" lon="121.00134">
+	<time>2021-04-24T10:53:48</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.65738" lon="120.997223">
+	<time>2021-04-24T10:54:28</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65738" lon="120.997223">
+	<time>2021-04-24T10:54:48</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657372" lon="120.995528">
+	<time>2021-04-24T10:55:08</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.657335" lon="120.992817">
+	<time>2021-04-24T10:55:28</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.657308" lon="120.991348">
+	<time>2021-04-24T10:55:47</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657308" lon="120.991348">
+	<time>2021-04-24T10:56:07</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657332" lon="120.990715">
+	<time>2021-04-24T10:57:07</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.657288" lon="120.989087">
+	<time>2021-04-24T10:57:27</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.657268" lon="120.98796">
+	<time>2021-04-24T10:57:47</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657268" lon="120.98796">
+	<time>2021-04-24T10:58:06</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657273" lon="120.987353">
+	<time>2021-04-24T10:59:46</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657258" lon="120.986602">
+	<time>2021-04-24T11:00:45</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657258" lon="120.986602">
+	<time>2021-04-24T11:01:05</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657233" lon="120.986135">
+	<time>2021-04-24T11:01:25</time>
+	<speed>13.95</speed>
+</trkpt>
+<trkpt lat="14.657233" lon="120.986135">
+	<time>2021-04-24T11:01:25</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657213" lon="120.985223">
+	<time>2021-04-24T11:01:45</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.657213" lon="120.985223">
+	<time>2021-04-24T11:02:05</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657238" lon="120.984552">
+	<time>2021-04-24T11:02:29</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657135" lon="120.98524">
+	<time>2021-04-24T11:04:24</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657047" lon="120.985603">
+	<time>2021-04-24T11:07:36</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.657057" lon="120.985807">
+	<time>2021-04-24T11:07:41</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.657057" lon="120.985807">
+	<time>2021-04-24T11:08:02</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657127" lon="120.986407">
+	<time>2021-04-24T11:10:21</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657147" lon="120.98674">
+	<time>2021-04-24T11:11:41</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.657147" lon="120.98674">
+	<time>2021-04-24T11:12:01</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657172" lon="120.988537">
+	<time>2021-04-24T11:12:20</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.657182" lon="120.989592">
+	<time>2021-04-24T11:12:40</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657182" lon="120.989592">
+	<time>2021-04-24T11:13:00</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657167" lon="120.989842">
+	<time>2021-04-24T11:15:19</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.65718" lon="120.99118">
+	<time>2021-04-24T11:15:39</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.65722" lon="120.993633">
+	<time>2021-04-24T11:15:59</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.657267" lon="120.996213">
+	<time>2021-04-24T11:16:19</time>
+	<speed>48.99</speed>
+</trkpt>
+<trkpt lat="14.657267" lon="120.996213">
+	<time>2021-04-24T11:16:19</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657263" lon="120.997462">
+	<time>2021-04-24T11:16:58</time>
+	<speed>3.7</speed>
+</trkpt>
+<trkpt lat="14.657263" lon="120.997462">
+	<time>2021-04-24T11:16:59</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657257" lon="120.997962">
+	<time>2021-04-24T11:17:38</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.657288" lon="120.99949">
+	<time>2021-04-24T11:17:58</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.657335" lon="121.001633">
+	<time>2021-04-24T11:18:18</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.657397" lon="121.004037">
+	<time>2021-04-24T11:18:38</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.657393" lon="121.004973">
+	<time>2021-04-24T11:18:57</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.657393" lon="121.005145">
+	<time>2021-04-24T11:19:16</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.657425" lon="121.00639">
+	<time>2021-04-24T11:19:37</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.657407" lon="121.00793">
+	<time>2021-04-24T11:19:57</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.657438" lon="121.010178">
+	<time>2021-04-24T11:20:17</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.657465" lon="121.01245">
+	<time>2021-04-24T11:20:36</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.657522" lon="121.01551">
+	<time>2021-04-24T11:20:57</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.657582" lon="121.018247">
+	<time>2021-04-24T11:21:17</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.657592" lon="121.019048">
+	<time>2021-04-24T11:21:27</time>
+	<speed>9.41</speed>
+</trkpt>
+<trkpt lat="14.657592" lon="121.019048">
+	<time>2021-04-24T11:21:35</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657603" lon="121.019667">
+	<time>2021-04-24T11:22:15</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.65742" lon="121.021345">
+	<time>2021-04-24T11:22:36</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.65704" lon="121.023288">
+	<time>2021-04-24T11:22:56</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.656848" lon="121.02408">
+	<time>2021-04-24T11:23:16</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.656648" lon="121.025142">
+	<time>2021-04-24T11:23:36</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.65661" lon="121.025298">
+	<time>2021-04-24T11:23:39</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.656345" lon="121.02641">
+	<time>2021-04-24T11:23:56</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.65587" lon="121.028413">
+	<time>2021-04-24T11:24:15</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.655465" lon="121.030023">
+	<time>2021-04-24T11:24:29</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.655105" lon="121.030352">
+	<time>2021-04-24T11:24:34</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.655023" lon="121.030405">
+	<time>2021-04-24T11:24:35</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.65468" lon="121.030603">
+	<time>2021-04-24T11:24:39</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.653802" lon="121.031158">
+	<time>2021-04-24T11:24:48</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.65305" lon="121.031625">
+	<time>2021-04-24T11:24:55</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.651702" lon="121.032528">
+	<time>2021-04-24T11:25:15</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.651007" lon="121.033028">
+	<time>2021-04-24T11:25:31</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.65082" lon="121.033135">
+	<time>2021-04-24T11:25:34</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.648707" lon="121.034468">
+	<time>2021-04-24T11:25:55</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.64609" lon="121.03613">
+	<time>2021-04-24T11:26:15</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.645145" lon="121.03675">
+	<time>2021-04-24T11:26:25</time>
+	<speed>45.58</speed>
+</trkpt>
+<trkpt lat="14.644203" lon="121.037363">
+	<time>2021-04-24T11:26:34</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.642293" lon="121.03862">
+	<time>2021-04-24T11:26:54</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.642293" lon="121.03862">
+	<time>2021-04-24T11:26:59</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.641778" lon="121.038963">
+	<time>2021-04-24T11:27:20</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.641473" lon="121.03915">
+	<time>2021-04-24T11:27:30</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.64138" lon="121.039208">
+	<time>2021-04-24T11:27:34</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.641195" lon="121.039325">
+	<time>2021-04-24T11:27:35</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.640822" lon="121.039563">
+	<time>2021-04-24T11:27:40</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.639715" lon="121.040297">
+	<time>2021-04-24T11:27:54</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.637453" lon="121.04179">
+	<time>2021-04-24T11:28:14</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.635187" lon="121.043243">
+	<time>2021-04-24T11:28:34</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.63315" lon="121.044568">
+	<time>2021-04-24T11:28:54</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.632398" lon="121.04502">
+	<time>2021-04-24T11:29:01</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.631912" lon="121.045245">
+	<time>2021-04-24T11:29:05</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.631022" lon="121.04566">
+	<time>2021-04-24T11:29:12</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.628848" lon="121.046672">
+	<time>2021-04-24T11:29:32</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.628848" lon="121.046672">
+	<time>2021-04-24T11:29:38</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.628253" lon="121.046965">
+	<time>2021-04-24T11:29:52</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.626767" lon="121.047635">
+	<time>2021-04-24T11:30:13</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.624735" lon="121.048572">
+	<time>2021-04-24T11:30:32</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.622468" lon="121.049653">
+	<time>2021-04-24T11:30:53</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.619893" lon="121.050858">
+	<time>2021-04-24T11:31:13</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.618762" lon="121.051447">
+	<time>2021-04-24T11:31:23</time>
+	<speed>49.95</speed>
+</trkpt>
+<trkpt lat="14.617688" lon="121.05192">
+	<time>2021-04-24T11:31:32</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.615578" lon="121.05287">
+	<time>2021-04-24T11:31:50</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.614592" lon="121.053292">
+	<time>2021-04-24T11:32:05</time>
+	<speed>5.56</speed>
+</trkpt>
+<trkpt lat="14.614592" lon="121.053292">
+	<time>2021-04-24T11:32:12</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.614022" lon="121.053517">
+	<time>2021-04-24T11:32:59</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.613762" lon="121.053645">
+	<time>2021-04-24T11:33:03</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.61292" lon="121.05404">
+	<time>2021-04-24T11:33:12</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.611073" lon="121.054867">
+	<time>2021-04-24T11:33:31</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.608905" lon="121.055857">
+	<time>2021-04-24T11:33:51</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.608588" lon="121.055978">
+	<time>2021-04-24T11:33:55</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.60816" lon="121.05618">
+	<time>2021-04-24T11:34:00</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.607118" lon="121.056702">
+	<time>2021-04-24T11:34:11</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.604918" lon="121.057717">
+	<time>2021-04-24T11:34:30</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.602138" lon="121.05897">
+	<time>2021-04-24T11:34:51</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.601385" lon="121.059248">
+	<time>2021-04-24T11:34:57</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.599713" lon="121.059627">
+	<time>2021-04-24T11:35:11</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.59718" lon="121.059593">
+	<time>2021-04-24T11:35:31</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.594978" lon="121.058962">
+	<time>2021-04-24T11:35:51</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.592387" lon="121.058105">
+	<time>2021-04-24T11:36:11</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.59118" lon="121.057723">
+	<time>2021-04-24T11:36:21</time>
+	<speed>54.75</speed>
+</trkpt>
+<trkpt lat="14.589907" lon="121.057328">
+	<time>2021-04-24T11:36:30</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.587365" lon="121.056422">
+	<time>2021-04-24T11:36:50</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.586533" lon="121.05618">
+	<time>2021-04-24T11:37:10</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.586533" lon="121.05618">
+	<time>2021-04-24T11:37:14</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.5857" lon="121.055855">
+	<time>2021-04-24T11:37:28</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.585605" lon="121.055825">
+	<time>2021-04-24T11:37:29</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.583895" lon="121.055203">
+	<time>2021-04-24T11:37:44</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.583157" lon="121.054813">
+	<time>2021-04-24T11:37:50</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.579328" lon="121.052138">
+	<time>2021-04-24T11:38:22</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.578493" lon="121.05152">
+	<time>2021-04-24T11:38:30</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.576398" lon="121.049955">
+	<time>2021-04-24T11:38:49</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.574417" lon="121.048493">
+	<time>2021-04-24T11:39:09</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.571947" lon="121.046973">
+	<time>2021-04-24T11:39:29</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.56918" lon="121.04602">
+	<time>2021-04-24T11:39:49</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.56858" lon="121.045832">
+	<time>2021-04-24T11:40:04</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.56771" lon="121.045617">
+	<time>2021-04-24T11:40:29</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.565715" lon="121.045062">
+	<time>2021-04-24T11:40:49</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.564027" lon="121.04445">
+	<time>2021-04-24T11:41:07</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.562745" lon="121.043683">
+	<time>2021-04-24T11:41:18</time>
+	<speed>56.8</speed>
+</trkpt>
+<trkpt lat="14.561708" lon="121.042783">
+	<time>2021-04-24T11:41:28</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.55994" lon="121.040728">
+	<time>2021-04-24T11:41:48</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.558607" lon="121.039143">
+	<time>2021-04-24T11:42:08</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.557907" lon="121.038322">
+	<time>2021-04-24T11:42:21</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.557568" lon="121.037998">
+	<time>2021-04-24T11:42:28</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.55749" lon="121.03789">
+	<time>2021-04-24T11:42:30</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.55734" lon="121.037603">
+	<time>2021-04-24T11:42:35</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.557048" lon="121.037215">
+	<time>2021-04-24T11:42:41</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.556767" lon="121.036888">
+	<time>2021-04-24T11:42:46</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.556658" lon="121.036763">
+	<time>2021-04-24T11:42:48</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.555493" lon="121.035357">
+	<time>2021-04-24T11:43:08</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.554992" lon="121.034822">
+	<time>2021-04-24T11:43:18</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.554917" lon="121.034727">
+	<time>2021-04-24T11:43:27</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.554318" lon="121.034007">
+	<time>2021-04-24T11:43:30</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.55289" lon="121.032325">
+	<time>2021-04-24T11:43:47</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.551158" lon="121.030272">
+	<time>2021-04-24T11:44:07</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.549552" lon="121.028607">
+	<time>2021-04-24T11:44:27</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.546827" lon="121.025533">
+	<time>2021-04-24T11:44:58</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.546712" lon="121.025087">
+	<time>2021-04-24T11:45:03</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.54637" lon="121.024722">
+	<time>2021-04-24T11:45:07</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.544633" lon="121.022597">
+	<time>2021-04-24T11:45:27</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.542587" lon="121.020108">
+	<time>2021-04-24T11:45:46</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.540975" lon="121.017663">
+	<time>2021-04-24T11:46:06</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.5404" lon="121.016548">
+	<time>2021-04-24T11:46:16</time>
+	<speed>50.56</speed>
+</trkpt>
+<trkpt lat="14.539127" lon="121.012647">
+	<time>2021-04-24T11:46:46</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.538878" lon="121.010903">
+	<time>2021-04-24T11:47:06</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.538643" lon="121.008837">
+	<time>2021-04-24T11:47:26</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.538585" lon="121.008417">
+	<time>2021-04-24T11:47:33</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.53854" lon="121.00807">
+	<time>2021-04-24T11:47:38</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.53854" lon="121.00807">
+	<time>2021-04-24T11:47:46</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.538397" lon="121.006628">
+	<time>2021-04-24T11:48:06</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.538312" lon="121.005727">
+	<time>2021-04-24T11:48:24</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.538312" lon="121.005727">
+	<time>2021-04-24T11:48:43</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.538085" lon="121.004135">
+	<time>2021-04-24T11:49:05</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.537755" lon="121.00178">
+	<time>2021-04-24T11:49:24</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.537698" lon="121.000895">
+	<time>2021-04-24T11:49:45</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537698" lon="121.000895">
+	<time>2021-04-24T11:50:05</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537708" lon="120.999112">
+	<time>2021-04-24T11:51:24</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.537728" lon="120.99891">
+	<time>2021-04-24T11:51:26</time>
+	<speed>37.56</speed>
+</trkpt>
+<trkpt lat="14.537885" lon="120.997025">
+	<time>2021-04-24T11:51:44</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.537692" lon="120.994863">
+	<time>2021-04-24T11:52:02</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.537668" lon="120.994735">
+	<time>2021-04-24T11:52:03</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.537302" lon="120.992942">
+	<time>2021-04-24T11:52:22</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.53727" lon="120.992812">
+	<time>2021-04-24T11:52:24</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.537095" lon="120.992238">
+	<time>2021-04-24T11:52:36</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.536967" lon="120.991742">
+	<time>2021-04-24T11:52:42</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.536967" lon="120.991742">
+	<time>2021-04-24T11:52:44</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.536498" lon="120.989723">
+	<time>2021-04-24T11:53:03</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.536498" lon="120.989723">
+	<time>2021-04-24T11:53:05</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.536453" lon="120.989415">
+	<time>2021-04-24T11:54:48</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.53636" lon="120.989038">
+	<time>2021-04-24T11:54:55</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.536183" lon="120.988903">
+	<time>2021-04-24T11:55:00</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.536" lon="120.988903">
+	<time>2021-04-24T11:55:03</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.535928" lon="120.98891">
+	<time>2021-04-24T11:55:04</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.535392" lon="120.988972">
+	<time>2021-04-24T11:55:10</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.533993" lon="120.989155">
+	<time>2021-04-24T11:55:22</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.53247" lon="120.989425">
+	<time>2021-04-24T11:55:33</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.531247" lon="120.989542">
+	<time>2021-04-24T11:55:42</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.529403" lon="120.989698">
+	<time>2021-04-24T11:56:01</time>
+	<speed>5.56</speed>
+</trkpt>
+<trkpt lat="14.529403" lon="120.989698">
+	<time>2021-04-24T11:56:02</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.52939" lon="120.989697">
+	<time>2021-04-24T11:56:22</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.52911" lon="120.989717">
+	<time>2021-04-24T11:57:21</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.527173" lon="120.989942">
+	<time>2021-04-24T11:57:41</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.525532" lon="120.990108">
+	<time>2021-04-24T11:57:58</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.525432" lon="120.990107">
+	<time>2021-04-24T11:58:01</time>
+	<speed>7.41</speed>
+</trkpt>
+<trkpt lat="14.525432" lon="120.990107">
+	<time>2021-04-24T11:58:21</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.524503" lon="120.990245">
+	<time>2021-04-24T11:58:41</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.52319" lon="120.990425">
+	<time>2021-04-24T11:59:00</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.523012" lon="120.990448">
+	<time>2021-04-24T11:59:04</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.5216" lon="120.990652">
+	<time>2021-04-24T11:59:21</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.520853" lon="120.990713">
+	<time>2021-04-24T11:59:29</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.51978" lon="120.990667">
+	<time>2021-04-24T11:59:41</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.518322" lon="120.990587">
+	<time>2021-04-24T12:00:00</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.518322" lon="120.990587">
+	<time>2021-04-24T12:00:19</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.518003" lon="120.990577">
+	<time>2021-04-24T12:01:20</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.51781" lon="120.990593">
+	<time>2021-04-24T12:01:22</time>
+	<speed>23.28</speed>
+</trkpt>
+<trkpt lat="14.516418" lon="120.990523">
+	<time>2021-04-24T12:01:40</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.513685" lon="120.990142">
+	<time>2021-04-24T12:02:00</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.51303" lon="120.990033">
+	<time>2021-04-24T12:02:05</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.512453" lon="120.989877">
+	<time>2021-04-24T12:02:10</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.511477" lon="120.989587">
+	<time>2021-04-24T12:02:19</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.511073" lon="120.989488">
+	<time>2021-04-24T12:02:25</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.511073" lon="120.989488">
+	<time>2021-04-24T12:02:30</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510842" lon="120.989758">
+	<time>2021-04-24T12:02:38</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.510833" lon="120.989788">
+	<time>2021-04-24T12:02:39</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.510833" lon="120.989788">
+	<time>2021-04-24T12:02:59</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510782" lon="120.990183">
+	<time>2021-04-24T12:04:52</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.510782" lon="120.990183">
+	<time>2021-04-24T12:04:57</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51067" lon="120.990572">
+	<time>2021-04-24T12:05:07</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.51067" lon="120.990572">
+	<time>2021-04-24T12:05:18</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510592" lon="120.990932">
+	<time>2021-04-24T12:05:19</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.51068" lon="120.991053">
+	<time>2021-04-24T12:05:24</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.510897" lon="120.991115">
+	<time>2021-04-24T12:05:29</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.510897" lon="120.991115">
+	<time>2021-04-24T12:05:36</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511305" lon="120.991253">
+	<time>2021-04-24T12:05:43</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.511618" lon="120.991292">
+	<time>2021-04-24T12:05:48</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.511618" lon="120.991292">
+	<time>2021-04-24T12:05:57</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.512265" lon="120.991355">
+	<time>2021-04-24T12:06:09</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.512262" lon="120.991552">
+	<time>2021-04-24T12:06:18</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.512237" lon="120.991628">
+	<time>2021-04-24T12:06:19</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.512223" lon="120.991667">
+	<time>2021-04-24T12:06:20</time>
+	<speed>16.41</speed>
+</trkpt>
+<trkpt lat="14.512223" lon="120.991667">
+	<time>2021-04-24T12:06:24</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511712" lon="120.99198">
+	<time>2021-04-24T12:07:50</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510992" lon="120.991672">
+	<time>2021-04-24T12:10:16</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510992" lon="120.991672">
+	<time>2021-04-24T12:10:36</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510963" lon="120.992415">
+	<time>2021-04-24T12:10:48</time>
+	<speed>5.56</speed>
+</trkpt>
+<trkpt lat="14.510963" lon="120.992415">
+	<time>2021-04-24T12:10:56</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511078" lon="120.991958">
+	<time>2021-04-24T12:11:11</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.511153" lon="120.991737">
+	<time>2021-04-24T12:11:16</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.511153" lon="120.991737">
+	<time>2021-04-24T12:11:16</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.511153" lon="120.991737">
+	<time>2021-04-24T12:11:18</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51124" lon="120.991483">
+	<time>2021-04-24T12:11:21</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.511627" lon="120.990495">
+	<time>2021-04-24T12:11:36</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.511693" lon="120.99028">
+	<time>2021-04-24T12:11:49</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.511693" lon="120.99028">
+	<time>2021-04-24T12:11:56</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51146" lon="120.990947">
+	<time>2021-04-24T12:11:59</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511238" lon="120.991178">
+	<time>2021-04-24T12:12:09</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.511003" lon="120.9913">
+	<time>2021-04-24T12:12:13</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.511003" lon="120.9913">
+	<time>2021-04-24T12:12:15</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510307" lon="120.991332">
+	<time>2021-04-24T12:12:29</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.509562" lon="120.991285">
+	<time>2021-04-24T12:13:08</time>
+	<speed>5.56</speed>
+</trkpt>
+<trkpt lat="14.5093" lon="120.99126">
+	<time>2021-04-24T12:13:13</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.509222" lon="120.991308">
+	<time>2021-04-24T12:13:15</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.509222" lon="120.991308">
+	<time>2021-04-24T12:13:18</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.508907" lon="120.991278">
+	<time>2021-04-24T12:13:23</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.507758" lon="120.990988">
+	<time>2021-04-24T12:13:35</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.507333" lon="120.990832">
+	<time>2021-04-24T12:13:42</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.507382" lon="120.990625">
+	<time>2021-04-24T12:13:47</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.507503" lon="120.990353">
+	<time>2021-04-24T12:13:52</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.507503" lon="120.990353">
+	<time>2021-04-24T12:13:55</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507812" lon="120.989592">
+	<time>2021-04-24T12:14:14</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.508005" lon="120.989">
+	<time>2021-04-24T12:14:29</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.508047" lon="120.988882">
+	<time>2021-04-24T12:14:34</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.508047" lon="120.988882">
+	<time>2021-04-24T12:14:38</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.508403" lon="120.98881">
+	<time>2021-04-24T12:14:49</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.508647" lon="120.988892">
+	<time>2021-04-24T12:14:53</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.508647" lon="120.988892">
+	<time>2021-04-24T12:14:53</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.510552" lon="120.98949">
+	<time>2021-04-24T12:15:14</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.511732" lon="120.989868">
+	<time>2021-04-24T12:15:34</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.511773" lon="120.989888">
+	<time>2021-04-24T12:15:35</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.511773" lon="120.989888">
+	<time>2021-04-24T12:15:40</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.512308" lon="120.990023">
+	<time>2021-04-24T12:19:16</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.513082" lon="120.99022">
+	<time>2021-04-24T12:19:31</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.515007" lon="120.990488">
+	<time>2021-04-24T12:19:52</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.517008" lon="120.990715">
+	<time>2021-04-24T12:20:12</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.517008" lon="120.990715">
+	<time>2021-04-24T12:20:30</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.517582" lon="120.990805">
+	<time>2021-04-24T12:22:11</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.519753" lon="120.99091">
+	<time>2021-04-24T12:22:31</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.519973" lon="120.990912">
+	<time>2021-04-24T12:22:33</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.520612" lon="120.990927">
+	<time>2021-04-24T12:22:39</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.52125" lon="120.99092">
+	<time>2021-04-24T12:22:45</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.521708" lon="120.990877">
+	<time>2021-04-24T12:22:51</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.521708" lon="120.990877">
+	<time>2021-04-24T12:22:54</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.52203" lon="120.990837">
+	<time>2021-04-24T12:23:39</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.52252" lon="120.99077">
+	<time>2021-04-24T12:23:46</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.535822" lon="120.989185">
+	<time>2021-04-24T12:27:55</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.53615" lon="120.989177">
+	<time>2021-04-24T12:28:09</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.536203" lon="120.989193">
+	<time>2021-04-24T12:28:11</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.536263" lon="120.989327">
+	<time>2021-04-24T12:28:15</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.53633" lon="120.989575">
+	<time>2021-04-24T12:28:19</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.536457" lon="120.990085">
+	<time>2021-04-24T12:28:25</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.536527" lon="120.990393">
+	<time>2021-04-24T12:28:28</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.536783" lon="120.99164">
+	<time>2021-04-24T12:28:47</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.536783" lon="120.99164">
+	<time>2021-04-24T12:29:27</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.53698" lon="120.992557">
+	<time>2021-04-24T12:30:26</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.537238" lon="120.993732">
+	<time>2021-04-24T12:30:47</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.537343" lon="120.994167">
+	<time>2021-04-24T12:30:56</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.537513" lon="120.994823">
+	<time>2021-04-24T12:31:05</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.537573" lon="120.995117">
+	<time>2021-04-24T12:31:09</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.537632" lon="120.995877">
+	<time>2021-04-24T12:31:24</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.537632" lon="120.995877">
+	<time>2021-04-24T12:31:26</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537655" lon="120.99686">
+	<time>2021-04-24T12:31:37</time>
+	<speed>30.5</speed>
+</trkpt>
+<trkpt lat="14.537622" lon="120.997503">
+	<time>2021-04-24T12:31:46</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.537572" lon="120.998042">
+	<time>2021-04-24T12:31:51</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.537395" lon="120.999897">
+	<time>2021-04-24T12:32:07</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.537455" lon="121.001132">
+	<time>2021-04-24T12:32:26</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.537468" lon="121.001182">
+	<time>2021-04-24T12:32:27</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.537508" lon="121.001325">
+	<time>2021-04-24T12:32:31</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.537508" lon="121.001325">
+	<time>2021-04-24T12:32:39</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.53764" lon="121.002188">
+	<time>2021-04-24T12:32:47</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.53764" lon="121.002188">
+	<time>2021-04-24T12:32:47</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537725" lon="121.002958">
+	<time>2021-04-24T12:33:06</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.53803" lon="121.005662">
+	<time>2021-04-24T12:33:26</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.5383" lon="121.007677">
+	<time>2021-04-24T12:33:38</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.538395" lon="121.008403">
+	<time>2021-04-24T12:33:46</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.538748" lon="121.011097">
+	<time>2021-04-24T12:34:06</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.539247" lon="121.013803">
+	<time>2021-04-24T12:34:25</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.540187" lon="121.016438">
+	<time>2021-04-24T12:34:45</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.54146" lon="121.018797">
+	<time>2021-04-24T12:35:02</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.541647" lon="121.019075">
+	<time>2021-04-24T12:35:05</time>
+	<speed>64.82</speed>
+</trkpt>
+<trkpt lat="14.543925" lon="121.021987">
+	<time>2021-04-24T12:35:25</time>
+	<speed>68.52</speed>
+</trkpt>
+<trkpt lat="14.545957" lon="121.02436">
+	<time>2021-04-24T12:35:45</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.547537" lon="121.026217">
+	<time>2021-04-24T12:36:05</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.548873" lon="121.027762">
+	<time>2021-04-24T12:36:23</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.54962" lon="121.028778">
+	<time>2021-04-24T12:36:35</time>
+	<speed>26.22</speed>
+</trkpt>
+<trkpt lat="14.549947" lon="121.029177">
+	<time>2021-04-24T12:36:40</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.550133" lon="121.029402">
+	<time>2021-04-24T12:36:43</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.55145" lon="121.030948">
+	<time>2021-04-24T12:37:04</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.552532" lon="121.032273">
+	<time>2021-04-24T12:37:25</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.554005" lon="121.03399">
+	<time>2021-04-24T12:37:44</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.554958" lon="121.035092">
+	<time>2021-04-24T12:38:04</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.556043" lon="121.036392">
+	<time>2021-04-24T12:38:23</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.557545" lon="121.0381">
+	<time>2021-04-24T12:38:44</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.558932" lon="121.039737">
+	<time>2021-04-24T12:39:03</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.560862" lon="121.042035">
+	<time>2021-04-24T12:39:24</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.562297" lon="121.043523">
+	<time>2021-04-24T12:39:43</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.562297" lon="121.043523">
+	<time>2021-04-24T12:39:43</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.563328" lon="121.044263">
+	<time>2021-04-24T12:40:04</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.56505" lon="121.04506">
+	<time>2021-04-24T12:40:23</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.56774" lon="121.045797">
+	<time>2021-04-24T12:40:43</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.568527" lon="121.046035">
+	<time>2021-04-24T12:40:59</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.568652" lon="121.046077">
+	<time>2021-04-24T12:41:02</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.568878" lon="121.046135">
+	<time>2021-04-24T12:41:04</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.569227" lon="121.046245">
+	<time>2021-04-24T12:41:08</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.569705" lon="121.04638">
+	<time>2021-04-24T12:41:13</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.570667" lon="121.046665">
+	<time>2021-04-24T12:41:23</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.573273" lon="121.047895">
+	<time>2021-04-24T12:41:49</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.574518" lon="121.048867">
+	<time>2021-04-24T12:42:02</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.576755" lon="121.050483">
+	<time>2021-04-24T12:42:23</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.578693" lon="121.051883">
+	<time>2021-04-24T12:42:42</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.581095" lon="121.053557">
+	<time>2021-04-24T12:43:03</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.583243" lon="121.055028">
+	<time>2021-04-24T12:43:21</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.584467" lon="121.055652">
+	<time>2021-04-24T12:43:41</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.585552" lon="121.056042">
+	<time>2021-04-24T12:43:42</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.586907" lon="121.056472">
+	<time>2021-04-24T12:44:01</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.587487" lon="121.056677">
+	<time>2021-04-24T12:44:04</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.588122" lon="121.056808">
+	<time>2021-04-24T12:44:10</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.5895" lon="121.057237">
+	<time>2021-04-24T12:44:22</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.592318" lon="121.058218">
+	<time>2021-04-24T12:44:42</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.595123" lon="121.059208">
+	<time>2021-04-24T12:45:01</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.597378" lon="121.059768">
+	<time>2021-04-24T12:45:16</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.598175" lon="121.059843">
+	<time>2021-04-24T12:45:21</time>
+	<speed>64.82</speed>
+</trkpt>
+<trkpt lat="14.59883" lon="121.059842">
+	<time>2021-04-24T12:45:25</time>
+	<speed>64.82</speed>
+</trkpt>
+<trkpt lat="14.60073" lon="121.059572">
+	<time>2021-04-24T12:45:37</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.601188" lon="121.059453">
+	<time>2021-04-24T12:45:40</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.603607" lon="121.058462">
+	<time>2021-04-24T12:46:00</time>
+	<speed>64.82</speed>
+</trkpt>
+<trkpt lat="14.606945" lon="121.056937">
+	<time>2021-04-24T12:46:20</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.609113" lon="121.055883">
+	<time>2021-04-24T12:46:41</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.609893" lon="121.055528">
+	<time>2021-04-24T12:46:51</time>
+	<speed>41.47</speed>
+</trkpt>
+<trkpt lat="14.610805" lon="121.055112">
+	<time>2021-04-24T12:46:59</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.613313" lon="121.053972">
+	<time>2021-04-24T12:47:19</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.613313" lon="121.053972">
+	<time>2021-04-24T12:47:40</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.61394" lon="121.053668">
+	<time>2021-04-24T12:48:00</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.61423" lon="121.053592">
+	<time>2021-04-24T12:48:20</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.61451" lon="121.053483">
+	<time>2021-04-24T12:48:25</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.61539" lon="121.05307">
+	<time>2021-04-24T12:48:40</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.6178" lon="121.051997">
+	<time>2021-04-24T12:49:00</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.620015" lon="121.050995">
+	<time>2021-04-24T12:49:20</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.622783" lon="121.04983">
+	<time>2021-04-24T12:49:40</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.625012" lon="121.048792">
+	<time>2021-04-24T12:49:58</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.62751" lon="121.047637">
+	<time>2021-04-24T12:50:19</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.62853" lon="121.04716">
+	<time>2021-04-24T12:50:38</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.62908" lon="121.046897">
+	<time>2021-04-24T12:50:40</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.630558" lon="121.046212">
+	<time>2021-04-24T12:50:58</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.632323" lon="121.045358">
+	<time>2021-04-24T12:51:18</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.633448" lon="121.044732">
+	<time>2021-04-24T12:51:24</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.635385" lon="121.043415">
+	<time>2021-04-24T12:51:39</time>
+	<speed>64.82</speed>
+</trkpt>
+<trkpt lat="14.636748" lon="121.042475">
+	<time>2021-04-24T12:51:49</time>
+	<speed>67.89</speed>
+</trkpt>
+<trkpt lat="14.638118" lon="121.041578">
+	<time>2021-04-24T12:51:58</time>
+	<speed>74.08</speed>
+</trkpt>
+<trkpt lat="14.64107" lon="121.039628">
+	<time>2021-04-24T12:52:18</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.642495" lon="121.038727">
+	<time>2021-04-24T12:52:36</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.642495" lon="121.038727">
+	<time>2021-04-24T12:52:38</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.642913" lon="121.038457">
+	<time>2021-04-24T12:52:41</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.643318" lon="121.038185">
+	<time>2021-04-24T12:52:46</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.643318" lon="121.038185">
+	<time>2021-04-24T12:52:56</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.64662" lon="121.036022">
+	<time>2021-04-24T12:53:17</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.649262" lon="121.03428">
+	<time>2021-04-24T12:53:37</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.651228" lon="121.03301">
+	<time>2021-04-24T12:53:58</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.651257" lon="121.03299">
+	<time>2021-04-24T12:53:59</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.651257" lon="121.03299">
+	<time>2021-04-24T12:54:05</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.651618" lon="121.03282">
+	<time>2021-04-24T12:54:59</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.651993" lon="121.032582">
+	<time>2021-04-24T12:55:05</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.652588" lon="121.03216">
+	<time>2021-04-24T12:55:12</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.653118" lon="121.03183">
+	<time>2021-04-24T12:55:17</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.655225" lon="121.030442">
+	<time>2021-04-24T12:55:36</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.655737" lon="121.029883">
+	<time>2021-04-24T12:55:43</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.655872" lon="121.029345">
+	<time>2021-04-24T12:55:48</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.655963" lon="121.028888">
+	<time>2021-04-24T12:55:52</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.656083" lon="121.02832">
+	<time>2021-04-24T12:55:57</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.656562" lon="121.026272">
+	<time>2021-04-24T12:56:17</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.656562" lon="121.026272">
+	<time>2021-04-24T12:56:37</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.656917" lon="121.025435">
+	<time>2021-04-24T13:00:35</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.657387" lon="121.023208">
+	<time>2021-04-24T13:00:55</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.657765" lon="121.020773">
+	<time>2021-04-24T13:01:15</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.657765" lon="121.020773">
+	<time>2021-04-24T13:01:35</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657737" lon="121.020147">
+	<time>2021-04-24T13:02:14</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65775" lon="121.02005">
+	<time>2021-04-24T13:02:54</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.657688" lon="121.016728">
+	<time>2021-04-24T13:03:14</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.657635" lon="121.013507">
+	<time>2021-04-24T13:03:34</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.657595" lon="121.011307">
+	<time>2021-04-24T13:03:53</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.657595" lon="121.011307">
+	<time>2021-04-24T13:04:13</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657627" lon="121.010223">
+	<time>2021-04-24T13:04:33</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.657595" lon="121.007963">
+	<time>2021-04-24T13:04:53</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.657538" lon="121.005098">
+	<time>2021-04-24T13:05:13</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.657538" lon="121.005098">
+	<time>2021-04-24T13:05:33</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657545" lon="121.00327">
+	<time>2021-04-24T13:05:53</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.65744" lon="121.000882">
+	<time>2021-04-24T13:06:11</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.657372" lon="120.998075">
+	<time>2021-04-24T13:06:32</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.657372" lon="120.998075">
+	<time>2021-04-24T13:06:42</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657377" lon="120.997462">
+	<time>2021-04-24T13:06:52</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657345" lon="120.996013">
+	<time>2021-04-24T13:07:12</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.657328" lon="120.993862">
+	<time>2021-04-24T13:07:32</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.65734" lon="120.992057">
+	<time>2021-04-24T13:07:52</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.65731" lon="120.990853">
+	<time>2021-04-24T13:08:12</time>
+	<speed>5.56</speed>
+</trkpt>
+<trkpt lat="14.65731" lon="120.990853">
+	<time>2021-04-24T13:08:12</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65733" lon="120.990545">
+	<time>2021-04-24T13:11:09</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.657283" lon="120.989025">
+	<time>2021-04-24T13:11:29</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.657267" lon="120.988365">
+	<time>2021-04-24T13:11:40</time>
+	<speed>23.13</speed>
+</trkpt>
+<trkpt lat="14.657267" lon="120.988365">
+	<time>2021-04-24T13:11:48</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657278" lon="120.987685">
+	<time>2021-04-24T13:12:14</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657308" lon="120.986893">
+	<time>2021-04-24T13:13:45</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.657308" lon="120.986893">
+	<time>2021-04-24T13:13:47</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657245" lon="120.98532">
+	<time>2021-04-24T13:19:44</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.657245" lon="120.98532">
+	<time>2021-04-24T13:20:03</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657287" lon="120.984542">
+	<time>2021-04-24T13:20:43</time>
+	<speed>7.41</speed>
+</trkpt>
+<trkpt lat="14.657287" lon="120.984542">
+	<time>2021-04-24T13:20:43</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657147" lon="120.984792">
+	<time>2021-04-24T13:21:07</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.657165" lon="120.985255">
+	<time>2021-04-24T13:21:13</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.65717" lon="120.98605">
+	<time>2021-04-24T13:21:22</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.65717" lon="120.98605">
+	<time>2021-04-24T13:21:36</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657117" lon="120.986725">
+	<time>2021-04-24T13:23:01</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657147" lon="120.987478">
+	<time>2021-04-24T13:25:56</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.657153" lon="120.98754">
+	<time>2021-04-24T13:25:59</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.65718" lon="120.989413">
+	<time>2021-04-24T13:26:20</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.65718" lon="120.989413">
+	<time>2021-04-24T13:26:39</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657187" lon="120.990052">
+	<time>2021-04-24T13:27:00</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65718" lon="120.990383">
+	<time>2021-04-24T13:27:19</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.657208" lon="120.99244">
+	<time>2021-04-24T13:27:38</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.657262" lon="120.995468">
+	<time>2021-04-24T13:27:59</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.65729" lon="120.997677">
+	<time>2021-04-24T13:28:18</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.65729" lon="120.997677">
+	<time>2021-04-24T13:28:39</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657293" lon="120.999487">
+	<time>2021-04-24T13:28:58</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.657323" lon="121.001827">
+	<time>2021-04-24T13:29:18</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.657388" lon="121.004432">
+	<time>2021-04-24T13:29:39</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.657402" lon="121.005377">
+	<time>2021-04-24T13:29:58</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.6574" lon="121.005462">
+	<time>2021-04-24T13:30:18</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.657443" lon="121.010577">
+	<time>2021-04-24T13:30:57</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.657448" lon="121.012008">
+	<time>2021-04-24T13:31:18</time>
+	<speed>3.7</speed>
+</trkpt>
+<trkpt lat="14.657442" lon="121.012572">
+	<time>2021-04-24T13:31:32</time>
+	<speed>34.71</speed>
+</trkpt>
+<trkpt lat="14.657458" lon="121.013403">
+	<time>2021-04-24T13:31:37</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.657505" lon="121.016295">
+	<time>2021-04-24T13:31:58</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.657557" lon="121.018988">
+	<time>2021-04-24T13:32:15</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.657548" lon="121.019763">
+	<time>2021-04-24T13:32:33</time>
+	<speed>5.56</speed>
+</trkpt>
+<trkpt lat="14.657548" lon="121.019763">
+	<time>2021-04-24T13:32:36</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657425" lon="121.02133">
+	<time>2021-04-24T13:32:55</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.657335" lon="121.022637">
+	<time>2021-04-24T13:33:07</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.657063" lon="121.023787">
+	<time>2021-04-24T13:33:16</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.656648" lon="121.025362">
+	<time>2021-04-24T13:33:37</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.656648" lon="121.025362">
+	<time>2021-04-24T13:33:56</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.656328" lon="121.026465">
+	<time>2021-04-24T13:35:56</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.655902" lon="121.028433">
+	<time>2021-04-24T13:36:15</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.655683" lon="121.029428">
+	<time>2021-04-24T13:36:30</time>
+	<speed>47.21</speed>
+</trkpt>
+<trkpt lat="14.655385" lon="121.030177">
+	<time>2021-04-24T13:36:30</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.65494" lon="121.030475">
+	<time>2021-04-24T13:36:35</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.65494" lon="121.030475">
+	<time>2021-04-24T13:36:35</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.654533" lon="121.03073">
+	<time>2021-04-24T13:36:39</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.651318" lon="121.032692">
+	<time>2021-04-24T13:37:15</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.651318" lon="121.032692">
+	<time>2021-04-24T13:37:36</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.651198" lon="121.032768">
+	<time>2021-04-24T13:38:35</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.648747" lon="121.034405">
+	<time>2021-04-24T13:38:54</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.645813" lon="121.036297">
+	<time>2021-04-24T13:39:15</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.643328" lon="121.037932">
+	<time>2021-04-24T13:39:34</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.64156" lon="121.039098">
+	<time>2021-04-24T13:39:52</time>
+	<speed>7.41</speed>
+</trkpt>
+<trkpt lat="14.64156" lon="121.039098">
+	<time>2021-04-24T13:39:52</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.641348" lon="121.039215">
+	<time>2021-04-24T13:40:14</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.640947" lon="121.039478">
+	<time>2021-04-24T13:40:19</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.639903" lon="121.040165">
+	<time>2021-04-24T13:40:33</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.637908" lon="121.041487">
+	<time>2021-04-24T13:40:54</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.635295" lon="121.04323">
+	<time>2021-04-24T13:41:13</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.628227" lon="121.046995">
+	<time>2021-04-24T13:42:17</time>
+	<speed>3.7</speed>
+</trkpt>
+<trkpt lat="14.628227" lon="121.046995">
+	<time>2021-04-24T13:42:33</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.627997" lon="121.047068">
+	<time>2021-04-24T13:42:57</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.62754" lon="121.047257">
+	<time>2021-04-24T13:43:12</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.623532" lon="121.049103">
+	<time>2021-04-24T13:43:52</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.620338" lon="121.050575">
+	<time>2021-04-24T13:44:13</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.61754" lon="121.051908">
+	<time>2021-04-24T13:44:32</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.614483" lon="121.053292">
+	<time>2021-04-24T13:44:56</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.614402" lon="121.053335">
+	<time>2021-04-24T13:45:07</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.614402" lon="121.053335">
+	<time>2021-04-24T13:45:12</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.613785" lon="121.0536">
+	<time>2021-04-24T13:45:41</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.612895" lon="121.054008">
+	<time>2021-04-24T13:45:52</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.610792" lon="121.054965">
+	<time>2021-04-24T13:46:09</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.607787" lon="121.056333">
+	<time>2021-04-24T13:46:32</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.605005" lon="121.057612">
+	<time>2021-04-24T13:46:49</time>
+	<speed>70.38</speed>
+</trkpt>
+<trkpt lat="14.605482" lon="121.057392">
+	<time>2021-04-24T13:46:50</time>
+	<speed>69.3</speed>
+</trkpt>
+<trkpt lat="14.601558" lon="121.05917">
+	<time>2021-04-24T13:47:10</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.600547" lon="121.059457">
+	<time>2021-04-24T13:47:17</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.598637" lon="121.059693">
+	<time>2021-04-24T13:47:31</time>
+	<speed>66.67</speed>
+</trkpt>
+<trkpt lat="14.596518" lon="121.059497">
+	<time>2021-04-24T13:47:44</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.59593" lon="121.059327">
+	<time>2021-04-24T13:47:49</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.59593" lon="121.059327">
+	<time>2021-04-24T13:47:50</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.594362" lon="121.05879">
+	<time>2021-04-24T13:48:00</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.593495" lon="121.058487">
+	<time>2021-04-24T13:48:11</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.589778" lon="121.057323">
+	<time>2021-04-24T13:48:30</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.58729" lon="121.05641">
+	<time>2021-04-24T13:48:50</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.586712" lon="121.056198">
+	<time>2021-04-24T13:49:07</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.586583" lon="121.056147">
+	<time>2021-04-24T13:49:12</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.586282" lon="121.056065">
+	<time>2021-04-24T13:49:18</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.5856" lon="121.055842">
+	<time>2021-04-24T13:49:30</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.583497" lon="121.055042">
+	<time>2021-04-24T13:49:44</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.582778" lon="121.054632">
+	<time>2021-04-24T13:49:50</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.58254" lon="121.054467">
+	<time>2021-04-24T13:49:52</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.581098" lon="121.053342">
+	<time>2021-04-24T13:50:10</time>
+	<speed>70.38</speed>
+</trkpt>
+<trkpt lat="14.57819" lon="121.051285">
+	<time>2021-04-24T13:50:29</time>
+	<speed>66.67</speed>
+</trkpt>
+<trkpt lat="14.575035" lon="121.0489">
+	<time>2021-04-24T13:50:50</time>
+	<speed>64.82</speed>
+</trkpt>
+<trkpt lat="14.572345" lon="121.047087">
+	<time>2021-04-24T13:51:06</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.5722" lon="121.047018">
+	<time>2021-04-24T13:51:09</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.569403" lon="121.04609">
+	<time>2021-04-24T13:51:30</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.568507" lon="121.045875">
+	<time>2021-04-24T13:51:48</time>
+	<speed>0.22</speed>
+</trkpt>
+<trkpt lat="14.568507" lon="121.045875">
+	<time>2021-04-24T13:51:49</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.568383" lon="121.045872">
+	<time>2021-04-24T13:52:29</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.566442" lon="121.045338">
+	<time>2021-04-24T13:52:48</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.564065" lon="121.044522">
+	<time>2021-04-24T13:53:09</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.564065" lon="121.044522">
+	<time>2021-04-24T13:53:09</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.561612" lon="121.042728">
+	<time>2021-04-24T13:53:27</time>
+	<speed>70.38</speed>
+</trkpt>
+<trkpt lat="14.561485" lon="121.042592">
+	<time>2021-04-24T13:53:28</time>
+	<speed>70.38</speed>
+</trkpt>
+<trkpt lat="14.559235" lon="121.03993">
+	<time>2021-04-24T13:53:47</time>
+	<speed>70.38</speed>
+</trkpt>
+<trkpt lat="14.557797" lon="121.038252">
+	<time>2021-04-24T13:54:03</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.557797" lon="121.038252">
+	<time>2021-04-24T13:54:08</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.557188" lon="121.037535">
+	<time>2021-04-24T13:54:13</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.556368" lon="121.036555">
+	<time>2021-04-24T13:54:27</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.555228" lon="121.035247">
+	<time>2021-04-24T13:54:48</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.554868" lon="121.03482">
+	<time>2021-04-24T13:54:55</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.554757" lon="121.034642">
+	<time>2021-04-24T13:54:59</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.554757" lon="121.034642">
+	<time>2021-04-24T13:55:07</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.553717" lon="121.033388">
+	<time>2021-04-24T13:55:22</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.553632" lon="121.033285">
+	<time>2021-04-24T13:55:27</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.551152" lon="121.03031">
+	<time>2021-04-24T13:55:47</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.549775" lon="121.028682">
+	<time>2021-04-24T13:56:07</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.546825" lon="121.025422">
+	<time>2021-04-24T13:56:31</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.546017" lon="121.024328">
+	<time>2021-04-24T13:56:46</time>
+	<speed>42.74</speed>
+</trkpt>
+<trkpt lat="14.545827" lon="121.024062">
+	<time>2021-04-24T13:56:50</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.544292" lon="121.022138">
+	<time>2021-04-24T13:57:08</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.542578" lon="121.020078">
+	<time>2021-04-24T13:57:29</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.541227" lon="121.018145">
+	<time>2021-04-24T13:57:48</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.540155" lon="121.015982">
+	<time>2021-04-24T13:58:07</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.539118" lon="121.012658">
+	<time>2021-04-24T13:58:27</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.538815" lon="121.01078">
+	<time>2021-04-24T13:58:46</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.538627" lon="121.00914">
+	<time>2021-04-24T13:59:07</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.538112" lon="121.004602">
+	<time>2021-04-24T13:59:43</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.537888" lon="121.002768">
+	<time>2021-04-24T14:00:06</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.5378" lon="121.001945">
+	<time>2021-04-24T14:00:25</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.5378" lon="121.001945">
+	<time>2021-04-24T14:00:46</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537743" lon="121.001687">
+	<time>2021-04-24T14:01:24</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.537663" lon="121.001013">
+	<time>2021-04-24T14:01:44</time>
+	<speed>16.91</speed>
+</trkpt>
+<trkpt lat="14.537663" lon="121.001013">
+	<time>2021-04-24T14:01:45</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.53762" lon="120.999838">
+	<time>2021-04-24T14:02:04</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.537817" lon="120.998157">
+	<time>2021-04-24T14:02:23</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.537878" lon="120.996697">
+	<time>2021-04-24T14:02:44</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.537752" lon="120.995037">
+	<time>2021-04-24T14:03:03</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.537573" lon="120.994237">
+	<time>2021-04-24T14:03:10</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.537302" lon="120.992987">
+	<time>2021-04-24T14:03:24</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.537302" lon="120.992987">
+	<time>2021-04-24T14:03:43</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537212" lon="120.992522">
+	<time>2021-04-24T14:05:19</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.537212" lon="120.992522">
+	<time>2021-04-24T14:05:23</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537097" lon="120.992037">
+	<time>2021-04-24T14:05:26</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.53663" lon="120.990123">
+	<time>2021-04-24T14:05:43</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.536373" lon="120.989178">
+	<time>2021-04-24T14:05:58</time>
+	<speed>3.7</speed>
+</trkpt>
+<trkpt lat="14.536373" lon="120.989178">
+	<time>2021-04-24T14:06:03</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.536337" lon="120.988985">
+	<time>2021-04-24T14:07:59</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.536337" lon="120.988985">
+	<time>2021-04-24T14:08:03</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.536162" lon="120.988832">
+	<time>2021-04-24T14:08:04</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.535672" lon="120.988857">
+	<time>2021-04-24T14:08:11</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.525457" lon="120.990138">
+	<time>2021-04-24T14:11:50</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.525457" lon="120.990138">
+	<time>2021-04-24T14:12:00</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.524783" lon="120.99022">
+	<time>2021-04-24T14:12:20</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.523357" lon="120.99042">
+	<time>2021-04-24T14:12:40</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.522432" lon="120.990545">
+	<time>2021-04-24T14:13:20</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.522432" lon="120.990545">
+	<time>2021-04-24T14:13:39</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.522115" lon="120.990582">
+	<time>2021-04-24T14:14:00</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.520102" lon="120.990687">
+	<time>2021-04-24T14:14:19</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.518438" lon="120.990632">
+	<time>2021-04-24T14:14:40</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.517057" lon="120.990603">
+	<time>2021-04-24T14:14:57</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.513895" lon="120.990228">
+	<time>2021-04-24T14:15:20</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.511377" lon="120.989582">
+	<time>2021-04-24T14:15:39</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.511377" lon="120.989582">
+	<time>2021-04-24T14:15:45</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510925" lon="120.989638">
+	<time>2021-04-24T14:15:50</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.510895" lon="120.989752">
+	<time>2021-04-24T14:15:58</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.510768" lon="120.9902">
+	<time>2021-04-24T14:16:01</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.510577" lon="120.990953">
+	<time>2021-04-24T14:16:14</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.510577" lon="120.990953">
+	<time>2021-04-24T14:16:17</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51096" lon="120.991167">
+	<time>2021-04-24T14:16:24</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.51096" lon="120.991167">
+	<time>2021-04-24T14:16:29</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511332" lon="120.991238">
+	<time>2021-04-24T14:16:38</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51159" lon="120.991287">
+	<time>2021-04-24T14:21:17</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51167" lon="120.99122">
+	<time>2021-04-24T14:37:10</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.512067" lon="120.991302">
+	<time>2021-04-24T14:40:50</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.512067" lon="120.991302">
+	<time>2021-04-24T14:40:53</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.512247" lon="120.991625">
+	<time>2021-04-24T14:41:02</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.512165" lon="120.991843">
+	<time>2021-04-24T14:41:07</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.512165" lon="120.991843">
+	<time>2021-04-24T14:41:09</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51181" lon="120.991552">
+	<time>2021-04-24T14:42:08</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511767" lon="120.991385">
+	<time>2021-04-24T14:42:49</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511372" lon="120.991838">
+	<time>2021-04-24T14:43:31</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511037" lon="120.993203">
+	<time>2021-04-24T14:44:02</time>
+	<speed>3.7</speed>
+</trkpt>
+<trkpt lat="14.511037" lon="120.993203">
+	<time>2021-04-24T14:44:11</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511363" lon="120.992592">
+	<time>2021-04-24T14:45:30</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510905" lon="120.992328">
+	<time>2021-04-24T14:45:47</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.510905" lon="120.992328">
+	<time>2021-04-24T14:45:50</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51064" lon="120.99224">
+	<time>2021-04-24T14:45:52</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.510345" lon="120.992217">
+	<time>2021-04-24T14:45:57</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.510028" lon="120.992102">
+	<time>2021-04-24T14:46:03</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.509728" lon="120.991945">
+	<time>2021-04-24T14:46:08</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.509728" lon="120.991945">
+	<time>2021-04-24T14:46:10</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.50948" lon="120.991733">
+	<time>2021-04-24T14:46:12</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.50948" lon="120.991733">
+	<time>2021-04-24T14:46:20</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.508867" lon="120.991412">
+	<time>2021-04-24T14:46:24</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.508493" lon="120.991238">
+	<time>2021-04-24T14:46:28</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.508493" lon="120.991238">
+	<time>2021-04-24T14:46:28</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507318" lon="120.99077">
+	<time>2021-04-24T14:46:45</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.50733" lon="120.990727">
+	<time>2021-04-24T14:46:48</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.507407" lon="120.99052">
+	<time>2021-04-24T14:46:50</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.507497" lon="120.990257">
+	<time>2021-04-24T14:46:54</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.507497" lon="120.990257">
+	<time>2021-04-24T14:47:01</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507602" lon="120.989938">
+	<time>2021-04-24T14:47:07</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507602" lon="120.989938">
+	<time>2021-04-24T14:47:11</time>
+	<speed>10.65</speed>
+</trkpt>
+<trkpt lat="14.50783" lon="120.989285">
+	<time>2021-04-24T14:47:16</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.508018" lon="120.98881">
+	<time>2021-04-24T14:47:26</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.508042" lon="120.988773">
+	<time>2021-04-24T14:47:27</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.508122" lon="120.988732">
+	<time>2021-04-24T14:47:30</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.508325" lon="120.98877">
+	<time>2021-04-24T14:47:35</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.508895" lon="120.98896">
+	<time>2021-04-24T14:47:43</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.50898" lon="120.988992">
+	<time>2021-04-24T14:47:46</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.510913" lon="120.98959">
+	<time>2021-04-24T14:48:06</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.513585" lon="120.990282">
+	<time>2021-04-24T14:48:25</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.513875" lon="120.990327">
+	<time>2021-04-24T14:48:27</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.516083" lon="120.990642">
+	<time>2021-04-24T14:48:44</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.517443" lon="120.99081">
+	<time>2021-04-24T14:49:05</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.518257" lon="120.990898">
+	<time>2021-04-24T14:49:11</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.519325" lon="120.990957">
+	<time>2021-04-24T14:49:24</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.521422" lon="120.990902">
+	<time>2021-04-24T14:49:40</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.521422" lon="120.990902">
+	<time>2021-04-24T14:50:25</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.522032" lon="120.990802">
+	<time>2021-04-24T14:51:16</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.522032" lon="120.990802">
+	<time>2021-04-24T14:51:24</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.535207" lon="120.989193">
+	<time>2021-04-24T14:54:58</time>
+	<speed>5.56</speed>
+</trkpt>
+<trkpt lat="14.535207" lon="120.989193">
+	<time>2021-04-24T14:55:02</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.535892" lon="120.989175">
+	<time>2021-04-24T14:55:42</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.536187" lon="120.989173">
+	<time>2021-04-24T14:55:53</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.53628" lon="120.989357">
+	<time>2021-04-24T14:55:58</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.536293" lon="120.989413">
+	<time>2021-04-24T14:56:01</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.536373" lon="120.989782">
+	<time>2021-04-24T14:56:04</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.536702" lon="120.991502">
+	<time>2021-04-24T14:56:22</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.536702" lon="120.991502">
+	<time>2021-04-24T14:56:22</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.536765" lon="120.991808">
+	<time>2021-04-24T14:56:52</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.536863" lon="120.99227">
+	<time>2021-04-24T14:57:02</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.53704" lon="120.993165">
+	<time>2021-04-24T14:57:21</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.53716" lon="120.993642">
+	<time>2021-04-24T14:57:36</time>
+	<speed>29.24</speed>
+</trkpt>
+<trkpt lat="14.537305" lon="120.994207">
+	<time>2021-04-24T14:57:40</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.537547" lon="120.995162">
+	<time>2021-04-24T14:57:47</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.537645" lon="120.996087">
+	<time>2021-04-24T14:58:01</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.537662" lon="120.997025">
+	<time>2021-04-24T14:58:20</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.537533" lon="120.998972">
+	<time>2021-04-24T14:58:41</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.537415" lon="121.000718">
+	<time>2021-04-24T14:59:00</time>
+	<speed>3.7</speed>
+</trkpt>
+<trkpt lat="14.537415" lon="121.000718">
+	<time>2021-04-24T14:59:15</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537572" lon="121.001877">
+	<time>2021-04-24T14:59:34</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.537605" lon="121.002282">
+	<time>2021-04-24T14:59:40</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.537698" lon="121.003527">
+	<time>2021-04-24T14:59:59</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.537895" lon="121.004837">
+	<time>2021-04-24T15:00:20</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.538497" lon="121.009468">
+	<time>2021-04-24T15:00:59</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.539083" lon="121.013218">
+	<time>2021-04-24T15:01:39</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.541327" lon="121.018605">
+	<time>2021-04-24T15:02:17</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.542252" lon="121.01996">
+	<time>2021-04-24T15:02:34</time>
+	<speed>56.36</speed>
+</trkpt>
+<trkpt lat="14.54296" lon="121.02084">
+	<time>2021-04-24T15:02:38</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.545995" lon="121.024425">
+	<time>2021-04-24T15:03:18</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.548158" lon="121.027043">
+	<time>2021-04-24T15:03:39</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.54936" lon="121.028603">
+	<time>2021-04-24T15:03:58</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.54936" lon="121.028603">
+	<time>2021-04-24T15:04:01</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.549638" lon="121.028928">
+	<time>2021-04-24T15:04:17</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.551248" lon="121.030797">
+	<time>2021-04-24T15:04:38</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.552702" lon="121.032535">
+	<time>2021-04-24T15:04:57</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.553878" lon="121.033923">
+	<time>2021-04-24T15:05:18</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.555052" lon="121.035297">
+	<time>2021-04-24T15:05:37</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.556195" lon="121.036598">
+	<time>2021-04-24T15:05:58</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.556345" lon="121.03675">
+	<time>2021-04-24T15:06:00</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.557865" lon="121.03844">
+	<time>2021-04-24T15:06:17</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.559688" lon="121.04064">
+	<time>2021-04-24T15:06:37</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.56158" lon="121.042882">
+	<time>2021-04-24T15:06:57</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.56195" lon="121.043242">
+	<time>2021-04-24T15:07:01</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.56195" lon="121.043242">
+	<time>2021-04-24T15:07:07</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.562537" lon="121.04374">
+	<time>2021-04-24T15:07:18</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.562835" lon="121.04396">
+	<time>2021-04-24T15:07:24</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.563548" lon="121.044415">
+	<time>2021-04-24T15:07:36</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.56362" lon="121.044453">
+	<time>2021-04-24T15:07:37</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.56362" lon="121.044453">
+	<time>2021-04-24T15:07:42</time>
+	<speed>32.65</speed>
+</trkpt>
+<trkpt lat="14.56504" lon="121.045082">
+	<time>2021-04-24T15:07:57</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.567435" lon="121.045765">
+	<time>2021-04-24T15:08:16</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.568082" lon="121.045905">
+	<time>2021-04-24T15:08:37</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.568283" lon="121.045975">
+	<time>2021-04-24T15:08:40</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.569305" lon="121.046273">
+	<time>2021-04-24T15:08:56</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.57116" lon="121.046827">
+	<time>2021-04-24T15:09:17</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.573327" lon="121.047943">
+	<time>2021-04-24T15:09:36</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.573835" lon="121.048337">
+	<time>2021-04-24T15:09:39</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.5754" lon="121.049477">
+	<time>2021-04-24T15:09:55</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.577655" lon="121.05114">
+	<time>2021-04-24T15:10:16</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.579102" lon="121.052253">
+	<time>2021-04-24T15:10:35</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.582022" lon="121.054537">
+	<time>2021-04-24T15:10:56</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.584108" lon="121.055672">
+	<time>2021-04-24T15:11:14</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.584223" lon="121.055712">
+	<time>2021-04-24T15:11:15</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.584703" lon="121.055855">
+	<time>2021-04-24T15:11:19</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.58623" lon="121.056345">
+	<time>2021-04-24T15:11:55</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.586383" lon="121.05643">
+	<time>2021-04-24T15:12:00</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.586833" lon="121.05658">
+	<time>2021-04-24T15:12:14</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.588608" lon="121.057157">
+	<time>2021-04-24T15:12:35</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.588608" lon="121.057157">
+	<time>2021-04-24T15:12:40</time>
+	<speed>33.82</speed>
+</trkpt>
+<trkpt lat="14.590205" lon="121.05767">
+	<time>2021-04-24T15:12:54</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.594633" lon="121.059062">
+	<time>2021-04-24T15:13:34</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.598962" lon="121.059835">
+	<time>2021-04-24T15:14:10</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.599078" lon="121.05983">
+	<time>2021-04-24T15:14:14</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.599885" lon="121.059753">
+	<time>2021-04-24T15:14:18</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.600007" lon="121.059735">
+	<time>2021-04-24T15:14:34</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.603865" lon="121.058333">
+	<time>2021-04-24T15:14:54</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.606283" lon="121.057213">
+	<time>2021-04-24T15:15:14</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.608677" lon="121.056173">
+	<time>2021-04-24T15:15:33</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.609957" lon="121.055562">
+	<time>2021-04-24T15:15:54</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.612237" lon="121.05453">
+	<time>2021-04-24T15:16:13</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.613825" lon="121.053788">
+	<time>2021-04-24T15:16:34</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.613825" lon="121.053788">
+	<time>2021-04-24T15:16:53</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.614063" lon="121.0537">
+	<time>2021-04-24T15:17:03</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.614555" lon="121.053462">
+	<time>2021-04-24T15:17:12</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.615658" lon="121.052913">
+	<time>2021-04-24T15:17:33</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.615658" lon="121.052913">
+	<time>2021-04-24T15:17:38</time>
+	<speed>48.17</speed>
+</trkpt>
+<trkpt lat="14.61832" lon="121.051632">
+	<time>2021-04-24T15:17:52</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.62074" lon="121.050528">
+	<time>2021-04-24T15:18:13</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.62579" lon="121.048262">
+	<time>2021-04-24T15:18:51</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.628307" lon="121.047152">
+	<time>2021-04-24T15:19:12</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.628545" lon="121.047035">
+	<time>2021-04-24T15:19:15</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.628545" lon="121.047035">
+	<time>2021-04-24T15:19:20</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.628825" lon="121.046912">
+	<time>2021-04-24T15:19:31</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.62908" lon="121.046797">
+	<time>2021-04-24T15:19:33</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.629432" lon="121.046633">
+	<time>2021-04-24T15:19:38</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.630498" lon="121.046123">
+	<time>2021-04-24T15:19:52</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.632472" lon="121.045208">
+	<time>2021-04-24T15:20:11</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.633012" lon="121.044927">
+	<time>2021-04-24T15:20:16</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.633877" lon="121.04437">
+	<time>2021-04-24T15:20:31</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.639175" lon="121.040922">
+	<time>2021-04-24T15:21:11</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.641335" lon="121.039495">
+	<time>2021-04-24T15:21:31</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.641335" lon="121.039495">
+	<time>2021-04-24T15:21:35</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.64202" lon="121.039063">
+	<time>2021-04-24T15:22:45</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.64177" lon="121.039198">
+	<time>2021-04-24T15:22:46</time>
+	<speed>13.24</speed>
+</trkpt>
+<trkpt lat="14.642253" lon="121.038892">
+	<time>2021-04-24T15:22:50</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.642253" lon="121.038892">
+	<time>2021-04-24T15:22:50</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.643752" lon="121.037873">
+	<time>2021-04-24T15:23:11</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.643752" lon="121.037873">
+	<time>2021-04-24T15:23:11</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.645528" lon="121.036715">
+	<time>2021-04-24T15:23:30</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.648077" lon="121.035027">
+	<time>2021-04-24T15:23:47</time>
+	<speed>66.67</speed>
+</trkpt>
+<trkpt lat="14.650593" lon="121.033398">
+	<time>2021-04-24T15:24:10</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.650593" lon="121.033398">
+	<time>2021-04-24T15:24:13</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.651113" lon="121.033112">
+	<time>2021-04-24T15:25:19</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65144" lon="121.032895">
+	<time>2021-04-24T15:26:08</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.653668" lon="121.031432">
+	<time>2021-04-24T15:26:29</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.655552" lon="121.030147">
+	<time>2021-04-24T15:26:48</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.655652" lon="121.030002">
+	<time>2021-04-24T15:26:50</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.655808" lon="121.029527">
+	<time>2021-04-24T15:26:55</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.656003" lon="121.028643">
+	<time>2021-04-24T15:27:03</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.65615" lon="121.027947">
+	<time>2021-04-24T15:27:09</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.656388" lon="121.027103">
+	<time>2021-04-24T15:27:44</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.656388" lon="121.027103">
+	<time>2021-04-24T15:27:48</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.656615" lon="121.026603">
+	<time>2021-04-24T15:29:25</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.656615" lon="121.026603">
+	<time>2021-04-24T15:29:27</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657102" lon="121.024472">
+	<time>2021-04-24T15:29:48</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.657592" lon="121.02223">
+	<time>2021-04-24T15:30:07</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.657802" lon="121.021012">
+	<time>2021-04-24T15:30:28</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657802" lon="121.021012">
+	<time>2021-04-24T15:30:47</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657975" lon="121.020185">
+	<time>2021-04-24T15:33:06</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657977" lon="121.01984">
+	<time>2021-04-24T15:33:22</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.657977" lon="121.01984">
+	<time>2021-04-24T15:33:25</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657817" lon="121.016727">
+	<time>2021-04-24T15:33:46</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.657697" lon="121.0112">
+	<time>2021-04-24T15:34:26</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.657703" lon="121.009895">
+	<time>2021-04-24T15:35:05</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.657697" lon="121.007628">
+	<time>2021-04-24T15:35:26</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.657677" lon="121.005017">
+	<time>2021-04-24T15:35:45</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.65762" lon="121.004705">
+	<time>2021-04-24T15:35:46</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.65762" lon="121.004705">
+	<time>2021-04-24T15:35:51</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657563" lon="121.004485">
+	<time>2021-04-24T15:36:03</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.657563" lon="121.004485">
+	<time>2021-04-24T15:36:06</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657548" lon="121.004225">
+	<time>2021-04-24T15:36:07</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.657505" lon="121.002507">
+	<time>2021-04-24T15:36:25</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.657448" lon="121.00043">
+	<time>2021-04-24T15:36:44</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.657408" lon="120.997542">
+	<time>2021-04-24T15:37:05</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.657408" lon="120.997542">
+	<time>2021-04-24T15:37:24</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657405" lon="120.997088">
+	<time>2021-04-24T15:37:26</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.657387" lon="120.996425">
+	<time>2021-04-24T15:37:39</time>
+	<speed>35.82</speed>
+</trkpt>
+<trkpt lat="14.65737" lon="120.995573">
+	<time>2021-04-24T15:37:45</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.657333" lon="120.992982">
+	<time>2021-04-24T15:38:04</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.657288" lon="120.990665">
+	<time>2021-04-24T15:38:23</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.657288" lon="120.990665">
+	<time>2021-04-24T15:38:44</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65728" lon="120.989882">
+	<time>2021-04-24T15:40:23</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.65726" lon="120.988552">
+	<time>2021-04-24T15:40:43</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.657228" lon="120.9875">
+	<time>2021-04-24T15:41:03</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657228" lon="120.9875">
+	<time>2021-04-24T15:41:23</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657275" lon="120.986877">
+	<time>2021-04-24T15:42:43</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.657275" lon="120.986877">
+	<time>2021-04-24T15:42:49</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657245" lon="120.986212">
+	<time>2021-04-24T15:43:21</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657237" lon="120.986005">
+	<time>2021-04-24T15:43:29</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.657227" lon="120.98554">
+	<time>2021-04-24T15:43:42</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.657227" lon="120.98554">
+	<time>2021-04-24T15:44:01</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657212" lon="120.984757">
+	<time>2021-04-24T15:45:00</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.657253" lon="120.984503">
+	<time>2021-04-24T15:45:05</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.657253" lon="120.984503">
+	<time>2021-04-24T15:45:10</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657092" lon="120.985045">
+	<time>2021-04-24T15:45:40</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.657092" lon="120.985045">
+	<time>2021-04-24T15:45:40</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.65708" lon="120.985703">
+	<time>2021-04-24T15:46:20</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657062" lon="120.986333">
+	<time>2021-04-24T15:49:39</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657073" lon="120.98694">
+	<time>2021-04-24T15:52:57</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657062" lon="120.987198">
+	<time>2021-04-24T15:53:44</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.657078" lon="120.98755">
+	<time>2021-04-24T15:53:50</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.657083" lon="120.987795">
+	<time>2021-04-24T15:53:58</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.65712" lon="120.989593">
+	<time>2021-04-24T15:54:17</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657145" lon="120.991315">
+	<time>2021-04-24T15:54:57</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.65717" lon="120.993348">
+	<time>2021-04-24T15:55:17</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.657232" lon="120.996767">
+	<time>2021-04-24T15:55:37</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.657223" lon="120.99758">
+	<time>2021-04-24T15:55:57</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657223" lon="120.99758">
+	<time>2021-04-24T15:56:16</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657177" lon="120.997785">
+	<time>2021-04-24T15:57:17</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.657198" lon="120.998782">
+	<time>2021-04-24T15:57:31</time>
+	<speed>42.1</speed>
+</trkpt>
+<trkpt lat="14.65723" lon="121.00055">
+	<time>2021-04-24T15:57:36</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.6573" lon="121.003092">
+	<time>2021-04-24T15:57:55</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.657298" lon="121.005247">
+	<time>2021-04-24T15:58:16</time>
+	<speed>7.41</speed>
+</trkpt>
+<trkpt lat="14.657327" lon="121.005738">
+	<time>2021-04-24T15:58:35</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.657348" lon="121.00791">
+	<time>2021-04-24T15:58:56</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.657377" lon="121.009212">
+	<time>2021-04-24T15:59:15</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.657418" lon="121.011723">
+	<time>2021-04-24T15:59:34</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657418" lon="121.011723">
+	<time>2021-04-24T15:59:41</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657422" lon="121.012013">
+	<time>2021-04-24T16:00:03</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.657432" lon="121.01242">
+	<time>2021-04-24T16:00:09</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.65743" lon="121.012908">
+	<time>2021-04-24T16:00:14</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.65747" lon="121.015685">
+	<time>2021-04-24T16:00:35</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.657512" lon="121.018612">
+	<time>2021-04-24T16:00:54</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.657547" lon="121.019505">
+	<time>2021-04-24T16:01:13</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657547" lon="121.019505">
+	<time>2021-04-24T16:01:33</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.657528" lon="121.020422">
+	<time>2021-04-24T16:01:54</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.65704" lon="121.022903">
+	<time>2021-04-24T16:02:14</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.656827" lon="121.023913">
+	<time>2021-04-24T16:02:29</time>
+	<speed>32.69</speed>
+</trkpt>
+<trkpt lat="14.656827" lon="121.023913">
+	<time>2021-04-24T16:02:34</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.656693" lon="121.024513">
+	<time>2021-04-24T16:02:46</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.65663" lon="121.024792">
+	<time>2021-04-24T16:02:53</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.656325" lon="121.026175">
+	<time>2021-04-24T16:03:14</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.655955" lon="121.027828">
+	<time>2021-04-24T16:03:33</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.655192" lon="121.03029">
+	<time>2021-04-24T16:03:46</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.65482" lon="121.030532">
+	<time>2021-04-24T16:03:50</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.65482" lon="121.030532">
+	<time>2021-04-24T16:03:54</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.654322" lon="121.03085">
+	<time>2021-04-24T16:03:55</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.652565" lon="121.03196">
+	<time>2021-04-24T16:04:13</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.652007" lon="121.03234">
+	<time>2021-04-24T16:04:18</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.652007" lon="121.03234">
+	<time>2021-04-24T16:04:34</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.6514" lon="121.032643">
+	<time>2021-04-24T16:05:36</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.651102" lon="121.03273">
+	<time>2021-04-24T16:05:59</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.65082" lon="121.03288">
+	<time>2021-04-24T16:06:05</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.650427" lon="121.033147">
+	<time>2021-04-24T16:06:13</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.648213" lon="121.034615">
+	<time>2021-04-24T16:06:32</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.645512" lon="121.036395">
+	<time>2021-04-24T16:06:51</time>
+	<speed>64.82</speed>
+</trkpt>
+<trkpt lat="14.643263" lon="121.037915">
+	<time>2021-04-24T16:07:12</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.643" lon="121.038092">
+	<time>2021-04-24T16:07:27</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.641333" lon="121.039228">
+	<time>2021-04-24T16:07:43</time>
+	<speed>5.56</speed>
+</trkpt>
+<trkpt lat="14.641142" lon="121.03936">
+	<time>2021-04-24T16:07:47</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.640825" lon="121.03957">
+	<time>2021-04-24T16:07:52</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.640825" lon="121.03957">
+	<time>2021-04-24T16:07:52</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.63927" lon="121.040587">
+	<time>2021-04-24T16:08:11</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.637547" lon="121.041712">
+	<time>2021-04-24T16:08:31</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.63512" lon="121.043438">
+	<time>2021-04-24T16:08:52</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.632887" lon="121.044837">
+	<time>2021-04-24T16:09:11</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.632028" lon="121.045255">
+	<time>2021-04-24T16:09:14</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.629678" lon="121.046307">
+	<time>2021-04-24T16:09:31</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.629678" lon="121.046307">
+	<time>2021-04-24T16:09:39</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.629088" lon="121.04656">
+	<time>2021-04-24T16:09:44</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.628727" lon="121.046722">
+	<time>2021-04-24T16:09:54</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.628727" lon="121.046722">
+	<time>2021-04-24T16:10:08</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.628235" lon="121.046965">
+	<time>2021-04-24T16:10:27</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.628235" lon="121.046965">
+	<time>2021-04-24T16:10:31</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.627945" lon="121.047093">
+	<time>2021-04-24T16:10:32</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.626718" lon="121.047632">
+	<time>2021-04-24T16:10:50</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.62457" lon="121.0486">
+	<time>2021-04-24T16:11:11</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.621905" lon="121.049855">
+	<time>2021-04-24T16:11:30</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.619103" lon="121.0513">
+	<time>2021-04-24T16:11:49</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.617742" lon="121.051928">
+	<time>2021-04-24T16:12:10</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.615737" lon="121.05281">
+	<time>2021-04-24T16:12:25</time>
+	<speed>41.86</speed>
+</trkpt>
+<trkpt lat="14.614918" lon="121.053175">
+	<time>2021-04-24T16:12:29</time>
+	<speed>7.41</speed>
+</trkpt>
+<trkpt lat="14.614918" lon="121.053175">
+	<time>2021-04-24T16:12:50</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.614255" lon="121.053282">
+	<time>2021-04-24T16:13:22</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.614038" lon="121.053385">
+	<time>2021-04-24T16:13:27</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.614038" lon="121.053385">
+	<time>2021-04-24T16:13:28</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.612513" lon="121.054102">
+	<time>2021-04-24T16:13:49</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.610765" lon="121.054925">
+	<time>2021-04-24T16:14:08</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.608127" lon="121.056163">
+	<time>2021-04-24T16:14:29</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.60675" lon="121.056772">
+	<time>2021-04-24T16:14:39</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.605778" lon="121.05721">
+	<time>2021-04-24T16:14:48</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.604758" lon="121.057683">
+	<time>2021-04-24T16:15:08</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.601368" lon="121.059212">
+	<time>2021-04-24T16:15:19</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.600602" lon="121.05943">
+	<time>2021-04-24T16:15:24</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.59999" lon="121.05955">
+	<time>2021-04-24T16:15:28</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.599692" lon="121.059597">
+	<time>2021-04-24T16:15:30</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.597685" lon="121.059635">
+	<time>2021-04-24T16:15:43</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.597558" lon="121.05962">
+	<time>2021-04-24T16:15:48</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.596052" lon="121.059352">
+	<time>2021-04-24T16:15:56</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.591853" lon="121.057963">
+	<time>2021-04-24T16:16:28</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.586862" lon="121.05628">
+	<time>2021-04-24T16:17:03</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.586862" lon="121.05628">
+	<time>2021-04-24T16:17:06</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.585993" lon="121.055983">
+	<time>2021-04-24T16:17:21</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.586497" lon="121.056147">
+	<time>2021-04-24T16:17:23</time>
+	<speed>18.63</speed>
+</trkpt>
+<trkpt lat="14.585612" lon="121.055865">
+	<time>2021-04-24T16:17:25</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.585612" lon="121.055865">
+	<time>2021-04-24T16:17:27</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.583647" lon="121.055147">
+	<time>2021-04-24T16:17:43</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.583317" lon="121.054967">
+	<time>2021-04-24T16:17:48</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.582163" lon="121.054177">
+	<time>2021-04-24T16:17:57</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.581648" lon="121.053802">
+	<time>2021-04-24T16:18:07</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.580455" lon="121.052757">
+	<time>2021-04-24T16:18:15</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.579895" lon="121.052502">
+	<time>2021-04-24T16:18:28</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.576572" lon="121.050085">
+	<time>2021-04-24T16:18:47</time>
+	<speed>62.97</speed>
+</trkpt>
+<trkpt lat="14.574522" lon="121.048572">
+	<time>2021-04-24T16:19:06</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.572285" lon="121.046995">
+	<time>2021-04-24T16:19:22</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.572285" lon="121.046995">
+	<time>2021-04-24T16:19:27</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.569163" lon="121.04598">
+	<time>2021-04-24T16:19:46</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.569163" lon="121.04598">
+	<time>2021-04-24T16:19:59</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.56843" lon="121.045828">
+	<time>2021-04-24T16:20:25</time>
+	<speed>7.41</speed>
+</trkpt>
+<trkpt lat="14.56843" lon="121.045828">
+	<time>2021-04-24T16:20:26</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.566858" lon="121.045398">
+	<time>2021-04-24T16:21:46</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.565287" lon="121.044918">
+	<time>2021-04-24T16:22:05</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.564843" lon="121.044772">
+	<time>2021-04-24T16:22:10</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.564553" lon="121.044665">
+	<time>2021-04-24T16:22:21</time>
+	<speed>49.86</speed>
+</trkpt>
+<trkpt lat="14.563398" lon="121.044112">
+	<time>2021-04-24T16:22:23</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.563023" lon="121.04388">
+	<time>2021-04-24T16:22:26</time>
+	<speed>59.26</speed>
+</trkpt>
+<trkpt lat="14.560852" lon="121.041828">
+	<time>2021-04-24T16:22:45</time>
+	<speed>61.12</speed>
+</trkpt>
+<trkpt lat="14.557903" lon="121.038192">
+	<time>2021-04-24T16:23:21</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.556488" lon="121.036477">
+	<time>2021-04-24T16:23:45</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.555257" lon="121.035025">
+	<time>2021-04-24T16:24:05</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.554038" lon="121.033583">
+	<time>2021-04-24T16:24:25</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.552445" lon="121.031688">
+	<time>2021-04-24T16:24:44</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.551173" lon="121.030108">
+	<time>2021-04-24T16:25:05</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.551173" lon="121.030108">
+	<time>2021-04-24T16:25:24</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.550603" lon="121.029442">
+	<time>2021-04-24T16:25:30</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.550123" lon="121.028965">
+	<time>2021-04-24T16:25:43</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.550123" lon="121.028965">
+	<time>2021-04-24T16:25:45</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.549383" lon="121.027858">
+	<time>2021-04-24T16:26:04</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.549388" lon="121.027743">
+	<time>2021-04-24T16:26:06</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.549577" lon="121.027422">
+	<time>2021-04-24T16:26:11</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.550033" lon="121.026967">
+	<time>2021-04-24T16:26:17</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.550033" lon="121.026967">
+	<time>2021-04-24T16:26:24</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.54879" lon="121.027263">
+	<time>2021-04-24T16:27:26</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.54879" lon="121.027263">
+	<time>2021-04-24T16:27:27</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.54879" lon="121.027263">
+	<time>2021-04-24T16:27:29</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.548655" lon="121.027088">
+	<time>2021-04-24T16:27:30</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.548655" lon="121.027088">
+	<time>2021-04-24T16:27:37</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.548225" lon="121.026683">
+	<time>2021-04-24T16:28:24</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.548225" lon="121.026683">
+	<time>2021-04-24T16:28:26</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.547742" lon="121.026107">
+	<time>2021-04-24T16:28:45</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.54434" lon="121.022155">
+	<time>2021-04-24T16:29:24</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.542957" lon="121.020527">
+	<time>2021-04-24T16:29:43</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.541632" lon="121.018773">
+	<time>2021-04-24T16:30:03</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.541033" lon="121.017803">
+	<time>2021-04-24T16:30:13</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.540692" lon="121.017172">
+	<time>2021-04-24T16:30:22</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.539697" lon="121.01483">
+	<time>2021-04-24T16:30:43</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.539123" lon="121.012618">
+	<time>2021-04-24T16:31:00</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.53901" lon="121.011625">
+	<time>2021-04-24T16:31:21</time>
+	<speed>3.7</speed>
+</trkpt>
+<trkpt lat="14.538862" lon="121.010555">
+	<time>2021-04-24T16:31:40</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.538862" lon="121.010555">
+	<time>2021-04-24T16:31:44</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.538817" lon="121.010285">
+	<time>2021-04-24T16:31:48</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.538678" lon="121.009177">
+	<time>2021-04-24T16:32:01</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.53851" lon="121.007718">
+	<time>2021-04-24T16:32:20</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.53851" lon="121.007718">
+	<time>2021-04-24T16:32:27</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.53826" lon="121.005863">
+	<time>2021-04-24T16:32:41</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.538177" lon="121.004823">
+	<time>2021-04-24T16:32:59</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.538177" lon="121.004823">
+	<time>2021-04-24T16:33:00</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.538123" lon="121.004502">
+	<time>2021-04-24T16:33:04</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.538083" lon="121.004223">
+	<time>2021-04-24T16:33:08</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.537955" lon="121.003227">
+	<time>2021-04-24T16:33:21</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.537878" lon="121.00245">
+	<time>2021-04-24T16:33:40</time>
+	<speed>7.41</speed>
+</trkpt>
+<trkpt lat="14.537823" lon="121.00188">
+	<time>2021-04-24T16:34:01</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.537745" lon="121.001298">
+	<time>2021-04-24T16:34:20</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.537608" lon="121.000377">
+	<time>2021-04-24T16:34:40</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.537608" lon="121.000377">
+	<time>2021-04-24T16:34:40</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537657" lon="120.999487">
+	<time>2021-04-24T16:35:00</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.537818" lon="120.998317">
+	<time>2021-04-24T16:35:41</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.537872" lon="120.997665">
+	<time>2021-04-24T16:36:00</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.537887" lon="120.99613">
+	<time>2021-04-24T16:36:19</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.537748" lon="120.995042">
+	<time>2021-04-24T16:36:40</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.537348" lon="120.993203">
+	<time>2021-04-24T16:36:59</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.536812" lon="120.990998">
+	<time>2021-04-24T16:37:20</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.53666" lon="120.990338">
+	<time>2021-04-24T16:37:39</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.536457" lon="120.989633">
+	<time>2021-04-24T16:39:04</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.536337" lon="120.989155">
+	<time>2021-04-24T16:39:14</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.536337" lon="120.989155">
+	<time>2021-04-24T16:39:19</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.536183" lon="120.988953">
+	<time>2021-04-24T16:39:20</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.535922" lon="120.988925">
+	<time>2021-04-24T16:39:25</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.535273" lon="120.988992">
+	<time>2021-04-24T16:39:33</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.534972" lon="120.989025">
+	<time>2021-04-24T16:39:38</time>
+	<speed>42.6</speed>
+</trkpt>
+<trkpt lat="14.530573" lon="120.989618">
+	<time>2021-04-24T16:40:58</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.528363" lon="120.98987">
+	<time>2021-04-24T16:41:17</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.525455" lon="120.990165">
+	<time>2021-04-24T16:42:56</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.523488" lon="120.990435">
+	<time>2021-04-24T16:43:17</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.521427" lon="120.990715">
+	<time>2021-04-24T16:43:36</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.51977" lon="120.990733">
+	<time>2021-04-24T16:43:57</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.518055" lon="120.990625">
+	<time>2021-04-24T16:44:16</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.518055" lon="120.990625">
+	<time>2021-04-24T16:44:37</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.517927" lon="120.990625">
+	<time>2021-04-24T16:44:37</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.516822" lon="120.990565">
+	<time>2021-04-24T16:44:56</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.516822" lon="120.990565">
+	<time>2021-04-24T16:45:03</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.515723" lon="120.990423">
+	<time>2021-04-24T16:45:16</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.515723" lon="120.990423">
+	<time>2021-04-24T16:45:16</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.513227" lon="120.990082">
+	<time>2021-04-24T16:45:36</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.512655" lon="120.989943">
+	<time>2021-04-24T16:45:40</time>
+	<speed>57.41</speed>
+</trkpt>
+<trkpt lat="14.51119" lon="120.989523">
+	<time>2021-04-24T16:45:54</time>
+	<speed>9.26</speed>
+</trkpt>
+<trkpt lat="14.51119" lon="120.989523">
+	<time>2021-04-24T16:46:07</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510837" lon="120.989845">
+	<time>2021-04-24T16:46:16</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.510837" lon="120.989845">
+	<time>2021-04-24T16:46:16</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510778" lon="120.9901">
+	<time>2021-04-24T16:46:21</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.510687" lon="120.990445">
+	<time>2021-04-24T16:46:26</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.510568" lon="120.990973">
+	<time>2021-04-24T16:46:34</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.510578" lon="120.991005">
+	<time>2021-04-24T16:46:35</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.510578" lon="120.991005">
+	<time>2021-04-24T16:46:39</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.510988" lon="120.991182">
+	<time>2021-04-24T16:46:48</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.511167" lon="120.991237">
+	<time>2021-04-24T16:46:55</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.51153" lon="120.991288">
+	<time>2021-04-24T16:46:58</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.512313" lon="120.99148">
+	<time>2021-04-24T16:47:14</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.512283" lon="120.991747">
+	<time>2021-04-24T16:47:20</time>
+	<speed>22.22</speed>
+</trkpt>
+<trkpt lat="14.512103" lon="120.992183">
+	<time>2021-04-24T16:47:28</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.511695" lon="120.992107">
+	<time>2021-04-24T16:47:35</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.511695" lon="120.992107">
+	<time>2021-04-24T16:47:35</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.511172" lon="120.991978">
+	<time>2021-04-24T16:47:41</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.510643" lon="120.991838">
+	<time>2021-04-24T16:47:46</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.508552" lon="120.991277">
+	<time>2021-04-24T16:48:10</time>
+	<speed>47.65</speed>
+</trkpt>
+<trkpt lat="14.50798" lon="120.991127">
+	<time>2021-04-24T16:48:15</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.507272" lon="120.99089">
+	<time>2021-04-24T16:48:18</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.507325" lon="120.990652">
+	<time>2021-04-24T16:48:23</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.507402" lon="120.990452">
+	<time>2021-04-24T16:48:27</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.507512" lon="120.990203">
+	<time>2021-04-24T16:48:34</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507325" lon="120.990652">
+	<time>2021-04-24T16:48:34</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.50774" lon="120.990218">
+	<time>2021-04-24T16:48:42</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.508297" lon="120.990398">
+	<time>2021-04-24T16:48:50</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.508383" lon="120.990423">
+	<time>2021-04-24T16:48:55</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.509112" lon="120.990702">
+	<time>2021-04-24T16:49:14</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.509112" lon="120.990702">
+	<time>2021-04-24T16:49:35</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.509332" lon="120.990763">
+	<time>2021-04-24T16:49:40</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.509652" lon="120.990863">
+	<time>2021-04-24T16:49:45</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.510255" lon="120.991063">
+	<time>2021-04-24T16:49:55</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.511442" lon="120.991395">
+	<time>2021-04-24T16:50:13</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.511442" lon="120.991395">
+	<time>2021-04-24T16:50:15</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51209" lon="120.991412">
+	<time>2021-04-24T17:00:42</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.512278" lon="120.991515">
+	<time>2021-04-24T17:00:49</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.512292" lon="120.991658">
+	<time>2021-04-24T17:00:53</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.512292" lon="120.991658">
+	<time>2021-04-24T17:00:53</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.512205" lon="120.991965">
+	<time>2021-04-24T17:01:04</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.512135" lon="120.992145">
+	<time>2021-04-24T17:01:10</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.512047" lon="120.992175">
+	<time>2021-04-24T17:01:13</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.512047" lon="120.992175">
+	<time>2021-04-24T17:01:14</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.511893" lon="120.992143">
+	<time>2021-04-24T17:01:26</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.511627" lon="120.992073">
+	<time>2021-04-24T17:01:31</time>
+	<speed>25.93</speed>
+</trkpt>
+<trkpt lat="14.511558" lon="120.992057">
+	<time>2021-04-24T17:01:32</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.509628" lon="120.99155">
+	<time>2021-04-24T17:01:53</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.507733" lon="120.991037">
+	<time>2021-04-24T17:02:11</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.507357" lon="120.990918">
+	<time>2021-04-24T17:02:16</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.507357" lon="120.990918">
+	<time>2021-04-24T17:02:33</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507527" lon="120.99032">
+	<time>2021-04-24T17:02:36</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507575" lon="120.990212">
+	<time>2021-04-24T17:02:44</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507622" lon="120.990097">
+	<time>2021-04-24T17:02:49</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.507667" lon="120.989995">
+	<time>2021-04-24T17:02:53</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.507973" lon="120.989038">
+	<time>2021-04-24T17:03:12</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.508078" lon="120.988788">
+	<time>2021-04-24T17:03:21</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.508172" lon="120.988727">
+	<time>2021-04-24T17:03:26</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.50832" lon="120.988762">
+	<time>2021-04-24T17:03:31</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.50832" lon="120.988762">
+	<time>2021-04-24T17:03:31</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.508615" lon="120.988845">
+	<time>2021-04-24T17:03:36</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.509988" lon="120.989293">
+	<time>2021-04-24T17:03:51</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.511078" lon="120.989623">
+	<time>2021-04-24T17:04:07</time>
+	<speed>26.32</speed>
+</trkpt>
+<trkpt lat="14.511322" lon="120.9897">
+	<time>2021-04-24T17:04:12</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.511322" lon="120.9897">
+	<time>2021-04-24T17:04:15</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.51152" lon="120.989773">
+	<time>2021-04-24T17:04:20</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.51152" lon="120.989773">
+	<time>2021-04-24T17:04:32</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.512083" lon="120.990007">
+	<time>2021-04-24T17:04:35</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.5126" lon="120.990118">
+	<time>2021-04-24T17:06:26</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.51292" lon="120.990198">
+	<time>2021-04-24T17:06:31</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.51362" lon="120.990325">
+	<time>2021-04-24T17:06:39</time>
+	<speed>40.74</speed>
+</trkpt>
+<trkpt lat="14.514903" lon="120.990495">
+	<time>2021-04-24T17:06:51</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.516678" lon="120.990787">
+	<time>2021-04-24T17:07:11</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.516932" lon="120.990818">
+	<time>2021-04-24T17:07:17</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.5171" lon="120.990958">
+	<time>2021-04-24T17:07:22</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.517215" lon="120.991183">
+	<time>2021-04-24T17:07:27</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.517215" lon="120.991183">
+	<time>2021-04-24T17:07:30</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.517235" lon="120.991458">
+	<time>2021-04-24T17:07:31</time>
+	<speed>24.08</speed>
+</trkpt>
+<trkpt lat="14.517317" lon="120.992213">
+	<time>2021-04-24T17:07:51</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.517317" lon="120.992213">
+	<time>2021-04-24T17:07:52</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.517335" lon="120.992817">
+	<time>2021-04-24T17:11:08</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.517338" lon="120.992845">
+	<time>2021-04-24T17:11:09</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.517338" lon="120.992845">
+	<time>2021-04-24T17:11:13</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.517393" lon="120.993252">
+	<time>2021-04-24T17:11:21</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.517522" lon="120.993425">
+	<time>2021-04-24T17:11:26</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.517633" lon="120.993458">
+	<time>2021-04-24T17:11:29</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.51775" lon="120.99348">
+	<time>2021-04-24T17:11:31</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.51816" lon="120.993543">
+	<time>2021-04-24T17:11:36</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.51891" lon="120.993617">
+	<time>2021-04-24T17:11:43</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.51966" lon="120.993675">
+	<time>2021-04-24T17:11:49</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.522488" lon="120.993817">
+	<time>2021-04-24T17:12:08</time>
+	<speed>64.82</speed>
+</trkpt>
+<trkpt lat="14.522488" lon="120.993817">
+	<time>2021-04-24T17:12:08</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.52451" lon="120.99381">
+	<time>2021-04-24T17:12:21</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.525323" lon="120.993817">
+	<time>2021-04-24T17:12:28</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.526377" lon="120.993827">
+	<time>2021-04-24T17:12:38</time>
+	<speed>44.45</speed>
+</trkpt>
+<trkpt lat="14.527375" lon="120.993745">
+	<time>2021-04-24T17:12:48</time>
+	<speed>37.04</speed>
+</trkpt>
+<trkpt lat="14.529552" lon="120.993502">
+	<time>2021-04-24T17:13:08</time>
+	<speed>38.89</speed>
+</trkpt>
+<trkpt lat="14.531347" lon="120.993297">
+	<time>2021-04-24T17:13:27</time>
+	<speed>27.78</speed>
+</trkpt>
+<trkpt lat="14.532635" lon="120.993102">
+	<time>2021-04-24T17:13:47</time>
+	<speed>35.19</speed>
+</trkpt>
+<trkpt lat="14.534538" lon="120.99286">
+	<time>2021-04-24T17:14:03</time>
+	<speed>50.56</speed>
+</trkpt>
+<trkpt lat="14.53505" lon="120.992797">
+	<time>2021-04-24T17:14:08</time>
+	<speed>55.56</speed>
+</trkpt>
+<trkpt lat="14.537837" lon="120.992465">
+	<time>2021-04-24T17:14:28</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.540643" lon="120.99216">
+	<time>2021-04-24T17:14:47</time>
+	<speed>53.71</speed>
+</trkpt>
+<trkpt lat="14.54331" lon="120.991698">
+	<time>2021-04-24T17:15:07</time>
+	<speed>48.15</speed>
+</trkpt>
+<trkpt lat="14.545628" lon="120.991243">
+	<time>2021-04-24T17:15:27</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.548188" lon="120.990623">
+	<time>2021-04-24T17:15:47</time>
+	<speed>50.0</speed>
+</trkpt>
+<trkpt lat="14.550727" lon="120.990065">
+	<time>2021-04-24T17:16:07</time>
+	<speed>51.86</speed>
+</trkpt>
+<trkpt lat="14.552055" lon="120.98976">
+	<time>2021-04-24T17:16:25</time>
+	<speed>1.85</speed>
+</trkpt>
+<trkpt lat="14.552055" lon="120.98976">
+	<time>2021-04-24T17:16:27</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.552055" lon="120.98976">
+	<time>2021-04-24T17:16:29</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.552323" lon="120.989973">
+	<time>2021-04-24T17:16:39</time>
+	<speed>20.37</speed>
+</trkpt>
+<trkpt lat="14.552445" lon="120.990387">
+	<time>2021-04-24T17:16:45</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.552497" lon="120.990552">
+	<time>2021-04-24T17:16:47</time>
+	<speed>31.48</speed>
+</trkpt>
+<trkpt lat="14.552578" lon="120.990778">
+	<time>2021-04-24T17:16:50</time>
+	<speed>29.63</speed>
+</trkpt>
+<trkpt lat="14.55312" lon="120.992488">
+	<time>2021-04-24T17:17:07</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.553165" lon="120.992727">
+	<time>2021-04-24T17:17:09</time>
+	<speed>46.3</speed>
+</trkpt>
+<trkpt lat="14.553423" lon="120.994613">
+	<time>2021-04-24T17:17:27</time>
+	<speed>33.34</speed>
+</trkpt>
+<trkpt lat="14.553663" lon="120.995988">
+	<time>2021-04-24T17:17:46</time>
+	<speed>18.52</speed>
+</trkpt>
+<trkpt lat="14.553867" lon="120.996903">
+	<time>2021-04-24T17:18:06</time>
+	<speed>16.67</speed>
+</trkpt>
+<trkpt lat="14.553867" lon="120.996903">
+	<time>2021-04-24T17:18:13</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.553663" lon="120.997268">
+	<time>2021-04-24T17:18:23</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.553563" lon="120.997285">
+	<time>2021-04-24T17:18:26</time>
+	<speed>12.96</speed>
+</trkpt>
+<trkpt lat="14.552595" lon="120.997385">
+	<time>2021-04-24T17:18:46</time>
+	<speed>14.82</speed>
+</trkpt>
+<trkpt lat="14.552558" lon="120.997393">
+	<time>2021-04-24T17:18:47</time>
+	<speed>11.11</speed>
+</trkpt>
+<trkpt lat="14.552558" lon="120.997393">
+	<time>2021-04-24T17:18:52</time>
+	<speed>0.0</speed>
+</trkpt>
+<trkpt lat="14.552255" lon="120.997938">
+	<time>2021-04-24T17:19:44</time>
+	<speed>0.0</speed>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>
