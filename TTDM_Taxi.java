@@ -15,7 +15,11 @@ import java.util.*;
 public class TTDM_Taxi {
 
 
-	public  static Map<String,Long> locationMap = new HashMap<String, Long>();
+	public static Map<String,Long> locationMap = new HashMap<String, Long>();
+
+	public static HashMap<String, ArrayList<String>> predictedKid;
+
+	public static TTDM_Taxi TTDM_Instance;
 
 	public static void initLoationMap(String mapPath) throws IOException {
 
@@ -35,6 +39,24 @@ public class TTDM_Taxi {
 
 	}
 
+	public static void train() throws IOException {
+		String trainPath = "input/Taxi_Train_Data.csv";
+		String testPath = "input/Taxi_Test_Data.csv";
+		String graph_path = "output/graph/Taxi_graph.csv";
+		String time_path = "output/time/Taxi_shortest_time.csv";
+		initLoationMap("output/location_long_map");
+		TTDM_Instance = new TTDM_Taxi();
+		int topK = 10;
+
+		HashMap<String, HashMap<String, Integer>> neighborKid = TTDM_Instance
+				.fieProcess(trainPath, 1);
+		predictedKid = TTDM_Instance
+				.getPredictKid(neighborKid);
+	}
+
+	public String predictHelper(String path){
+		return TTDM_Instance.predict(path);
+	}
 
 
 	public static void main(String[] args) throws IOException {
@@ -456,6 +478,160 @@ public class TTDM_Taxi {
 				e.printStackTrace();
 			}
 
+
+
+	}
+
+	private String predict(String path) {
+
+
+		Map<Pair<Long, Long>, Double> graphMap = ShortestTimeCalTaxi.graphMap;
+
+		Map<Pair<Long, Long>, Double> shortestTimeMap = ShortestTimeCalTaxi.shortestTimeMap;
+
+
+		//if (path == null)
+		//	break;
+		String[] temp = path.split(",");
+		String traSequence = "";
+
+		int length = temp.length;
+		for (int i = 0; i < length; i++)
+			traSequence += "#" + temp[i].split("@")[0];
+
+		ArrayList<String> predictList = getGMMpredictListWithProb(traSequence,
+				predictedKid);
+
+		// zhenguihua score
+		ArrayList<String> normalPredictLocation = normalizeScore(predictList);
+		// sort all the predicted locations
+		Collections.sort(normalPredictLocation, new SortByProbability());
+
+		String[] lastNode = temp[length - 1].split("@");
+		String lastLoction = lastNode[0];
+		String lastTime = lastNode[1];
+
+		Iterator<String> choosen = normalPredictLocation.iterator();
+		ArrayList<String> timefactorList = new ArrayList<String>();
+
+		ArrayList<String> finalResult = new ArrayList<String>();
+
+		boolean flag = true;
+
+		int hoop = 0;
+		// below is the core of TTDM
+
+		while (choosen.hasNext()) {
+
+			hoop++;
+			if (hoop > 20) {
+				break;
+			}
+
+			double actualTime = 0.0;
+			double shortestTime = 0.0;
+
+			String predictStr = choosen.next();
+
+			String[] predictNode = predictStr.split("@");
+
+			Pair<Long, Long> tmpPair = new Pair<Long, Long>(locationMap.get(lastLoction), locationMap.get(predictNode[0]));
+			double lastweight = 0.0;
+			if (graphMap.containsKey(tmpPair)) {
+				lastweight = graphMap.get(tmpPair);
+			}
+
+			double validLength = length - 1;
+
+			for (int index = 1; index < length; index++) {
+				String passbyLoaction = temp[index].split("@")[0];
+
+				String passbytime = temp[index].split("@")[1];
+
+				double pathshorttime = ShortestTimeCalTaxi.getShortestTime(locationMap.get(passbyLoaction), locationMap.get(predictNode[0]));
+
+
+				if (pathshorttime == Double.MAX_VALUE) {
+
+					validLength--;
+
+					continue;
+
+				} else {
+
+					double pathActualTime = (Long.valueOf(lastTime) - Long.parseLong(passbytime)) / 1000 + lastweight;
+
+
+					if (pathshorttime > pathActualTime) {
+						validLength--;
+						continue;
+
+					}
+
+					shortestTime += pathshorttime;
+
+
+					actualTime += pathActualTime;
+
+
+				}
+
+
+			}
+
+			if (validLength == 0) {
+				flag = false;
+				break;
+
+
+			} else {
+
+
+				double differ = (actualTime - shortestTime) / (validLength + 0.0);
+
+
+				double timefactor = 1.0 / (((differ + 0.00001) / 60.0));
+
+
+				timefactorList.add(predictNode[0] + "@" + timefactor);
+
+			}
+
+
+		}
+
+		if (flag == true) {
+
+			ArrayList<String> normalTimeList = normalizeScore(timefactorList);
+
+			for (String gmm : normalPredictLocation) {
+
+				String key = gmm.split("@")[0];
+				String prob = gmm.split("@")[1];
+				String timeprob = "0.0";
+
+				for (String c : normalTimeList) {
+					String timelocation = c.split("@")[0];
+					if (key.equals(timelocation)) {
+						timeprob = c.split("@")[1];
+						break;
+
+					}
+				}
+
+				double finalPro = 0.3*Double.parseDouble(prob) +(1.0-0.3)*Double.parseDouble(timeprob);
+
+				finalResult.add(key + "@" + finalPro);
+
+			}
+		} else {
+			finalResult = normalPredictLocation;
+		}
+
+
+		Collections.sort(finalResult, new SortByProbability());
+
+		return finalResult.get(0).split("@")[0];
 
 
 	}
