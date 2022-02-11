@@ -3,7 +3,7 @@ import jpype.imports
 from jpype.types import *
 
 
-jpype.startJVM(classpath=['/Users/Carlton/Documents/4th Year 1st Sem/CS 198199/TTDM/target/classes'])
+jpype.startJVM(classpath=['/Users/Carlton/Documents/4th Year 1st Sem/CS 198199/project-ad/TTDM/target/classes'])
 
 # print(jpype.java.lang.System.getProperty("java.class.path"))
 
