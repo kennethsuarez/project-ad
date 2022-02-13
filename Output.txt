@@ -1,0 +1,102 @@
+current location: (14.552562,120.997557) 2021-04-20 06:37:47+00:00
+
+20000005,33$87@1618900667000,33$87@1618900671000,33$87@1618900672000,33$87@1618900689000,33$87@1618900693000,33$87@1618900698000,33$87@1618900703000,33$87@1618900707000,33$87@1618900710000,33$87@1618900712000,34$86@1618900729000,34$86@1618900730000,34$86@1618900734000,34$86@1618900739000,34$86@1618900744000,33$87@1618900667000 predicted: 32$87
+
+current queue: ['megamall.mp4', 'trinoma.mp4', 'galleria.mp4', 'makati.mp4', 'clover.mp4', 'kfc.mp4', 'manilabay.mp4', 'light.mp4', 'moa.mp4', 'cubao.mp4', 'shang.mp4', 'north.mp4']
+now playing: megamall.mp4
+trinoma.mp4: 0 points
+galleria.mp4: 0 points
+makati.mp4: 0 points
+clover.mp4: 0 points
+kfc.mp4: 0 points
+manilabay.mp4: 0 points
+light.mp4: 0 points
+moa.mp4: 0 points
+cubao.mp4: 0 points
+shang.mp4: 0 points
+north.mp4: 0 points
+megamall.mp4: 1 points
+
+current location: (14.552605,120.997548) 2021-04-20 06:37:51+00:00
+
+20000005,33$87@1618900671000 predicted: 34$86
+
+current queue: ['trinoma.mp4', 'galleria.mp4', 'makati.mp4', 'clover.mp4', 'kfc.mp4', 'manilabay.mp4', 'light.mp4', 'moa.mp4', 'cubao.mp4', 'shang.mp4', 'north.mp4', 'megamall.mp4']
+now playing: trinoma.mp4
+galleria.mp4: 0 points
+makati.mp4: 0 points
+clover.mp4: 0 points
+kfc.mp4: 0 points
+manilabay.mp4: 0 points
+light.mp4: 0 points
+moa.mp4: 0 points
+cubao.mp4: 0 points
+shang.mp4: 0 points
+north.mp4: 0 points
+megamall.mp4: 1 points
+trinoma.mp4: 1 points
+
+current location: (14.552863,120.997497) 2021-04-20 06:37:52+00:00
+
+20000005,33$87@1618900671000,33$87@1618900672000 predicted: 34$86
+
+current queue: ['galleria.mp4', 'makati.mp4', 'clover.mp4', 'kfc.mp4', 'manilabay.mp4', 'light.mp4', 'moa.mp4', 'cubao.mp4', 'shang.mp4', 'north.mp4', 'megamall.mp4', 'trinoma.mp4']
+now playing: galleria.mp4
+makati.mp4: 0 points
+clover.mp4: 0 points
+kfc.mp4: 0 points
+manilabay.mp4: 0 points
+light.mp4: 0 points
+moa.mp4: 0 points
+cubao.mp4: 0 points
+shang.mp4: 0 points
+north.mp4: 0 points
+megamall.mp4: 1 points
+trinoma.mp4: 1 points
+galleria.mp4: 1 points
+
+current location: (14.553762,120.997278) 2021-04-20 06:38:09+00:00
+
+20000005,33$87@1618900671000,33$87@1618900672000,33$87@1618900689000 predicted: 34$86
+
+current queue: ['makati.mp4', 'clover.mp4', 'kfc.mp4', 'manilabay.mp4', 'light.mp4', 'moa.mp4', 'cubao.mp4', 'shang.mp4', 'north.mp4', 'megamall.mp4', 'trinoma.mp4', 'galleria.mp4']
+now playing: makati.mp4
+clover.mp4: 0 points
+kfc.mp4: 0 points
+manilabay.mp4: 0 points
+light.mp4: 0 points
+moa.mp4: 0 points
+cubao.mp4: 0 points
+shang.mp4: 0 points
+north.mp4: 0 points
+megamall.mp4: 1 points
+trinoma.mp4: 1 points
+galleria.mp4: 1 points
+makati.mp4: 1 points
+
+current location: (14.553762,120.997278) 2021-04-20 06:38:13+00:00
+
+20000005,33$87@1618900671000,33$87@1618900672000,33$87@1618900689000,33$87@1618900693000 predicted: 34$86
+
+current queue: ['clover.mp4', 'kfc.mp4', 'manilabay.mp4', 'light.mp4', 'moa.mp4', 'cubao.mp4', 'shang.mp4', 'north.mp4', 'megamall.mp4', 'trinoma.mp4', 'galleria.mp4', 'makati.mp4']
+now playing: clover.mp4
+kfc.mp4: 0 points
+manilabay.mp4: 0 points
+light.mp4: 0 points
+moa.mp4: 0 points
+cubao.mp4: 0 points
+shang.mp4: 0 points
+north.mp4: 0 points
+megamall.mp4: 1 points
+trinoma.mp4: 1 points
+galleria.mp4: 1 points
+makati.mp4: 1 points
+clover.mp4: 1 points
+
+current location: (14.554007,120.997373) 2021-04-20 06:38:18+00:00
+
+20000005,33$87@1618900671000,33$87@1618900672000,33$87@1618900689000,33$87@1618900693000,33$87@1618900698000 predicted: 34$86
+
+current queue: ['kfc.mp4', 'manilabay.mp4', 'light.mp4', 'moa.mp4', 'cubao.mp4', 'shang.mp4', 'north.mp4', 'megamall.mp4', 'trinoma.mp4', 'galleria.mp4', 'makati.mp4', 'clover.mp4']
+now inside priority fence
+now playing: kfc.mp4
