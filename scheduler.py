@@ -3,6 +3,9 @@ import os
 import json
 from datetime import datetime
 import time
+import jpype
+import jpype.imports
+from jpype.types import *
 
 text_file = open("Output.txt", "w")
 UPPER_LEFT_X = 120.90541
@@ -79,6 +82,14 @@ OUTPUT_PATH = 'output/visited.txt'
 if not os.path.exists('output'):
     os.makedirs('output')
 
+# Begin JPype and train TTDM
+jpype.startJVM(classpath=['TTDM/target/classes'])
+TTDM = jpype.JClass("com.mdm.sdu.mdm.model.taxi.TTDM_Taxi")
+TTDM.train()
+
+# Empty initial sequence
+visited_list = []
+
 while len(queue) > 0:
     curr_loc = proc.stdout.readline().decode("utf-8")
     parsed_loc = curr_loc.split(" ")
@@ -93,13 +104,34 @@ while len(queue) > 0:
     # predict next location
     x_grid =  (x_pos - UPPER_LEFT_X) // DIFF_X
     y_grid =  (UPPER_LEFT_Y - y_pos) // DIFF_Y
-    coords = str(int(x_grid)) + "$" + str(int(y_grid)) + "@" + str(tim)
-    with open(OUTPUT_PATH, 'a+') as visited_list:
-        visited_list.write(coords + '\n')
-    pred = subprocess.Popen(["python3", "-u", "JPypeTest.py"], stdout=subprocess.PIPE)
-    predicted = pred.stdout.readline().decode("utf-8")
-    text_file.write(predicted+"\n")
+    coords = str(int(x_grid)) + "$" + str(int(y_grid))
+    text_file.write("grid coords: {0}\n".format(coords))
+
+    #with open(OUTPUT_PATH, 'a+b') as visited_list:  
+    #    try:
+    #        visited_list.seek(-2, os.SEEK_END)
+    #        while visited_list.read(1) != b'\n':
+    #            visited_list.seek(-2, os.SEEK_CUR)
+    #    except OSError:
+    #        visited_list.seek(0)
+    #    if visited_list.readline().decode().split('@')[0] != coords:
+    #        visited_list.write((coords + "@" + str(tim)+ '\n').encode("utf-8"))
+    #pred = subprocess.Popen(["python3", "-u", "JPypeTest.py"], stdout=subprocess.PIPE)
+    #predicted = pred.stdout.readline().decode("utf-8")
+
+    if len(visited_list) == 0 or visited_list[-1].split('@')[0] != coords:
+        if len(visited_list) != 0 and tim - int(visited_list[-1].split('@')[1]) > (120 * 1000):
+            visited_list.clear()
+        visited_list.append(coords + "@" + str(tim))
+    
+    idx = "20000005,"
+    visited_str = ",".join(visited_list)
+    trajectory = jpype.java.lang.String(idx + visited_str)
+    predicted = TTDM.TTDM_Instance.predictHelper(trajectory)
+
+    text_file.write(idx + visited_str + " predicted: " + str(predicted)+"\n")
     # play video
     playVideo(queue, folderPath, video_points, float(x_pos), float(y_pos))
 
 text_file.close()
+jpype.shutdownJVM()
