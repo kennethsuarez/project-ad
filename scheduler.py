@@ -20,7 +20,13 @@ def checkGeoFence(point, x_pos, y_pos):
         text_file.flush()
         return True
     return False
-    
+
+def convertToGrid(coords):
+    lon, lat = coords
+    x_grid = (float(lon) - UPPER_LEFT_X) // DIFF_X
+    y_grid = (UPPER_LEFT_Y - float(lat)) // DIFF_Y
+    return str(int(x_grid)) + "$" + str(int(y_grid))
+ 
 
 # round robin player
 def playVideo(queue, folderPath, video_points, x_pos, y_pos):
@@ -33,7 +39,10 @@ def playVideo(queue, folderPath, video_points, x_pos, y_pos):
 
         video_points[video] += 1    # increment point before playing
         for priority_zone in priority_zones[video]:
-            if (checkGeoFence(priority_zone, x_pos, y_pos)):
+            # temporary fix, but better if the priority zones are in the grid format to begin with
+            if convertToGrid((x_pos, y_pos)) == convertToGrid(priority_zone): 
+                text_file.write("in priority fence\n")
+                text_file.flush()
                 video_points[video] += 2    # add extra point for geo-fenced locations
                 break
 
@@ -73,7 +82,7 @@ for filename in os.listdir(folderPath):
 
 for ad in priority_zones_data['ads']: 
     for zone in ad['zones']:
-        priority_zones[ad['name']].append((zone['lat'],zone['lon']))
+        priority_zones[ad['name']].append((zone['lat'],zone['lon'])) #should really be lon lat but i got them flipped in priority file
 
 print(priority_zones)
 
@@ -93,31 +102,17 @@ visited_list = []
 while len(queue) > 0:
     curr_loc = proc.stdout.readline().decode("utf-8")
     parsed_loc = curr_loc.split(" ")
-    lon_lan = parsed_loc[0].split(",")
-    y_pos = float(lon_lan[0][1:])
-    x_pos = float(lon_lan[1][0:-1])
+    lat_lon = parsed_loc[0].split(",")
+    y_pos = float(lat_lon[0][1:])
+    x_pos = float(lat_lon[1][0:-1])
     tim = datetime.fromisoformat(parsed_loc[1] + " " + parsed_loc[2].strip())
     tim = int(tim.timestamp()*1000)
 
     text_file.write("current location: {0}\n".format(curr_loc))
     text_file.flush() 
     # predict next location
-    x_grid =  (x_pos - UPPER_LEFT_X) // DIFF_X
-    y_grid =  (UPPER_LEFT_Y - y_pos) // DIFF_Y
-    coords = str(int(x_grid)) + "$" + str(int(y_grid))
+    coords = convertToGrid((x_pos,y_pos))
     text_file.write("grid coords: {0}\n".format(coords))
-
-    #with open(OUTPUT_PATH, 'a+b') as visited_list:  
-    #    try:
-    #        visited_list.seek(-2, os.SEEK_END)
-    #        while visited_list.read(1) != b'\n':
-    #            visited_list.seek(-2, os.SEEK_CUR)
-    #    except OSError:
-    #        visited_list.seek(0)
-    #    if visited_list.readline().decode().split('@')[0] != coords:
-    #        visited_list.write((coords + "@" + str(tim)+ '\n').encode("utf-8"))
-    #pred = subprocess.Popen(["python3", "-u", "JPypeTest.py"], stdout=subprocess.PIPE)
-    #predicted = pred.stdout.readline().decode("utf-8")
 
     if len(visited_list) == 0 or visited_list[-1].split('@')[0] != coords:
         if len(visited_list) != 0 and tim - int(visited_list[-1].split('@')[1]) > (120 * 1000):
