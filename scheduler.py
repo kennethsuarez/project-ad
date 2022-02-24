@@ -26,7 +26,22 @@ def convertToGrid(coords):
     x_grid = (float(lon) - UPPER_LEFT_X) // DIFF_X
     y_grid = (UPPER_LEFT_Y - float(lat)) // DIFF_Y
     return str(int(x_grid)) + "$" + str(int(y_grid))
- 
+
+def getAllAdsInZone(zone):
+    ads = []
+    for ad, ad_zones in priority_zones.items():
+        if zone in map(convertToGrid, ad_zones):
+            ads.append(ad)
+    return ads
+
+def generateNextQueue(pred_loc,default_ad_list):
+    ads = getAllAdsInZone(pred_loc)
+    if not ads: #empty, did not get any
+        return default_ad_list
+    temp = []
+    for file_name in ads:
+        temp.append(file_name)
+    return temp 
 
 # round robin player
 def playVideo(queue, folderPath, video_points, x_pos, y_pos):
@@ -66,8 +81,10 @@ proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=subprocess.PIP
 
 folderPath = "/home/pi/Videos"
 queue = []
+nextQueue = []
 video_points = {}
 priority_zones = {}
+default_queue = []
 
 
 # setup priority zones with point counter
@@ -75,16 +92,19 @@ priority_zones_json = open('priority_zones.json')
 priority_zones_data = json.load(priority_zones_json)
 
 for filename in os.listdir(folderPath):
-    queue.append(filename)
+    default_queue.append(filename)
     # start counter for each file
     video_points[filename] = 0
     priority_zones[filename] = []
+
+queue = default_queue
 
 for ad in priority_zones_data['ads']: 
     for zone in ad['zones']:
         priority_zones[ad['name']].append((zone['lat'],zone['lon'])) #should really be lon lat but i got them flipped in priority file
 
 print(priority_zones)
+print(getAllAdsInZone("33$87"))
 
 # setup and read visited coordinates
 OUTPUT_PATH = 'output/visited.txt'
@@ -99,6 +119,8 @@ TTDM.train()
 # Empty initial sequence
 visited_list = []
 
+last_pred = ""
+
 while len(queue) > 0:
     curr_loc = proc.stdout.readline().decode("utf-8")
     parsed_loc = curr_loc.split(" ")
@@ -110,21 +132,47 @@ while len(queue) > 0:
 
     text_file.write("current location: {0}\n".format(curr_loc))
     text_file.flush() 
-    # predict next location
+
+    # location sequence checking
     coords = convertToGrid((x_pos,y_pos))
     text_file.write("grid coords: {0}\n".format(coords))
 
     if len(visited_list) == 0 or visited_list[-1].split('@')[0] != coords:
+        # move the queue if the sequence moved already
+        if len(visited_list) != 0:
+            text_file.write("clearing queue. New queue is:\n")
+            text_file.flush()
+
+            text_file.write("{0}\n".format(nextQueue))
+            text_file.flush()
+   
+            queue = nextQueue #hopefully no memory issues with this? garbage collected anyway
+
         if len(visited_list) != 0 and tim - int(visited_list[-1].split('@')[1]) > (120 * 1000):
             visited_list.clear()
-        visited_list.append(coords + "@" + str(tim))
-    
+        visited_list.append(coords + "@" + str(tim)) 
+
+            
     idx = "20000005,"
     visited_str = ",".join(visited_list)
     trajectory = jpype.java.lang.String(idx + visited_str)
+    
+    #predict
     predicted = TTDM.TTDM_Instance.predictHelper(trajectory)
-
     text_file.write(idx + visited_str + " predicted: " + str(predicted)+"\n")
+    
+    #if no next queue, or prediction changed, generate a new next queue.
+    if not nextQueue or predicted != last_pred:
+        #nextQueue.clear() hopefully no memory issues, but yeah garbage collect
+        nextQueue = generateNextQueue(predicted,default_queue)
+        text_file.write("populated next queue (" + str(predicted) + ")  with:\n")
+        text_file.flush()
+
+        text_file.write("{0}\n".format(nextQueue))
+        text_file.flush()
+
+    last_pred = predicted
+        
     # play video
     playVideo(queue, folderPath, video_points, float(x_pos), float(y_pos))
 
