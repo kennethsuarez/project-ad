@@ -3,6 +3,7 @@ import os
 import json
 from datetime import datetime
 import time
+import math
 import jpype
 import jpype.imports
 from jpype.types import *
@@ -41,19 +42,50 @@ def generateNextQueue(pred_loc,default_ad_list):
     temp = []
     for file_name in ads:
         temp.append(file_name)
-    return temp 
+    return temp
 
-# round robin player
-def playVideo(queue, folderPath, video_points, x_pos, y_pos):
-    text_file.write("current queue: {0}\n".format(queue))
-    text_file.flush()
-    video = queue.pop(0)    # remove from queue
+def ubs_utility_func(count_t,count):
+    lambda_a = 1 # not yet sure
+    theta_a = 1 # not yet sure
+    gamma_a = 0.00015 # from the paper
+    return lambda_a*((1/(1+math.e ** (-gamma_a(count_t-count))))-theta_a)
 
+def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time):
+    playlist = []
+
+    count_in_playlist = {}          
+    for ad in ad_list:              
+        count_in_playlist[ad] = 0
+        
+    playlist_duration = 0
+
+    while playlist_duration < time:
+        utility_gain = {}
+        for ad in ad_list:
+            utility_gain[ad] = 0
+    
+        for ad in ad_list:
+            utility_gain[ad] = ubs_utility_function(ad_play_counts[ad],ad_reqd_counts[ad])
+        k = max(utility_gain, key=utility_gain.get)
+        playlist.append(k)
+        count_in_playlist[k] += 1
+        playlist_duration += ad_lengths[ad]
+
+    return playlist
+
+
+def play_video(video, folderPath):
     if video.endswith(".mp4"):
         path = os.path.join(folderPath, video)
 
-        video_points[video] += 1    # increment point before playing
-        for priority_zone in priority_zones[video]:
+        text_file.write("now playing: {0}\n".format(video))
+        text_file.flush()
+
+        omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
+
+def upc(video, video_points, x_pos, y_pos): # could maybe make priority regions an input too
+    video_points[video] =+ 1 # basic point increase
+    for priority_zone in priority_zones[video]:
             # temporary fix, but better if the priority zones are in the grid format to begin with
             if convertToGrid((x_pos, y_pos)) == convertToGrid(priority_zone): 
                 text_file.write("in priority fence\n")
@@ -61,21 +93,9 @@ def playVideo(queue, folderPath, video_points, x_pos, y_pos):
                 video_points[video] += 2    # add extra point for geo-fenced locations
                 break
 
-        text_file.write("now playing: {0}\n".format(video))
-        text_file.flush()
 
-        omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
+#############################  main code #################################
 
-        queue.append(video)     # add played video to end of queue
-
-    for video in queue:
-        text_file.write("{0}: {1} points\n".format(video, video_points[video]))
-        text_file.flush()
-
-    text_file.write("\n")
-    text_file.flush()
-
-# main code
 # begin by running gps supplier
 proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1)
 
@@ -84,7 +104,7 @@ queue = []
 nextQueue = []
 video_points = {}
 priority_zones = {}
-default_queue = []
+default_queue = [] #this will get modified, but will always be accessible via default_queue
 
 
 # setup priority zones with point counter
@@ -118,10 +138,12 @@ TTDM.train()
 
 # Empty initial sequence
 visited_list = []
-
 last_pred = ""
 
-while len(queue) > 0:
+while len(queue) > 0: # might want to revisit this condition later
+
+    ################### current coordinates input #######################
+
     curr_loc = proc.stdout.readline().decode("utf-8")
     parsed_loc = curr_loc.split(" ")
     lat_lon = parsed_loc[0].split(",")
@@ -133,7 +155,7 @@ while len(queue) > 0:
     text_file.write("current location: {0}\n".format(curr_loc))
     text_file.flush() 
 
-    # location sequence checking
+    ####################  location sequence module  ######################
     coords = convertToGrid((x_pos,y_pos))
     text_file.write("grid coords: {0}\n".format(coords))
 
@@ -157,10 +179,17 @@ while len(queue) > 0:
     visited_str = ",".join(visited_list)
     trajectory = jpype.java.lang.String(idx + visited_str)
     
-    #predict
+    # predict via trajectory sequence output
     predicted = TTDM.TTDM_Instance.predictHelper(trajectory)
     text_file.write(idx + visited_str + " predicted: " + str(predicted)+"\n")
     
+    ###################  Video scheduling module ###################
+
+    # will need more modifications again, need to consider that UBS could create a queue that is not enough for the time.
+    # This is why the outer while loop may be problematic, considering setting it to just while true
+    
+    # we can consider making this depend on arg i.e. if scheduler == "rr"
+
     #if no next queue, or prediction changed, generate a new next queue.
     if not nextQueue or predicted != last_pred:
         #nextQueue.clear() hopefully no memory issues, but yeah garbage collect
@@ -173,8 +202,28 @@ while len(queue) > 0:
 
     last_pred = predicted
         
-    # play video
-    playVideo(queue, folderPath, video_points, float(x_pos), float(y_pos))
+    # play video via scheduler output
+    
+    text_file.write("current queue: {0}\n".format(queue))
+    text_file.flush()
+
+    # get the top from the queue
+    video = queue.pop(0)
+
+    play_video(video,folderPath)
+
+    # this is for round robin, we can make this depend on an arg later i.e. if scheduler == "rr"
+    queue.append(video)
+
+    #################   Utility Point Counter   ####################
+    upc(video,video_points,float(x_pos),float(y_pos))
+   
+    for video in queue:
+        text_file.write("{0}: {1} points\n".format(video, video_points[video]))
+        text_file.flush()
+
+    text_file.write("\n")
+    text_file.flush() 
 
 text_file.close()
 jpype.shutdownJVM()
