@@ -46,9 +46,9 @@ def generateNextQueue(pred_loc,default_ad_list):
 
 def ubs_utility_func(count_t,count):
     lambda_a = 1 # not yet sure
-    theta_a = 1 # not yet sure
+    theta_a = 0 # not yet sure
     gamma_a = 0.00015 # from the paper
-    return lambda_a*((1/(1+math.e ** (-gamma_a(count_t-count))))-theta_a)
+    return lambda_a * ((1/(1+math.e ** (-gamma_a*(count_t-count))))-theta_a)
 
 def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time):
     playlist = []
@@ -65,7 +65,9 @@ def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time):
             utility_gain[ad] = 0
     
         for ad in ad_list:
-            utility_gain[ad] = ubs_utility_function(ad_play_counts[ad],ad_reqd_counts[ad])
+            temp_1 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad] + 1,ad_reqd_counts[ad]))
+            temp_2 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad], ad_reqd_counts[ad]))
+            utility_gain[ad] = temp_1 - temp_2
         k = max(utility_gain, key=utility_gain.get)
         playlist.append(k)
         count_in_playlist[k] += 1
@@ -84,13 +86,13 @@ def play_video(video, folderPath):
         omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
 
 def upc(video, video_points, x_pos, y_pos): # could maybe make priority regions an input too
-    video_points[video] =+ 1 # basic point increase
+    video_points[video] += 1 # basic point increase
     for priority_zone in priority_zones[video]:
             # temporary fix, but better if the priority zones are in the grid format to begin with
             if convertToGrid((x_pos, y_pos)) == convertToGrid(priority_zone): 
                 text_file.write("in priority fence\n")
                 text_file.flush()
-                video_points[video] += 2    # add extra point for geo-fenced locations
+                video_points[video] += 2    # We need to decide on how much of a premium this gives
                 break
 
 
@@ -103,6 +105,9 @@ folderPath = "/home/pi/Videos"
 queue = []
 nextQueue = []
 video_points = {}
+play_counts = {}
+reqd_counts = {}
+ad_lengths = {}
 priority_zones = {}
 default_queue = [] #this will get modified, but will always be accessible via default_queue
 
@@ -115,9 +120,15 @@ for filename in os.listdir(folderPath):
     default_queue.append(filename)
     # start counter for each file
     video_points[filename] = 0
+    play_counts[filename] = 0
+    reqd_counts[filename] = 100 #temp value, should come from ad list later on
+    # How do we handle required play counts??? total, or in zone? Damn there's so much to consider
+    # we need a metric, like maybe how many equivalent play counts would it be in/out of the zone?
+
+    ad_lengths[filename] = 6.0  # ^
     priority_zones[filename] = []
 
-queue = default_queue
+queue = default_queue.copy() #if rr we don't need to copy, since removed ad gets pushed back
 
 for ad in priority_zones_data['ads']: 
     for zone in ad['zones']:
@@ -193,7 +204,11 @@ while len(queue) > 0: # might want to revisit this condition later
     #if no next queue, or prediction changed, generate a new next queue.
     if not nextQueue or predicted != last_pred:
         #nextQueue.clear() hopefully no memory issues, but yeah garbage collect
-        nextQueue = generateNextQueue(predicted,default_queue)
+        tempQueue = generateNextQueue(predicted,default_queue) 
+
+        nextQueue = ubs(tempQueue,play_counts,reqd_counts,ad_lengths,60.0) # 60  is a temp value, connect it up
+        # not sure if it is still close to optimal if we delay it per zone, will need to investigate
+
         text_file.write("populated next queue (" + str(predicted) + ")  with:\n")
         text_file.flush()
 
@@ -209,18 +224,27 @@ while len(queue) > 0: # might want to revisit this condition later
 
     # get the top from the queue
     video = queue.pop(0)
+    
+    # this is for round robin, we can make this depend on an arg later i.e. if scheduler == "rr"
+    #queue.append(video)
+
+    # this is for UBS
+    if len(queue) == 0:
+        tempQueue = generateNextQueue(coords,default_queue)
+        queue = ubs(tempQueue,play_counts,reqd_counts,ad_lengths,60.0)
 
     play_video(video,folderPath)
 
-    # this is for round robin, we can make this depend on an arg later i.e. if scheduler == "rr"
-    queue.append(video)
-
     #################   Utility Point Counter   ####################
     upc(video,video_points,float(x_pos),float(y_pos))
-   
-    for video in queue:
+    
+    play_counts[video] += 1 # Our points and play count really need a better metric for fairness
+
+    for video in default_queue:
         text_file.write("{0}: {1} points\n".format(video, video_points[video]))
         text_file.flush()
+
+
 
     text_file.write("\n")
     text_file.flush() 
