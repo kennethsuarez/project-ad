@@ -7,6 +7,9 @@ import math
 import jpype
 import jpype.imports
 from jpype.types import *
+import csv
+import functools
+
 
 text_file = open("Output.txt", "w")
 UPPER_LEFT_X = 120.90541
@@ -50,8 +53,11 @@ def ubs_utility_func(count_t,count):
     gamma_a = 0.00015 # from the paper
     return lambda_a * ((1/(1+math.e ** (-gamma_a*(count_t-count))))-theta_a)
 
-def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time):
+def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time,has_prio):
     playlist = []
+    incr = 0.2
+    if has_prio:
+        incr = 1
 
     count_in_playlist = {}          
     for ad in ad_list:              
@@ -65,12 +71,12 @@ def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time):
             utility_gain[ad] = 0
     
         for ad in ad_list:
-            temp_1 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad] + 1,ad_reqd_counts[ad]))
+            temp_1 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad] + incr,ad_reqd_counts[ad]))
             temp_2 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad], ad_reqd_counts[ad]))
             utility_gain[ad] = temp_1 - temp_2
         k = max(utility_gain, key=utility_gain.get)
         playlist.append(k)
-        count_in_playlist[k] += 1
+        count_in_playlist[k] += incr
         playlist_duration += ad_lengths[ad]
 
     return playlist
@@ -86,9 +92,6 @@ def play_video(video, folderPath):
         omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
 
 def upc(video, video_points,play_counts,reqd_counts,x_pos, y_pos): # could maybe make priority regions an input too
-    new_count_utility =  math.log(ubs_utility_func(play_counts[video] + 1,reqd_counts[video]))
-    old_count_utility = math.log(ubs_utility_func(play_counts[video],reqd_counts[video]))
-    count_utility_gained = (new_count_utility - old_count_utility) * 10000 #to put things in a workable range, but need to read the study more
     priority_multiplier = 1
     play_multiplier = 0.2 #arbitrary, 1 play outside zone is just equivalent to 0.2 plays
     for priority_zone in priority_zones[video]:
@@ -99,11 +102,44 @@ def upc(video, video_points,play_counts,reqd_counts,x_pos, y_pos): # could maybe
                 priority_multiplier = 3    # We need to decide on how much of a premium this gives
                 play_multiplier = 1
                 break
+    
+    new_count_utility =  math.log(ubs_utility_func(play_counts[video] + play_multiplier,reqd_counts[video]))
+    old_count_utility = math.log(ubs_utility_func(play_counts[video],reqd_counts[video]))
+    count_utility_gained = (new_count_utility - old_count_utility) * 10000 #to put things in a workable range, but need to read the study more
+
     video_points[video] += (count_utility_gained * priority_multiplier)
     play_counts[video] += (1 * play_multiplier)
 
 
 #############################  main code #################################
+
+#### temporarily placing the code to get minimum average time per zone. ####
+
+location_long_map = open("TTDM/output/location_long_map", "r")
+loc_long_dict = {}
+
+for x in location_long_map:
+    zone, long_z = x.split()
+    loc_long_dict[zone] = long_z
+
+graph_dict = {}
+zone_min_avg_dict = {}
+
+with open("TTDM/output/graph/Taxi_graph.csv", newline="") as taxi_graph:
+    graph = csv.reader(taxi_graph, skipinitialspace=True, delimiter=' ', quotechar='|')
+    number = next(graph)[0]
+    graph_dict = {k: [] for k in range(1,int(number)+1)}
+    zone_min_avg_dict = {k: [] for k in range(1,int(number)+1)}
+    next(graph)
+    for row in graph:
+        graph_dict[int(row[0])].append((int(row[1]),float(row[2])))
+
+for src, content in graph_dict.items():
+    zone_min_avg_dict[src] = min(list(map(lambda x: x[1], content)))
+
+##########################################################################
+
+
 
 # begin by running gps supplier
 proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1)
@@ -118,6 +154,8 @@ ad_lengths = {}
 priority_zones = {}
 default_queue = [] #this will get modified, but will always be accessible via default_queue
 
+next_has_prio_ads = 0
+zone_has_prio_ads = 0
 
 # setup priority zones with point counter
 priority_zones_json = open('priority_zones.json')
@@ -159,6 +197,8 @@ TTDM.train()
 visited_list = []
 last_pred = ""
 
+
+
 while len(queue) > 0: # might want to revisit this condition later
 
     ################### current coordinates input #######################
@@ -193,7 +233,11 @@ while len(queue) > 0: # might want to revisit this condition later
             visited_list.clear()
         visited_list.append(coords + "@" + str(tim)) 
 
-            
+        if next_has_prio_ads:
+            zone_has_prio_ads = 1
+            next_has_prio_ads = 0
+
+
     idx = "20000005,"
     visited_str = ",".join(visited_list)
     trajectory = jpype.java.lang.String(idx + visited_str)
@@ -213,8 +257,21 @@ while len(queue) > 0: # might want to revisit this condition later
     if not nextQueue or predicted != last_pred:
         #nextQueue.clear() hopefully no memory issues, but yeah garbage collect
         tempQueue = generateNextQueue(predicted,default_queue) 
+        if tempQueue != default_queue:
+            next_has_prio_ads = 1
 
-        nextQueue = ubs(tempQueue,play_counts,reqd_counts,ad_lengths,60.0) # 60  is a temp value, connect it up
+        # we assume that the already scheduled playlist will finish i.e. be optimistic.
+        # optimistic allocator - this means we need accurate predictions for better performance.
+        optimistic_counts = play_counts.copy()
+        
+        for ad in queue:
+            if zone_has_prio_ads:
+                optimistic_counts[ad] += 1
+            else:
+                optimistic_counts[ad] += 0.2
+                
+        zone_time = zone_min_avg_dict[int(loc_long_dict[predicted])]
+        nextQueue = ubs(tempQueue,optimistic_counts,reqd_counts,ad_lengths,zone_time,next_has_prio_ads) # 60  is a temp value, connect it up
         # not sure if it is still close to optimal if we delay it per zone, will need to investigate
 
         text_file.write("populated next queue (" + str(predicted) + ")  with:\n")
@@ -239,7 +296,7 @@ while len(queue) > 0: # might want to revisit this condition later
     # this is for UBS
     if len(queue) == 0:
         tempQueue = generateNextQueue(coords,default_queue)
-        queue = ubs(tempQueue,play_counts,reqd_counts,ad_lengths,60.0)
+        queue = ubs(tempQueue,play_counts,reqd_counts,ad_lengths,zone_time,zone_has_prio_ads)
 
     play_video(video,folderPath)
 
