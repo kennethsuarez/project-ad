@@ -45,7 +45,7 @@ def generateNextQueue(pred_loc,default_ad_list):
     return temp
 
 def ubs_utility_func(count_t,count):
-    lambda_a = 1 # not yet sure
+    lambda_a = 1000 # not yet sure
     theta_a = 0 # not yet sure
     gamma_a = 0.00015 # from the paper
     return lambda_a * ((1/(1+math.e ** (-gamma_a*(count_t-count))))-theta_a)
@@ -85,15 +85,22 @@ def play_video(video, folderPath):
 
         omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
 
-def upc(video, video_points, x_pos, y_pos): # could maybe make priority regions an input too
-    video_points[video] += 1 # basic point increase
+def upc(video, video_points,play_counts,reqd_counts,x_pos, y_pos): # could maybe make priority regions an input too
+    new_count_utility =  math.log(ubs_utility_func(play_counts[video] + 1,reqd_counts[video]))
+    old_count_utility = math.log(ubs_utility_func(play_counts[video],reqd_counts[video]))
+    count_utility_gained = (new_count_utility - old_count_utility) * 10000 #to put things in a workable range, but need to read the study more
+    priority_multiplier = 1
+    play_multiplier = 0.2 #arbitrary, 1 play outside zone is just equivalent to 0.2 plays
     for priority_zone in priority_zones[video]:
             # temporary fix, but better if the priority zones are in the grid format to begin with
             if convertToGrid((x_pos, y_pos)) == convertToGrid(priority_zone): 
                 text_file.write("in priority fence\n")
                 text_file.flush()
-                video_points[video] += 2    # We need to decide on how much of a premium this gives
+                priority_multiplier = 3    # We need to decide on how much of a premium this gives
+                play_multiplier = 1
                 break
+    video_points[video] += (count_utility_gained * priority_multiplier)
+    play_counts[video] += (1 * play_multiplier)
 
 
 #############################  main code #################################
@@ -125,18 +132,19 @@ for filename in os.listdir(folderPath):
     # How do we handle required play counts??? total, or in zone? Damn there's so much to consider
     # we need a metric, like maybe how many equivalent play counts would it be in/out of the zone?
 
-    ad_lengths[filename] = 6.0  # ^
+    ad_lengths[filename] = 6.0 # ^
     priority_zones[filename] = []
 
 queue = default_queue.copy() #if rr we don't need to copy, since removed ad gets pushed back
 
-for ad in priority_zones_data['ads']: 
+reqd_counts['kfc.mp4'] = 100
+
+for ad in priority_zones_data['ads']:
     for zone in ad['zones']:
-        priority_zones[ad['name']].append((zone['lat'],zone['lon'])) #should really be lon lat but i got them flipped in priority file
+        priority_zones[ad['name']].append((zone['lat'],zone['lon'])) #should really be lon lat but I got them flippined in priority file
 
 print(priority_zones)
 print(getAllAdsInZone("33$87"))
-
 # setup and read visited coordinates
 OUTPUT_PATH = 'output/visited.txt'
 if not os.path.exists('output'):
@@ -236,15 +244,11 @@ while len(queue) > 0: # might want to revisit this condition later
     play_video(video,folderPath)
 
     #################   Utility Point Counter   ####################
-    upc(video,video_points,float(x_pos),float(y_pos))
-    
-    play_counts[video] += 1 # Our points and play count really need a better metric for fairness
+    upc(video,video_points,play_counts,reqd_counts,float(x_pos),float(y_pos)) #utility and play counts
 
     for video in default_queue:
-        text_file.write("{0}: {1} points\n".format(video, video_points[video]))
+        text_file.write("{0}: {1} pts, {2}/{3} plays\n".format(video, video_points[video],play_counts[video],reqd_counts[video]))
         text_file.flush()
-
-
 
     text_file.write("\n")
     text_file.flush() 
