@@ -1,10 +1,26 @@
+// converter function
+const UPPER_LEFT_X = 120.90541
+const UPPER_LEFT_Y = 14.785505
+const DIFF_X = 0.002747
+const DIFF_Y = 0.002657
+
+function convertLonX(lon) {
+  return Math.floor((lon - UPPER_LEFT_X) / DIFF_X) 
+}
+
+function convertLatY(lat) {
+  return Math.floor((UPPER_LEFT_Y - lat) / DIFF_Y)
+}
+
 // initialize map
-var map = L.map('map').setView([14.552562, 120.997557], 16);
+var map = L.map('map').setView([14.552562, 120.997557], 17);
 var marker = L.marker([14.552562, 120.997557]).addTo(map);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
-  maxNativeZoom:19,
-  maxZoom:25
+  minNativeZoom:17,
+  minZoom:17,
+  maxNativeZoom:17,
+  maxZoom:17
 }).addTo(map);
 
 /*var gpx = 'DS2-0420.gpx';
@@ -17,15 +33,15 @@ L.GridLayer.GridDebug = L.GridLayer.extend({
   createTile: function (coords) {
     const tile = document.createElement('div');
     tile.style.outline = '1px solid green';
-    tile.style.fontWeight = 'bold';
-    tile.style.fontSize = '14pt';
+    tile.style.fontWeight = 'light';
+    tile.style.fontSize = '30pt';
     
     var size = this.getTileSize();
     var nwPoint = coords.scaleBy(size);
   
     // calculate geographic coordinates of top left tile pixel
     var nw = map.unproject(nwPoint, coords.z);
-    tile.innerHTML = [coords.z, nw.lat.toFixed(6), nw.lng.toFixed(6)].join('/');
+    tile.innerHTML = [convertLonX(nw.lng.toFixed(6)), convertLatY(nw.lat.toFixed(6))].join('$');
     return tile;
   },
 });
