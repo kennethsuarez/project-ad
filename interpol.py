@@ -86,7 +86,7 @@ def divide_cts(cts,seq_thresh):
 
 
 # main code
-file = 'DS2-0420.gpx'
+file = 'gpx_test/DS2-0420.gpx'
 
 sts = load_sts(file)
 #print(sts)

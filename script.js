@@ -23,7 +23,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom:17
 }).addTo(map);
 
-/*var gpx = 'DS2-0420.gpx';
+/*var gpx = 'gpx_test/DS2-0420.gpx';
 
 new L.GPX(gpx, {async: true}).on('loaded', function(e) {
     map.fitBounds(e.target.getBounds());

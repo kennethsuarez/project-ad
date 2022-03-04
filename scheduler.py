@@ -10,8 +10,11 @@ from jpype.types import *
 import csv
 import functools
 
+if not os.path.exists('output'):
+    os.makedirs('output')
 
-text_file = open("Output.txt", "w")
+text_file = open("output/Output.txt", "w")
+
 UPPER_LEFT_X = 120.90541
 UPPER_LEFT_Y = 14.785505
 DIFF_X = 0.002747
@@ -88,6 +91,7 @@ def play_video(video, folderPath):
 
         text_file.write("now playing: {0}\n".format(video))
         text_file.flush()
+        print("\nnow playing: {0}".format(video))
 
         omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
 
@@ -183,10 +187,8 @@ for ad in priority_zones_data['ads']:
 
 print(priority_zones)
 print(getAllAdsInZone("33$87"))
-# setup and read visited coordinates
+# read visited coordinates
 OUTPUT_PATH = 'output/visited.txt'
-if not os.path.exists('output'):
-    os.makedirs('output')
 
 # Begin JPype and train TTDM
 jpype.startJVM(classpath=['TTDM/target/classes'])
