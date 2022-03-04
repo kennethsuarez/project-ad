@@ -143,10 +143,9 @@ for src, content in graph_dict.items():
 
 ##########################################################################
 
-
-
 # begin by running gps supplier
-proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1)
+log = open('output/gpx_loc.txt', 'a+') 
+proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=log)
 
 folderPath = "/home/pi/Videos"
 queue = []
@@ -187,8 +186,6 @@ for ad in priority_zones_data['ads']:
 
 print(priority_zones)
 print(getAllAdsInZone("33$87"))
-# read visited coordinates
-OUTPUT_PATH = 'output/visited.txt'
 
 # Begin JPype and train TTDM
 jpype.startJVM(classpath=['TTDM/target/classes'])
@@ -204,8 +201,12 @@ last_pred = ""
 while len(queue) > 0: # might want to revisit this condition later
 
     ################### current coordinates input #######################
-
-    curr_loc = proc.stdout.readline().decode("utf-8")
+    #curr_loc = proc.stdout.readline().decode("utf-8")  #deprecated
+    curr_loc = ""
+    while curr_loc == "":
+        with open('output/gpx_loc.txt', 'r') as f:
+            curr_loc = f.readlines()[-1]
+    print(curr_loc)
     parsed_loc = curr_loc.split(" ")
     lat_lon = parsed_loc[0].split(",")
     y_pos = float(lat_lon[0][1:])
