@@ -41,9 +41,8 @@ with open("TTDM/output/graph/Taxi_graph.csv", newline="") as taxi_graph:
 #print(graph_dict)
 
 for src, content in graph_dict.items():
-    zone_min_dict[src] = min(list(map(lambda x : x[1], content)))
-
-#print(zone_min_dict)
+    zone_min_dict[src] = min(list(filter(lambda x: x>=0,map(lambda x : x[1], content)))) #temp fix to prevent negs
+print(zone_min_dict)
 
 #zones = {k: [] for k in range(1,len(zone_min_dict)+1)}
 

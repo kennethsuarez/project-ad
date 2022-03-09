@@ -43,11 +43,17 @@ def getAllAdsInZone(zone):
 
 def generateNextQueue(pred_loc,default_ad_list):
     ads = getAllAdsInZone(pred_loc)
+    #print("ads start gNQ")
+    #print(ads)
     if not ads: #empty, did not get any
+        #print("def_ad_list gNQ")
+        #print(default_ad_list)
         return default_ad_list
     temp = []
     for file_name in ads:
         temp.append(file_name)
+    #print("temp gnQ")
+    #print(temp)
     return temp
 
 def ubs_utility_func(count_t,count):
@@ -67,6 +73,8 @@ def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time,has_prio):
         count_in_playlist[ad] = 0
         
     playlist_duration = 0
+    print("time is")
+    print(time)
 
     while playlist_duration < time:
         utility_gain = {}
@@ -81,6 +89,8 @@ def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time,has_prio):
         playlist.append(k)
         count_in_playlist[k] += incr
         playlist_duration += ad_lengths[ad]
+        print("playlist duration is")
+        print(playlist_duration)
 
     return playlist
 
@@ -103,7 +113,7 @@ def upc(video, video_points,play_counts,reqd_counts,x_pos, y_pos): # could maybe
             if convertToGrid((x_pos, y_pos)) == convertToGrid(priority_zone): 
                 text_file.write("in priority fence\n")
                 text_file.flush()
-                priority_multiplier = 3    # We need to decide on how much of a premium this gives
+                priority_multiplier = 1    # We need to decide on how much of a premium this gives. May not be necessary
                 play_multiplier = 1
                 break
     
@@ -139,7 +149,7 @@ with open("TTDM/output/graph/Taxi_graph.csv", newline="") as taxi_graph:
         graph_dict[int(row[0])].append((int(row[1]),float(row[2])))
 
 for src, content in graph_dict.items():
-    zone_min_avg_dict[src] = min(list(map(lambda x: x[1], content)))
+    zone_min_avg_dict[src] = min(list(filter(lambda x: x >= 0, map(lambda x: x[1], content)))) #temp fix for negs
 
 ##########################################################################
 
@@ -259,7 +269,9 @@ while len(queue) > 0: # might want to revisit this condition later
     #if no next queue, or prediction changed, generate a new next queue.
     if not nextQueue or predicted != last_pred:
         #nextQueue.clear() hopefully no memory issues, but yeah garbage collect
-        tempQueue = generateNextQueue(predicted,default_queue) 
+        tempQueue = generateNextQueue(predicted,default_queue)
+        print("temp queue is")
+        print(tempQueue)
         if tempQueue != default_queue:
             next_has_prio_ads = 1
 
