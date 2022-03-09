@@ -240,7 +240,8 @@ while len(queue) > 0: # might want to revisit this condition later
             text_file.write("{0}\n".format(nextQueue))
             text_file.flush()
    
-            queue = nextQueue #hopefully no memory issues with this? garbage collected anyway
+            queue = nextQueue.copy() #hopefully no memory issues with this? garbage collected anyway
+            nextQueue = []
 
         if len(visited_list) != 0 and tim - int(visited_list[-1].split('@')[1]) > (120 * 1000):
             visited_list.clear()
