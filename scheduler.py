@@ -41,8 +41,7 @@ def generateNextQueue(pred_loc,default_ad_list):
         ads = priority_zones[pred_loc]
     else:
         return default_ad_list
-
-   temp = []
+    temp = []
     for file_name in ads:
         temp.append(file_name)
     #print("temp gnQ")
