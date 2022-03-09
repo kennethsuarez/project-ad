@@ -34,22 +34,15 @@ def convertToGrid(coords):
     y_grid = (UPPER_LEFT_Y - float(lat)) // DIFF_Y
     return str(int(x_grid)) + "$" + str(int(y_grid))
 
-def getAllAdsInZone(zone):
-    ads = []
-    for ad, ad_zones in priority_zones.items():
-        if zone in map(convertToGrid, ad_zones):
-            ads.append(ad)
-    return ads
-
 def generateNextQueue(pred_loc,default_ad_list):
-    ads = getAllAdsInZone(pred_loc)
-    #print("ads start gNQ")
-    #print(ads)
-    if not ads: #empty, did not get any
-        #print("def_ad_list gNQ")
-        #print(default_ad_list)
+    ads = []
+    
+    if priority_zones.get(pred_loc):
+        ads = priority_zones[pred_loc]
+    else:
         return default_ad_list
-    temp = []
+
+   temp = []
     for file_name in ads:
         temp.append(file_name)
     #print("temp gnQ")
@@ -105,18 +98,17 @@ def play_video(video, folderPath):
 
         omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
 
-def upc(video, video_points,play_counts,reqd_counts,x_pos, y_pos): # could maybe make priority regions an input too
+def upc(video, video_points,play_counts,reqd_counts,coords): # could maybe make priority regions an input too
     priority_multiplier = 1
     play_multiplier = 0.2 #arbitrary, 1 play outside zone is just equivalent to 0.2 plays
-    for priority_zone in priority_zones[video]:
-            # temporary fix, but better if the priority zones are in the grid format to begin with
-            if convertToGrid((x_pos, y_pos)) == convertToGrid(priority_zone): 
-                text_file.write("in priority fence\n")
-                text_file.flush()
-                priority_multiplier = 1    # We need to decide on how much of a premium this gives. May not be necessary
-                play_multiplier = 1
-                break
-    
+    if priority_zones.get(coords): # if that coordinate does have a priority region
+        if video in priority_zones[coords]: 
+            text_file.write("in priority fence\n")
+            text_file.flush()
+            priority_multiplier = 1    # We need to decide on how much of a premium this gives. May not be necessary
+            play_multiplier = 1
+        
+
     new_count_utility =  math.log(ubs_utility_func(play_counts[video] + play_multiplier,reqd_counts[video]))
     old_count_utility = math.log(ubs_utility_func(play_counts[video],reqd_counts[video]))
     count_utility_gained = (new_count_utility - old_count_utility) * 10000 #to put things in a workable range, but need to read the study more
@@ -164,15 +156,14 @@ video_points = {}
 play_counts = {}
 reqd_counts = {}
 ad_lengths = {}
-priority_zones = {}
 default_queue = [] #this will get modified, but will always be accessible via default_queue
 
 next_has_prio_ads = 0
 zone_has_prio_ads = 0
 
 # setup priority zones with point counter
-priority_zones_json = open('priority_zones.json')
-priority_zones_data = json.load(priority_zones_json)
+priority_zones_json = open('priority_zones2.json')
+priority_zones = json.load(priority_zones_json)
 
 for filename in os.listdir(folderPath):
     default_queue.append(filename)
@@ -184,18 +175,13 @@ for filename in os.listdir(folderPath):
     # we need a metric, like maybe how many equivalent play counts would it be in/out of the zone?
 
     ad_lengths[filename] = 6.0 # ^
-    priority_zones[filename] = []
 
 queue = default_queue.copy() #if rr we don't need to copy, since removed ad gets pushed back
 
 reqd_counts['kfc.mp4'] = 100
 
-for ad in priority_zones_data['ads']:
-    for zone in ad['zones']:
-        priority_zones[ad['name']].append((zone['lat'],zone['lon'])) #should really be lon lat but I got them flippined in priority file
-
 print(priority_zones)
-print(getAllAdsInZone("33$87"))
+print(priority_zones["33$87"])
 
 # Begin JPype and train TTDM
 jpype.startJVM(classpath=['TTDM/target/classes'])
@@ -317,7 +303,7 @@ while len(queue) > 0: # might want to revisit this condition later
     play_video(video,folderPath)
 
     #################   Utility Point Counter   ####################
-    upc(video,video_points,play_counts,reqd_counts,float(x_pos),float(y_pos)) #utility and play counts
+    upc(video,video_points,play_counts,reqd_counts,coords) #utility and play counts
 
     for video in default_queue:
         text_file.write("{0}: {1} pts, {2}/{3} plays\n".format(video, video_points[video],play_counts[video],reqd_counts[video]))
