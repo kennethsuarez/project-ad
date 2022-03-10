@@ -238,7 +238,8 @@ while len(queue) > 0: # might want to revisit this condition later
 
         if next_has_prio_ads:
             zone_has_prio_ads = 1
-            next_has_prio_ads = 0
+        
+        next_has_prio_ads = 0
 
 
     idx = "20000005,"
@@ -285,6 +286,12 @@ while len(queue) > 0: # might want to revisit this condition later
         text_file.write("{0}\n".format(nextQueue))
         text_file.flush()
 
+        text_file.write("based on")
+        text_file.flush()
+
+        text_file.write(str(optimistic_counts) + "\n")
+        text_file.flush()
+
     last_pred = predicted
         
     # play video via scheduler output
@@ -298,7 +305,8 @@ while len(queue) > 0: # might want to revisit this condition later
     # this is for round robin, we can make this depend on an arg later i.e. if scheduler == "rr"
     #queue.append(video)
 
-    # this is for UBS
+    # this is for UBS. A bit problematic, defeats the purpose of loc pred, leads to some unfairness...
+    # perhaps we can redo this?
     if len(queue) == 0:
         tempQueue = generateNextQueue(coords,default_queue)
         queue = ubs(tempQueue,play_counts,ad_list,zone_time,zone_has_prio_ads)
