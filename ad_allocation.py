@@ -55,7 +55,7 @@ priority_zones = json.load(priority_zones_json)
 
 #### load the ad lengths ####
 ad_list_json = open('ad_list.json')
-ad_lengths = json.load(ad_list_json)
+ad_list = json.load(ad_list_json)
 
 #print(ad_lengths)
 
@@ -63,11 +63,12 @@ ad_lengths = json.load(ad_list_json)
 coords = input()
 ad_len = float(input())
 ad_name = input()
+ad_count = input() # currently not really handled
 
 past_total = 0
 if priority_zones.get(coords): #if that coordinate is a priority zone
     for ad in priority_zones[coords]:
-        past_total += ad_lengths[ad]
+        past_total += ad_list[ad]['len']
 else:
     priority_zones[coords] = []
 
@@ -75,7 +76,7 @@ if past_total + ad_len < zone_min_dict[int(loc_long_dict[coords])]:
     print("ad {0} was ACCEPTED".format(ad_name))
     print("time left: {0}".format(zone_min_dict[int(loc_long_dict[coords])]-(past_total + ad_len)))
     priority_zones[coords].append(ad_name+".mp4")
-    ad_lengths[ad_name+".mp4"] = ad_len
+    ad_list[ad_name+".mp4"] = {"len":ad_len,"count": ad_count}
 else:
     print("ad {0} was REJECTED".format(ad_name))
     print("available time is {0}".format(zone_min_dict[int(loc_long_dict[coords])] - past_total))
@@ -92,7 +93,7 @@ with open('priority_zones2.json', 'w') as outfile:
     json.dump(priority_zones, outfile)
     
 with open('ad_list.json', 'w') as outfile:
-    json.dump(ad_lengths, outfile)
+    json.dump(ad_list, outfile)
 
 
 

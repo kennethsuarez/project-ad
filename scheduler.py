@@ -54,14 +54,14 @@ def ubs_utility_func(count_t,count):
     gamma_a = 0.00015 # from the paper
     return lambda_a * ((1/(1+math.e ** (-gamma_a*(count_t-count))))-theta_a)
 
-def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time,has_prio):
+def ubs(given_ad_list,ad_play_counts,ad_list,time,has_prio):
     playlist = []
     incr = 0.2
     if has_prio:
         incr = 1
 
     count_in_playlist = {}          
-    for ad in ad_list:              
+    for ad in given_ad_list:              
         count_in_playlist[ad] = 0
         
     playlist_duration = 0
@@ -70,17 +70,17 @@ def ubs(ad_list,ad_play_counts,ad_reqd_counts,ad_lengths,time,has_prio):
 
     while playlist_duration < time:
         utility_gain = {}
-        for ad in ad_list:
+        for ad in given_ad_list:
             utility_gain[ad] = 0
     
-        for ad in ad_list:
-            temp_1 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad] + incr,ad_reqd_counts[ad]))
-            temp_2 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad], ad_reqd_counts[ad]))
+        for ad in given_ad_list:
+            temp_1 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad] + incr,ad_list[ad]['count']))
+            temp_2 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad], ad_list[ad]['count']))
             utility_gain[ad] = temp_1 - temp_2
         k = max(utility_gain, key=utility_gain.get)
         playlist.append(k)
         count_in_playlist[k] += incr
-        playlist_duration += ad_lengths[ad]
+        playlist_duration += ad_list[ad]['len']
         print("playlist duration is")
         print(playlist_duration)
 
@@ -97,7 +97,7 @@ def play_video(video, folderPath):
 
         omx = subprocess.run(["omxplayer", "-o", "local", path])    # play video
 
-def upc(video, video_points,play_counts,reqd_counts,coords): # could maybe make priority regions an input too
+def upc(video, video_points,play_counts,ad_list,coords): # could maybe make priority regions an input too
     priority_multiplier = 1
     play_multiplier = 0.2 #arbitrary, 1 play outside zone is just equivalent to 0.2 plays
     if priority_zones.get(coords): # if that coordinate does have a priority region
@@ -108,8 +108,8 @@ def upc(video, video_points,play_counts,reqd_counts,coords): # could maybe make 
             play_multiplier = 1
         
 
-    new_count_utility =  math.log(ubs_utility_func(play_counts[video] + play_multiplier,reqd_counts[video]))
-    old_count_utility = math.log(ubs_utility_func(play_counts[video],reqd_counts[video]))
+    new_count_utility =  math.log(ubs_utility_func(play_counts[video] + play_multiplier,ad_list[video]['count']))
+    old_count_utility = math.log(ubs_utility_func(play_counts[video],ad_list[video]['count']))
     count_utility_gained = (new_count_utility - old_count_utility) * 10000 #to put things in a workable range, but need to read the study more
 
     video_points[video] += (count_utility_gained * priority_multiplier)
@@ -154,7 +154,6 @@ nextQueue = []
 video_points = {}
 play_counts = {}
 reqd_counts = {}
-ad_lengths = {}
 default_queue = [] #this will get modified, but will always be accessible via default_queue
 
 next_has_prio_ads = 0
@@ -164,23 +163,28 @@ zone_has_prio_ads = 0
 priority_zones_json = open('priority_zones2.json')
 priority_zones = json.load(priority_zones_json)
 
+# load ad lengths
+ad_list_json = open('ad_list.json')
+ad_list = json.load(ad_list_json)
+
 for filename in os.listdir(folderPath):
     default_queue.append(filename)
     # start counter for each file
     video_points[filename] = 0
     play_counts[filename] = 0
-    reqd_counts[filename] = 100 #temp value, should come from ad list later on
+    #reqd_counts[filename] = 100 #temp value, should come from ad list later on
     # How do we handle required play counts??? total, or in zone? Damn there's so much to consider
     # we need a metric, like maybe how many equivalent play counts would it be in/out of the zone?
 
-    ad_lengths[filename] = 6.0 # ^
+    #ad_lengths[filename] = 6.0 # ^
 
 queue = default_queue.copy() #if rr we don't need to copy, since removed ad gets pushed back
 
-reqd_counts['kfc.mp4'] = 100
+#reqd_counts['kfc.mp4'] = 100
 
 print(priority_zones)
-print(priority_zones["33$87"])
+print(ad_list)
+#print(priority_zones["33$87"])
 
 # Begin JPype and train TTDM
 jpype.startJVM(classpath=['TTDM/target/classes'])
@@ -272,7 +276,7 @@ while len(queue) > 0: # might want to revisit this condition later
                 optimistic_counts[ad] += 0.2
                 
         zone_time = zone_min_avg_dict[int(loc_long_dict[predicted])]
-        nextQueue = ubs(tempQueue,optimistic_counts,reqd_counts,ad_lengths,zone_time,next_has_prio_ads) # 60  is a temp value, connect it up
+        nextQueue = ubs(tempQueue,optimistic_counts,ad_list,zone_time,next_has_prio_ads) # 60  is a temp value, connect it up
         # not sure if it is still close to optimal if we delay it per zone, will need to investigate
 
         text_file.write("populated next queue (" + str(predicted) + ")  with:\n")
@@ -297,15 +301,15 @@ while len(queue) > 0: # might want to revisit this condition later
     # this is for UBS
     if len(queue) == 0:
         tempQueue = generateNextQueue(coords,default_queue)
-        queue = ubs(tempQueue,play_counts,reqd_counts,ad_lengths,zone_time,zone_has_prio_ads)
+        queue = ubs(tempQueue,play_counts,ad_list,zone_time,zone_has_prio_ads)
 
     play_video(video,folderPath)
 
     #################   Utility Point Counter   ####################
-    upc(video,video_points,play_counts,reqd_counts,coords) #utility and play counts
+    upc(video,video_points,play_counts,ad_list,coords) #utility and play counts
 
     for video in default_queue:
-        text_file.write("{0}: {1} pts, {2}/{3} plays\n".format(video, video_points[video],play_counts[video],reqd_counts[video]))
+        text_file.write("{0}: {1} pts, {2}/{3} plays\n".format(video, video_points[video],play_counts[video],ad_list[video]['count']))
         text_file.flush()
 
     text_file.write("\n")
