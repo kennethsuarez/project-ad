@@ -2,6 +2,47 @@ from calendar import c
 import csv
 import functools
 import json
+from cmath import nan
+import math
+from scipy.stats import t
+import collections
+
+class Outgoing:
+    def __init__(self, loc):
+        self.pairs = [loc]
+        self.ave = 0
+        self.sd = 0
+        self.lb = 0
+
+    def addLoc(self, loc):
+        self.pairs.append(loc)
+
+    def getAverage(self):
+        total = 0
+
+        for value in self.pairs:
+            interval = int(value[1])    # value[1] contains time interval
+            total += interval
+            ave = total/len(self.pairs)
+
+            self.ave = ave
+    
+    def getSD(self):
+        # only call after calling getAverage()
+        num = 0
+
+        for value in self.pairs:
+            num += (float(value[1]) - self.ave) ** 2
+
+        sd = math.sqrt(num/len(self.pairs))
+        self.sd = sd
+
+    def getLowerBound(self):
+        # only call after calling getSD()
+        temp = t.ppf(0.2, len(self.pairs) - 1, loc = self.ave, scale = self.sd)
+        if temp < 10.0 or self.sd == 0:
+            temp = 10.0
+        self.lb = temp
 
 UPPER_LEFT_X = 120.90541
 UPPER_LEFT_Y = 14.785505
@@ -14,35 +55,101 @@ def convertToGrid(coords):
     y_grid = (UPPER_LEFT_Y - float(lat)) // DIFF_Y
     return str(int(x_grid)) + "$" + str(int(y_grid))
 
+def generateListFromData(data, pairs, outgoing, loc_long_dict):
+    for line in data:
+        # start from left until length - 1
+        # ignore reference value
+        for i in range(1, len(line)-1):
+            
+            # convert grid coordinates into index-based 
+            traj1_data = line[i].split('@')
+            loc1 = loc_long_dict[traj1_data[0]]
+
+            traj2_data = line[i+1].split('@')
+            loc2 = loc_long_dict[traj2_data[0]]
+
+
+
+            # should always be positive
+            interval = int((float(traj2_data[1]) - float(traj1_data[1]))/1000)
+            if interval < 0:
+                continue    # skip pair if negative
+
+            pair = loc1 + ">>" + loc2
+            # update pairs dictionary
+            if pair in pairs:
+                pairs[pair].append(interval)
+            else:
+                pairs[pair] = [interval]      
+
+            # add outgoing from current point i
+            if loc1 in outgoing:
+                outgoing[loc1].addLoc([loc2,interval])
+            else:
+                outgoing[loc1] = Outgoing([loc2, interval])
 
 ################################### initial setup ###################################
 location_long_map = open("TTDM/output/location_long_map", "r")
 loc_long_dict = {}
-
+# load corresponding index for each grid-coordinate
 for x in location_long_map:
     zone, long_z = x.split()
     loc_long_dict[zone] = long_z
 
-#print(loc_long_dict)
+# graph_dict = {}
+# zone_min_dict = {}
 
-graph_dict = {}
-zone_min_dict = {}
+pairs = {}          # x1$y1 >> x2$y2 : [intervals]
+pair_ave = {}       # x1$y1 >> x2$y2 : average of intervals of pair
+outgoing = {}       # x1$y1 : [[x2$y2 : interval1], [x3$y3 : interval2]]
 
-with open("TTDM/output/graph/Taxi_graph.csv", newline="") as taxi_graph:
-    graph = csv.reader(taxi_graph, skipinitialspace=True, delimiter=' ', quotechar='|')
-    number = next(graph)[0]
-    graph_dict = {k: [] for k in range(1,int(number)+1)}
-    zone_min_dict = {k: [] for k in range(1,int(number)+1)}
-    next(graph)
-    for row in graph:
-        #print(row)
-        graph_dict[int(row[0])].append((int(row[1]),float(row[2])))
+# with open("TTDM/output/graph/Taxi_graph.csv", newline="") as taxi_graph:
+#     graph = csv.reader(taxi_graph, skipinitialspace=True, delimiter=' ', quotechar='|')
+#     number = next(graph)[0]
+#     graph_dict = {k: [] for k in range(1,int(number)+1)}
+#     zone_min_dict = {k: [] for k in range(1,int(number)+1)}
+#     next(graph)
+#     for row in graph:
+#         #print(row)
+#         graph_dict[int(row[0])].append((int(row[1]),float(row[2])))
 
-#print(graph_dict)
 
-for src, content in graph_dict.items():
-    zone_min_dict[src] = min(list(filter(lambda x: x>=0,map(lambda x : x[1], content)))) #temp fix to prevent negs
-print(zone_min_dict)
+# perform data computation
+PATH = 'TTDM/input/Taxi_Train_Data.csv'
+with open(PATH, newline="") as taxi_graph:
+
+    data = csv.reader(open(PATH))
+    generateListFromData(data, pairs, outgoing, loc_long_dict)
+    #outgoing = collections.OrderedDict(sorted(outgoing.items())) # sort dictionary by key
+
+    # get average time for each pair
+    # and store in pair_ave 
+    for key in pairs:
+        total = 0
+        for interval in pairs[key]:
+            total += interval
+        ave = total/len(pairs[key])
+        
+        pair_ave[key] = ave
+
+    # get average of each outgoing locations
+    for key in outgoing: 
+        outgoing[key].getAverage()
+
+    # get standard deviation of each outgoing locations
+    for key in outgoing: 
+        outgoing[key].getSD()
+
+    for key in outgoing:
+        outgoing[key].getLowerBound()
+
+
+for key, value in outgoing.items():
+    print(str(key) + ", " + "average: " + str(value.ave) + " sd: " + str(value.sd) + " lower bound: " + str(value.lb) + "\n")
+
+# for src, content in graph_dict.items():
+#     zone_min_dict[src] = min(list(filter(lambda x: x>=0,map(lambda x : x[1], content)))) #temp fix to prevent negs
+#print(zone_min_dict)
 
 #zones = {k: [] for k in range(1,len(zone_min_dict)+1)}
 
@@ -66,20 +173,22 @@ ad_name = input()
 ad_count = input() # currently not really handled
 
 past_total = 0
-if priority_zones.get(coords): #if that coordinate is a priority zone
+# verify if coordinates of input is a priority zone
+if priority_zones.get(coords): 
     for ad in priority_zones[coords]:
         past_total += ad_list[ad]['len']
 else:
     priority_zones[coords] = []
 
-if past_total + ad_len < zone_min_dict[int(loc_long_dict[coords])]:
+# check if requested ad can be allocated
+if past_total + ad_len < outgoing[loc_long_dict[coords]].lb:
     print("ad {0} was ACCEPTED".format(ad_name))
-    print("time left: {0}".format(zone_min_dict[int(loc_long_dict[coords])]-(past_total + ad_len)))
+    print("time left: {0}".format(outgoing[loc_long_dict[coords]].lb - (past_total + ad_len)))
     priority_zones[coords].append(ad_name+".mp4")
     ad_list[ad_name+".mp4"] = {"len":ad_len,"count": ad_count}
 else:
     print("ad {0} was REJECTED".format(ad_name))
-    print("available time is {0}".format(zone_min_dict[int(loc_long_dict[coords])] - past_total))
+    print("available time is {0}".format(outgoing[loc_long_dict[coords]].lb - past_total))
 
 #print(priority_zones)
 #print(ad_lengths)
