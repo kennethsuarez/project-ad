@@ -222,10 +222,10 @@ while len(queue) > 0: # might want to revisit this condition later
             visited_list.clear()
         visited_list.append(coords + "@" + str(tim)) 
 
-        if next_has_prio_ads:
-            zone_has_prio_ads = 1
+        #if next_has_prio_ads:
+            #zone_has_prio_ads = 1
         
-        next_has_prio_ads = 0
+        #next_has_prio_ads = 0
 
         if last_pred != coords:
             wrong_prediction = True
@@ -256,26 +256,27 @@ while len(queue) > 0: # might want to revisit this condition later
         tempQueue = []
         if priority_zones.get(predicted):
             tempQueue = priority_zones[predicted]
+            next_has_prio_ads = 1
         else:
             tempQueue = default_queue
 
         print("temp queue is")
         print(tempQueue)
-        if tempQueue != default_queue:
-            next_has_prio_ads = 1
 
         # we assume that the already scheduled playlist will finish i.e. be optimistic.
         optimistic_counts = play_counts.copy()
         
         for ad in queue:
-            if zone_has_prio_ads:
-                optimistic_counts[ad] += 1
+            if coords in priority_zones:
+                if ad in priority_zone[coords]:
+                    optimistic_counts[ad] += 1
             else:
                 optimistic_counts[ad] += 0.2
                 
         zone_time = zone_min_avg_dict[int(loc_long_dict[predicted])]
         #zone_time = graph_dict[loc_long_dict[coords] + ">" + loc_long_dict[predicted]]  #actual has worse fairness
         nextQueue = ubs(tempQueue,optimistic_counts,ad_list,zone_time,next_has_prio_ads)
+        next_has_prio_ads = 0
 
         text_file.write("populated next queue (" + str(predicted) + ")  with:\n")
         text_file.write("{0}\n".format(nextQueue))
@@ -309,12 +310,20 @@ while len(queue) > 0: # might want to revisit this condition later
             tempQueue = default_queue
 
         #tempQueue = generateNextQueue(coords,default_queue)
-        queue = ubs(tempQueue,play_counts,ad_list,zone_time,zone_has_prio_ads)
+        queue = ubs(tempQueue,play_counts,ad_list,zone_time,coords in priority_zones)
+        if wrong_prediction:
+            text_file.write("current queue update due to wrong prediction\n")
+
+        if len(queue) == 0:
+            text_file.write("current queue update due to running out\n")
+
+        text_file.flush() 
         
         # over prediction case - when it runs out, update next queue optimistically
         # comment out to do under prediction case
         wrong_prediction = False
         update_next_queue = True
+        #next_has_prio_ads = 0
 
 
     #Utility and points output.
