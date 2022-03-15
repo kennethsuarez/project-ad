@@ -4,6 +4,7 @@ import json
 from datetime import datetime
 import time
 import math
+import numpy as np
 import jpype
 import jpype.imports
 from jpype.types import *
@@ -290,7 +291,11 @@ while len(queue) > 0: # might want to revisit this condition later
     # for round robin, we can make this depend on an arg later i.e. if scheduler == "rr"
     # queue.append(video)
 
-    # for UBS, generate new queue for current region if previous runs out
+    play_video(video,folderPath)
+
+    upc(video,video_points,play_counts,ad_list,coords) # Utility Point Counter
+
+    # for UBS, generate new queue for current region if previous runs out. Moved for better accuracy
     if len(queue) == 0:
         tempQueue = []
         if priority_zones.get(coords):
@@ -305,14 +310,18 @@ while len(queue) > 0: # might want to revisit this condition later
         # comment out to do under prediction case
         update_next_queue = True
 
-    play_video(video,folderPath)
 
-    #################   Utility Point Counter   ####################
-    upc(video,video_points,play_counts,ad_list,coords) #utility and play counts
+    #Utility and points output.
 
     for video in default_queue:
         text_file.write("{0}: {1} pts, {2}/{3} plays\n".format(video, video_points[video],play_counts[video],ad_list[video]['count']))
-        
+       
+    vals = list(video_points.values())
+    text_file.write("Util: total:{0}, mean:{1}, sd:{2}\n".format(sum(vals),np.mean(vals),np.std(vals)))
+    
+    vals = list(play_counts.values())
+    text_file.write("Plays: total:{0}, mean:{1}, sd:{2}\n".format(sum(vals),np.mean(vals),np.std(vals)))
+
     text_file.write("\n")
     text_file.flush() 
 
