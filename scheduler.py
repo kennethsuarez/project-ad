@@ -181,7 +181,8 @@ TTDM.train()
 
 visited_list = []
 last_pred = ""
-update_next_queue = False 
+update_next_queue = False
+wrong_prediction = False
 
 while len(queue) > 0: # might want to revisit this condition later
 
@@ -226,6 +227,9 @@ while len(queue) > 0: # might want to revisit this condition later
         
         next_has_prio_ads = 0
 
+        if last_pred != coords:
+            wrong_prediction = True
+
 
     idx = "20000005,"
     visited_str = ",".join(visited_list)
@@ -240,7 +244,7 @@ while len(queue) > 0: # might want to revisit this condition later
     # This is why the outer while loop may be problematic, considering setting it to just while true
     # We can consider making this depend on arg i.e. if scheduler == "rr"
 
-     #if no next queue, or prediction changed, set to update next queue
+    #if no next queue, or prediction changed, set to update next queue
     if not nextQueue or predicted != last_pred:
         update_next_queue = True
         
@@ -296,7 +300,8 @@ while len(queue) > 0: # might want to revisit this condition later
     upc(video,video_points,play_counts,ad_list,coords) # Utility Point Counter
 
     # for UBS, generate new queue for current region if previous runs out. Moved for better accuracy
-    if len(queue) == 0:
+    # also, generate new queue if prediction is wrong
+    if len(queue) == 0 or wrong_prediction:
         tempQueue = []
         if priority_zones.get(coords):
             tempQueue = priority_zones[coords]
@@ -308,6 +313,7 @@ while len(queue) > 0: # might want to revisit this condition later
         
         # over prediction case - when it runs out, update next queue optimistically
         # comment out to do under prediction case
+        wrong_prediction = False
         update_next_queue = True
 
 
