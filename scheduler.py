@@ -26,19 +26,19 @@ def convertToGrid(coords):
     y_grid = (UPPER_LEFT_Y - float(lat)) // DIFF_Y
     return str(int(x_grid)) + "$" + str(int(y_grid))
 
-def generateNextQueue(pred_loc,default_ad_list):
-    ads = []
-    
-    if priority_zones.get(pred_loc):
-        ads = priority_zones[pred_loc]
-    else:
-        return default_ad_list
-    temp = []
-    for file_name in ads:
-        temp.append(file_name)
-    #print("temp gnQ")
-    #print(temp)
-    return temp
+#def generateNextQueue(pred_loc,default_ad_list): deprecated
+#    ads = []
+#    
+#    if priority_zones.get(pred_loc):
+#        ads = priority_zones[pred_loc]
+#    else:
+#        return default_ad_list
+#    temp = []
+#    for file_name in ads:
+#        temp.append(file_name)
+#    #print("temp gnQ")
+#    #print(temp)
+#    return temp
 
 def ubs_utility_func(count_t,count):
     lambda_a = 1000 # not yet sure
@@ -246,7 +246,14 @@ while len(queue) > 0: # might want to revisit this condition later
 
     if update_next_queue:
         #nextQueue.clear() hopefully no memory issues, but yeah garbage collect
-        tempQueue = generateNextQueue(predicted,default_queue)
+        #tempQueue = generateNextQueue(predicted,default_queue)
+        
+        tempQueue = []
+        if priority_zones.get(predicted):
+            tempQueue = priority_zones[predicted]
+        else:
+            tempQueue = default_queue
+
         print("temp queue is")
         print(tempQueue)
         if tempQueue != default_queue:
@@ -285,7 +292,13 @@ while len(queue) > 0: # might want to revisit this condition later
 
     # for UBS, generate new queue for current region if previous runs out
     if len(queue) == 0:
-        tempQueue = generateNextQueue(coords,default_queue)
+        tempQueue = []
+        if priority_zones.get(coords):
+            tempQueue = priority_zones[coords]
+        else:
+            tempQueue = default_queue
+
+        #tempQueue = generateNextQueue(coords,default_queue)
         queue = ubs(tempQueue,play_counts,ad_list,zone_time,zone_has_prio_ads)
         
         # over prediction case - when it runs out, update next queue optimistically
