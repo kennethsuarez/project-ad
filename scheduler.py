@@ -216,9 +216,11 @@ while len(queue) > 0: # might want to revisit this condition later
     ####################  location sequence module  ######################
     coords = convertToGrid((x_pos,y_pos))
     text_file.write("grid coords: {0}\n".format(coords))
-
+    unknown_loc = 0
     if coords not in loc_long_dict:
-        unknown_loc = 1 
+        unknown_loc = 1
+    
+        
 
     if len(visited_list) == 0 or visited_list[-1].split('@')[0] != coords:
         # move the queue if the sequence moved already
