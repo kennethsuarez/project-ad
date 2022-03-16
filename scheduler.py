@@ -67,8 +67,8 @@ def ubs(given_ad_list,ad_play_counts,ad_list,time,has_prio):
             utility_gain[ad] = 0
     
         for ad in given_ad_list:
-            temp_1 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad] + incr,ad_list[ad]['count']))
-            temp_2 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad], ad_list[ad]['count']))
+            temp_1 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad] + incr,reqd_counts[ad]))
+            temp_2 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad],reqd_counts[ad]))
             utility_gain[ad] = temp_1 - temp_2
         k = max(utility_gain, key=utility_gain.get)
         playlist.append(k)
@@ -101,12 +101,26 @@ def upc(video, video_points,play_counts,ad_list,coords): # could maybe make prio
             play_multiplier = 1
         
 
-    new_count_utility =  math.log(ubs_utility_func(play_counts[video] + play_multiplier,ad_list[video]['count']))
-    old_count_utility = math.log(ubs_utility_func(play_counts[video],ad_list[video]['count']))
+    new_count_utility =  math.log(ubs_utility_func(play_counts[video] + play_multiplier,reqd_counts[video]))
+    old_count_utility = math.log(ubs_utility_func(play_counts[video],reqd_counts[video]))
     count_utility_gained = (new_count_utility - old_count_utility) * 10000 #to put things in a workable range
 
     video_points[video] += (count_utility_gained * priority_multiplier)
     play_counts[video] += (1 * play_multiplier)
+
+    # if there are still more counts needed, let us move to the next
+    diff = ad_list[ad]['count'] - reqd_counts[video] 
+
+    if play_counts[video] > reqd_counts[video]:
+        if diff >= 100:
+            reqd_counts[video] += 100
+        elif diff > 0:
+            reqd_counts[video] += diff 
+
+    # edge case - what if it gets beyond 100 but the others aren't at 100 yet? it would monopolize
+    # need to check that all the hundreds are satisfied first before doing this, but let's do that later?
+
+
 
 
 #############################  main code #################################
@@ -167,6 +181,10 @@ ad_list = json.load(ad_list_json)
 for filename in os.listdir(folderPath):
     default_queue.append(filename)
     video_points[filename] = 0
+
+    # we assume a minimum count of 100. We subdivide into hundreds.
+    reqd_counts[filename] = 100
+
     play_counts[filename] = 0
 
 queue = default_queue.copy() #if rr we don't need to copy, since removed ad gets pushed back
@@ -268,7 +286,7 @@ while len(queue) > 0: # might want to revisit this condition later
         
         for ad in queue:
             if coords in priority_zones:
-                if ad in priority_zone[coords]:
+                if ad in priority_zones[coords]:
                     optimistic_counts[ad] += 1
             else:
                 optimistic_counts[ad] += 0.2
