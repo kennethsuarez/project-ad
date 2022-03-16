@@ -27,20 +27,6 @@ def convertToGrid(coords):
     y_grid = (UPPER_LEFT_Y - float(lat)) // DIFF_Y
     return str(int(x_grid)) + "$" + str(int(y_grid))
 
-#def generateNextQueue(pred_loc,default_ad_list): deprecated
-#    ads = []
-#    
-#    if priority_zones.get(pred_loc):
-#        ads = priority_zones[pred_loc]
-#    else:
-#        return default_ad_list
-#    temp = []
-#    for file_name in ads:
-#        temp.append(file_name)
-#    #print("temp gnQ")
-#    #print(temp)
-#    return temp
-
 def ubs_utility_func(count_t,count):
     lambda_a = 1000 # not yet sure
     theta_a = 0 # not yet sure
@@ -108,18 +94,25 @@ def upc(video, video_points,play_counts,ad_list,coords): # could maybe make prio
     video_points[video] += (count_utility_gained * priority_multiplier)
     play_counts[video] += (1 * play_multiplier)
 
-    # if there are still more counts needed, let us move to the next
-    diff = ad_list[ad]['count'] - reqd_counts[video] 
+    # boost all provisional counts when possible
 
-    if play_counts[video] > reqd_counts[video]:
-        if diff >= 100:
-            reqd_counts[video] += 100
-        elif diff > 0:
-            reqd_counts[video] += diff 
-
-    # edge case - what if it gets beyond 100 but the others aren't at 100 yet? it would monopolize
-    # need to check that all the hundreds are satisfied first before doing this, but let's do that later?
-
+    # check first if all other ads met their provisionary target before boosting to prevent monopoly
+    targets_met = 1
+    for ad in ad_list.keys():
+        if play_counts[ad] < reqd_counts[ad]:
+            targets_met = 0 
+            break
+    if targets_met:
+        text_file.write("targets met")
+        for ad in ad_list.keys():
+            # if there are still more counts needed, let us move to the next
+            diff = ad_list[ad]['count'] - reqd_counts[ad] 
+            if diff >= 100:
+                reqd_counts[ad] += 100
+                text_file.write("provisional count for {0} is {1}\n".format(ad,reqd_counts[ad]))
+            elif diff > 0:
+                reqd_counts[ad] += diff 
+                text_file.write("provisional count for {0} is {1}\n".format(ad,reqd_counts[ad]))
 
 
 
@@ -183,7 +176,7 @@ for filename in os.listdir(folderPath):
     video_points[filename] = 0
 
     # we assume a minimum count of 100. We subdivide into hundreds.
-    reqd_counts[filename] = 100
+    reqd_counts[filename] = 100  #set to 1 for initial testing
 
     play_counts[filename] = 0
 
@@ -196,11 +189,11 @@ print(ad_list)
 jpype.startJVM(classpath=['TTDM/target/classes'])
 TTDM = jpype.JClass("com.mdm.sdu.mdm.model.taxi.TTDM_Taxi")
 TTDM.train()
-
 visited_list = []
 last_pred = ""
-update_next_queue = False
-wrong_prediction = False
+update_next_queue = 0
+wrong_prediction = 0
+unknown_loc = 0
 
 while len(queue) > 0: # might want to revisit this condition later
 
@@ -224,6 +217,9 @@ while len(queue) > 0: # might want to revisit this condition later
     coords = convertToGrid((x_pos,y_pos))
     text_file.write("grid coords: {0}\n".format(coords))
 
+    if coords not in loc_long_dict:
+        unknown_loc = 1 
+
     if len(visited_list) == 0 or visited_list[-1].split('@')[0] != coords:
         # move the queue if the sequence moved already
         if len(visited_list) != 0:
@@ -246,17 +242,23 @@ while len(queue) > 0: # might want to revisit this condition later
         #next_has_prio_ads = 0
 
         if last_pred != coords:
-            wrong_prediction = True
+            wrong_prediction = 1
+
+    predicted = ""
+   
+    # predict via trajectory sequence output if known location.
+    if not unknown_loc:
+        idx = "20000005,"
+        visited_str = ",".join(visited_list)
+        trajectory = jpype.java.lang.String(idx + visited_str)
+    
+        predicted = TTDM.TTDM_Instance.predictHelper(trajectory)
+        text_file.write(idx + visited_str + " predicted: " + str(predicted)+"\n")
+    else:
+        visited_list.clear() # cannot have unknown loc in visited list or TTDM will break.
+        text_file.write("New location with no history: " + str(coords) + "\n")
 
 
-    idx = "20000005,"
-    visited_str = ",".join(visited_list)
-    trajectory = jpype.java.lang.String(idx + visited_str)
-    
-    # predict via trajectory sequence output
-    predicted = TTDM.TTDM_Instance.predictHelper(trajectory)
-    text_file.write(idx + visited_str + " predicted: " + str(predicted)+"\n")
-    
     ###################  Video scheduling module ###################
     
     # This is why the outer while loop may be problematic, considering setting it to just while true
@@ -264,7 +266,7 @@ while len(queue) > 0: # might want to revisit this condition later
 
     #if no next queue, or prediction changed, set to update next queue
     if not nextQueue or predicted != last_pred:
-        update_next_queue = True
+        update_next_queue = 1
         
 
     if update_next_queue:
@@ -291,7 +293,10 @@ while len(queue) > 0: # might want to revisit this condition later
             else:
                 optimistic_counts[ad] += 0.2
                 
-        zone_time = zone_min_avg_dict[int(loc_long_dict[predicted])]
+        if not unknown_loc:
+            zone_time = zone_min_avg_dict[int(loc_long_dict[predicted])]
+        else:
+            zone_time = 60
         #zone_time = graph_dict[loc_long_dict[coords] + ">" + loc_long_dict[predicted]]  #actual has worse fairness
         nextQueue = ubs(tempQueue,optimistic_counts,ad_list,zone_time,next_has_prio_ads)
         next_has_prio_ads = 0
@@ -302,7 +307,7 @@ while len(queue) > 0: # might want to revisit this condition later
         text_file.write(str(optimistic_counts) + "\n")
         text_file.flush()
 
-        update_next_queue = False
+        update_next_queue = 0
 
     last_pred = predicted
         
@@ -339,8 +344,8 @@ while len(queue) > 0: # might want to revisit this condition later
         
         # over prediction case - when it runs out, update next queue optimistically
         # comment out to do under prediction case
-        wrong_prediction = False
-        update_next_queue = True
+        wrong_prediction = 0
+        update_next_queue = 1
         #next_has_prio_ads = 0
 
 
