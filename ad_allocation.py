@@ -22,6 +22,10 @@ class Outgoing:
 
         for value in self.pairs:
             interval = int(value[1])    # value[1] contains time interval
+            
+            if interval < 0:            # ignore negative time intervals
+                continue
+
             total += interval
             ave = total/len(self.pairs)
 
@@ -55,7 +59,7 @@ def convertToGrid(coords):
     y_grid = (UPPER_LEFT_Y - float(lat)) // DIFF_Y
     return str(int(x_grid)) + "$" + str(int(y_grid))
 
-def generateListFromData(data, pairs, outgoing, loc_long_dict):
+def generateListFromData(data, outgoing, loc_long_dict):
     for line in data:
         # start from left until length - 1
         # ignore reference value
@@ -68,19 +72,10 @@ def generateListFromData(data, pairs, outgoing, loc_long_dict):
             traj2_data = line[i+1].split('@')
             loc2 = loc_long_dict[traj2_data[0]]
 
-
-
             # should always be positive
             interval = int((float(traj2_data[1]) - float(traj1_data[1]))/1000)
             if interval < 0:
-                continue    # skip pair if negative
-
-            pair = loc1 + ">>" + loc2
-            # update pairs dictionary
-            if pair in pairs:
-                pairs[pair].append(interval)
-            else:
-                pairs[pair] = [interval]      
+                continue    # skip pair if negative 
 
             # add outgoing from current point i
             if loc1 in outgoing:
@@ -96,41 +91,15 @@ for x in location_long_map:
     zone, long_z = x.split()
     loc_long_dict[zone] = long_z
 
-# graph_dict = {}
-# zone_min_dict = {}
-
-pairs = {}          # x1$y1 >> x2$y2 : [intervals]
-pair_ave = {}       # x1$y1 >> x2$y2 : average of intervals of pair
-outgoing = {}       # x1$y1 : [[x2$y2 : interval1], [x3$y3 : interval2]]
-
-# with open("TTDM/output/graph/Taxi_graph.csv", newline="") as taxi_graph:
-#     graph = csv.reader(taxi_graph, skipinitialspace=True, delimiter=' ', quotechar='|')
-#     number = next(graph)[0]
-#     graph_dict = {k: [] for k in range(1,int(number)+1)}
-#     zone_min_dict = {k: [] for k in range(1,int(number)+1)}
-#     next(graph)
-#     for row in graph:
-#         #print(row)
-#         graph_dict[int(row[0])].append((int(row[1]),float(row[2])))
-
+outgoing = {}       # x1$y1 : [[x2$y2 : interval1], [x3$y3 : interval2], ...]
 
 # perform data computation
 PATH = 'TTDM/input/Taxi_Train_Data.csv'
 with open(PATH, newline="") as taxi_graph:
 
     data = csv.reader(open(PATH))
-    generateListFromData(data, pairs, outgoing, loc_long_dict)
+    generateListFromData(data, outgoing, loc_long_dict)
     #outgoing = collections.OrderedDict(sorted(outgoing.items())) # sort dictionary by key
-
-    # get average time for each pair
-    # and store in pair_ave 
-    for key in pairs:
-        total = 0
-        for interval in pairs[key]:
-            total += interval
-        ave = total/len(pairs[key])
-        
-        pair_ave[key] = ave
 
     # get average of each outgoing locations
     for key in outgoing: 
@@ -146,12 +115,6 @@ with open(PATH, newline="") as taxi_graph:
 
 for key, value in outgoing.items():
     print(str(key) + ", " + "average: " + str(value.ave) + " sd: " + str(value.sd) + " lower bound: " + str(value.lb) + "\n")
-
-# for src, content in graph_dict.items():
-#     zone_min_dict[src] = min(list(filter(lambda x: x>=0,map(lambda x : x[1], content)))) #temp fix to prevent negs
-#print(zone_min_dict)
-
-#zones = {k: [] for k in range(1,len(zone_min_dict)+1)}
 
 ################## input #########################
 
@@ -193,7 +156,6 @@ else:
 #print(priority_zones)
 #print(ad_lengths)
 
-
 #prep for output
 priority_zones_json.close()
 ad_list_json.close()
@@ -203,7 +165,3 @@ with open('priority_zones2.json', 'w') as outfile:
     
 with open('ad_list.json', 'w') as outfile:
     json.dump(ad_list, outfile)
-
-
-
-
