@@ -11,6 +11,12 @@ from jpype.types import *
 import csv
 import functools
 
+
+UPPER_LEFT_X = 120.90541
+UPPER_LEFT_Y = 14.785505
+DIFF_X = 0.002747
+DIFF_Y = 0.002657
+
 if not os.path.exists('output'):
     os.makedirs('output')
 
@@ -27,13 +33,6 @@ sf = 0
 while os.path.exists("state/state_{0}_{1}.json".format(dt2,sf)):
     sf += 1
 
-#state_file = open("state/state_{0}_{1}.json".format(dt2,sf), "w")
-
-
-UPPER_LEFT_X = 120.90541
-UPPER_LEFT_Y = 14.785505
-DIFF_X = 0.002747
-DIFF_Y = 0.002657
 
 def convertToGrid(coords):
     lon, lat = coords
@@ -63,13 +62,15 @@ def ubs(given_ad_list,ad_play_counts,ad_list,time,has_prio):
 
     while playlist_duration < time:
         utility_gain = {}
+
         for ad in given_ad_list:
-            utility_gain[ad] = 0
-    
+            utility_gain[ad] = 0 
+        
         for ad in given_ad_list:
             temp_1 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad] + incr,reqd_counts[ad]))
             temp_2 = math.log(ubs_utility_func(ad_play_counts[ad] + count_in_playlist[ad],reqd_counts[ad]))
             utility_gain[ad] = temp_1 - temp_2
+        
         k = max(utility_gain, key=utility_gain.get)
         playlist.append(k)
         count_in_playlist[k] += incr
@@ -92,7 +93,8 @@ def play_video(video, folderPath):
 
 def upc(video, video_points,play_counts,ad_list,coords): # could maybe make priority regions an input too
     priority_multiplier = 1
-    play_multiplier = 0.2 
+    play_multiplier = 0.2
+
     if priority_zones.get(coords):
         if video in priority_zones[coords]: 
             text_file.write("in priority fence\n")
@@ -100,7 +102,6 @@ def upc(video, video_points,play_counts,ad_list,coords): # could maybe make prio
             priority_multiplier = 1    # may not be necessary
             play_multiplier = 1
         
-
     new_count_utility =  math.log(ubs_utility_func(play_counts[video] + play_multiplier,reqd_counts[video]))
     old_count_utility = math.log(ubs_utility_func(play_counts[video],reqd_counts[video]))
     count_utility_gained = (new_count_utility - old_count_utility) * 10000 #to put things in a workable range
@@ -110,12 +111,13 @@ def upc(video, video_points,play_counts,ad_list,coords): # could maybe make prio
 
     # boost all provisional counts when possible
 
-    # check first if all other ads met their provisionary target before boosting to prevent monopoly
+    # check first if all other ads met targets before boosting to prevent monopoly
     targets_met = 1
     for ad in ad_list.keys():
         if play_counts[ad] < reqd_counts[ad]:
             targets_met = 0 
             break
+
     if targets_met:
         text_file.write("targets met")
         for ad in ad_list.keys():
@@ -129,10 +131,11 @@ def upc(video, video_points,play_counts,ad_list,coords): # could maybe make prio
                 text_file.write("provisional count for {0} is {1}\n".format(ad,reqd_counts[ad]))
 
 
-
 #############################  main code #################################
 
-#### temporarily placing the code to get minimum average time per zone. ####
+################################ setup ###################################
+
+# Load location_long_map and use it to find lowest average playtimes per region
 
 location_long_map = open("TTDM/output/location_long_map", "r")
 loc_long_dict = {}
@@ -160,34 +163,29 @@ with open("TTDM/output/graph/Taxi_graph.csv", newline="") as taxi_graph:
 for src, content in graph_dict.items():
     zone_min_avg_dict[src] = min(list(filter(lambda x: x >= 0, map(lambda x: x[1], content)))) #temp fix for negs
 
-##########################################################################
-
-# begin by running gps supplier
-log = open('output/gpx_loc.txt', 'a+') 
-proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=log)
-
+# declare dictionaries and listsi that need initialization
 folderPath = "/home/pi/Videos"
-queue = []
-nextQueue = []
 video_points = {}
 play_counts = {}
 reqd_counts = {}
+queue = []
 default_queue = [] # this will get modified, but will always be accessible via default_queue
 
-next_has_prio_ads = 0
-zone_has_prio_ads = 0
 
-# setup priority zones with point counter
+# load priority zones
 priority_zones_json = open('priority_zones2.json')
 priority_zones = json.load(priority_zones_json)
 
-# load ad lengths
+# load ad list
 ad_list_json = open('ad_list.json')
 ad_list = json.load(ad_list_json)
 
 for filename in os.listdir(folderPath):
     default_queue.append(filename) 
 
+queue = default_queue.copy() #if rr we don't need to copy, since removed ad gets pushed back
+
+# check if there is previous state and load if necessary
 if sf > 0:
     last_state_json = open("state/state_{0}_{1}.json".format(dt2,sf-1))
     last_state = json.load(last_state_json)
@@ -203,8 +201,6 @@ else:
         
         play_counts[filename] = 0
 
-queue = default_queue.copy() #if rr we don't need to copy, since removed ad gets pushed back
-
 print(priority_zones)
 print(ad_list)
 
@@ -212,11 +208,19 @@ print(ad_list)
 jpype.startJVM(classpath=['TTDM/target/classes'])
 TTDM = jpype.JClass("com.mdm.sdu.mdm.model.taxi.TTDM_Taxi")
 TTDM.train()
-visited_list = []
+
+# begin running gps supplier
+log = open('output/gpx_loc.txt', 'a+') 
+proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=log)
+
+# declare variables to keep state in while loop
+unknown_loc = 0
 last_pred = ""
 update_next_queue = 0
 wrong_prediction = 0
-unknown_loc = 0
+next_has_prio_ads = 0
+nextQueue = []
+visited_list = []
 
 while len(queue) > 0: # might want to revisit this condition later
 
@@ -239,12 +243,13 @@ while len(queue) > 0: # might want to revisit this condition later
     ####################  location sequence module  ######################
     coords = convertToGrid((x_pos,y_pos))
     text_file.write("grid coords: {0}\n".format(coords))
+    
+    # check if in known location
     unknown_loc = 0
     if coords not in loc_long_dict:
         unknown_loc = 1
     
-        
-
+    # check if moved into a new zone or there are no visited areas yet
     if len(visited_list) == 0 or visited_list[-1].split('@')[0] != coords:
         # move the queue if the sequence moved already
         if len(visited_list) != 0:
@@ -256,16 +261,13 @@ while len(queue) > 0: # might want to revisit this condition later
    
             queue = nextQueue.copy()
             nextQueue = []
-
+        
+        # append to the visited list if it falls within the threshold
         if len(visited_list) != 0 and tim - int(visited_list[-1].split('@')[1]) > (120 * 1000):
             visited_list.clear()
         visited_list.append(coords + "@" + str(tim)) 
-
-        #if next_has_prio_ads:
-            #zone_has_prio_ads = 1
-        
-        #next_has_prio_ads = 0
-
+    
+        # check if the prediction was wrong
         if last_pred != coords:
             wrong_prediction = 1
 
@@ -289,15 +291,14 @@ while len(queue) > 0: # might want to revisit this condition later
     # This is why the outer while loop may be problematic, considering setting it to just while true
     # We can consider making this depend on arg i.e. if scheduler == "rr"
 
-    #if no next queue, or prediction changed, set to update next queue
+    # if no next queue, or prediction changed, set to update next queue
     if not nextQueue or predicted != last_pred:
         update_next_queue = 1
-        
 
     if update_next_queue:
         #nextQueue.clear() hopefully no memory issues, but yeah garbage collect
-        #tempQueue = generateNextQueue(predicted,default_queue)
         
+        # get what ads can be scheduled for the zone
         tempQueue = []
         if priority_zones.get(predicted):
             tempQueue = priority_zones[predicted]
@@ -317,12 +318,15 @@ while len(queue) > 0: # might want to revisit this condition later
                     optimistic_counts[ad] += 1
             else:
                 optimistic_counts[ad] += 0.2
-                
+        
+        # if there is no known zone time, set to 60s
         if not unknown_loc:
             zone_time = zone_min_avg_dict[int(loc_long_dict[predicted])]
         else:
             zone_time = 60
         #zone_time = graph_dict[loc_long_dict[coords] + ">" + loc_long_dict[predicted]]  #actual has worse fairness
+        
+        # generate next playlist
         nextQueue = ubs(tempQueue,optimistic_counts,ad_list,zone_time,next_has_prio_ads)
         next_has_prio_ads = 0
 
