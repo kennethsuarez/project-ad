@@ -119,18 +119,33 @@ def upc(video, video_points,play_counts,ad_list,coords): # could maybe make prio
             break
 
     if targets_met:
-        text_file.write("targets met")
+        text_file.write("Provisional targets met\n")
+        text_file.flush()
+        actual_target_met = 1
         for ad in ad_list.keys():
             # if there are still more counts needed, let us move to the next
             diff = ad_list[ad]['count'] - reqd_counts[ad] 
-            if diff >= 100:
+            
+            if not reqd_counts[ad]: continue # if reqd is 0 i.e. disabled, skip this step
+
+            if diff >= 100 and reqd_counts[ad]: # non empty reqd_counts
                 reqd_counts[ad] += 100
                 text_file.write("provisional count for {0} is {1}\n".format(ad,reqd_counts[ad]))
-            elif diff > 0:
+                actual_target_met = 0
+            elif diff > 0 and reqd_counts[ad]:
                 reqd_counts[ad] += diff 
                 text_file.write("provisional count for {0} is {1}\n".format(ad,reqd_counts[ad]))
+                actual_target_met = 0
+            elif diff == 0:
+                # disable the ad if its contract is done
+                reqd_counts[ad] = 0 # will disable it since utility gain will be extremely low
 
-
+        if actual_target_met: #if actual targets met then we can restore required plays so all ads can play
+            text_file.write("Real targets met\n")
+            text_file.flush()
+            for ad in ad_list.keys():
+               reqd_counts[ad] = ad_list[ad]['count']
+               
 #############################  main code #################################
 
 ################################ setup ###################################
@@ -197,7 +212,7 @@ else:
     for filename in os.listdir(folderPath):
         video_points[filename] = 0
         # we assume a minimum count of 100. We subdivide into hundreds.
-        reqd_counts[filename] = 100  #set to 1 for initial testing
+        reqd_counts[filename] = 1  #set to 1 for initial testing
         
         play_counts[filename] = 0
 
