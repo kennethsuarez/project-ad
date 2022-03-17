@@ -6,6 +6,13 @@ from cmath import nan
 import math
 from scipy.stats import t
 import collections
+import warnings
+
+
+warnings.filterwarnings("ignore",category =RuntimeWarning)
+# disable scipy warnings for the meantime
+# RuntimeWarning: invalid value encountered in multiply
+#   lower_bound = _a * scale + loc
 
 class Outgoing:
     def __init__(self, loc):
@@ -48,10 +55,14 @@ class Outgoing:
             temp = 10.0
         self.lb = temp
 
+# initialize important values 
 UPPER_LEFT_X = 120.90541
 UPPER_LEFT_Y = 14.785505
 DIFF_X = 0.002747
 DIFF_Y = 0.002657
+OPER_TIME = 28,800   # 8 hours (28,800 sec)
+AD_SLOT_TIME = 5    # 5 second slot
+avail_slots = OPER_TIME/AD_SLOT_TIME    # number of total slots (global time)
 
 def convertToGrid(coords):
     lon, lat = coords
@@ -112,9 +123,9 @@ with open(PATH, newline="") as taxi_graph:
     for key in outgoing:
         outgoing[key].getLowerBound()
 
-
-for key, value in outgoing.items():
-    print(str(key) + ", " + "average: " + str(value.ave) + " sd: " + str(value.sd) + " lower bound: " + str(value.lb) + "\n")
+# testing key-value pairs
+# for key, value in outgoing.items():
+#     print(str(key) + ", " + "average: " + str(value.ave) + " sd: " + str(value.sd) + " lower bound: " + str(value.lb) + "\n")
 
 ################## input #########################
 
@@ -127,13 +138,24 @@ priority_zones = json.load(priority_zones_json)
 ad_list_json = open('ad_list.json')
 ad_list = json.load(ad_list_json)
 
+# subtract total play time of each ad to the global time (slot-based)
+for ad in ad_list:
+    ad_total_time = ad_list[ad]['len'] * ad_list[ad]['count']
+    avail_slots =  avail_slots - ad_total_time / AD_SLOT_TIME
+
 #print(ad_lengths)
 
 #for abc in range(3):
-coords = input()
-ad_len = float(input())
-ad_name = input()
-ad_count = input() # currently not really handled
+coords = input('Enter coordinates (x$y): ')
+ad_len = float(input('Enter ad length: '))
+ad_name = input('Enter ad name: ')
+ad_count = input('Enter required number of plays: ')
+
+# for testing
+# coords = "34$86"
+# ad_len = 6.0
+# ad_name = "test"
+# ad_count = 100
 
 past_total = 0
 # verify if coordinates of input is a priority zone
@@ -144,14 +166,38 @@ else:
     priority_zones[coords] = []
 
 # check if requested ad can be allocated
+# 1st condition: specified zone still has space for new ad
 if past_total + ad_len < outgoing[loc_long_dict[coords]].lb:
-    print("ad {0} was ACCEPTED".format(ad_name))
-    print("time left: {0}".format(outgoing[loc_long_dict[coords]].lb - (past_total + ad_len)))
-    priority_zones[coords].append(ad_name+".mp4")
-    ad_list[ad_name+".mp4"] = {"len":ad_len,"count": ad_count}
+
+    # 2nd condition: requested number of plays feasible for the day
+    ad_total_slots = (ad_list[ad]['len'] * ad_list[ad]['count']) / AD_SLOT_TIME
+    
+    if avail_slots > ad_total_slots:
+        avail_slots -= ad_total_slots   # deduct allocated slots to available slots
+        print("ad {0} was ACCEPTED".format(ad_name))
+        print("remaining slots: {0}".format(avail_slots))
+        print("time left: {0}".format(outgoing[loc_long_dict[coords]].lb - (past_total + ad_len)))
+
+        ad_name += ".mp4"
+        # add new ad to priority zones json file
+        if ad_name not in priority_zones[coords]:   # only add same ad in zone once
+            priority_zones[coords].append(ad_name)   
+
+        # add new ad to ad_list
+        if ad_name not in ad_list:
+            ad_list[ad_name] = {"len":ad_len,"count": ad_count}
+        else:   
+            old_ad_len = ad_list[ad_name]['len']    # assume len does not change for same ad
+            new_ad_count = ad_count + ad_list[ad_name]['count'] # increment count if already existing in ad list
+            ad_list[ad_name] = {"len":old_ad_len, "count": new_ad_count}
+    else: 
+        print("ad {0} was REJECTED".format(ad_name))
+        print("global time exceeded")
+        print("available slots are {0}".format(avail_slots))
 else:
     print("ad {0} was REJECTED".format(ad_name))
-    print("available time is {0}".format(outgoing[loc_long_dict[coords]].lb - past_total))
+    print("zone does not have remaining space")
+    print("available zone time is {0}".format(outgoing[loc_long_dict[coords]].lb - past_total))
 
 #print(priority_zones)
 #print(ad_lengths)
