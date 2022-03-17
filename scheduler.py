@@ -178,6 +178,10 @@ with open("TTDM/output/graph/Taxi_graph.csv", newline="") as taxi_graph:
 for src, content in graph_dict.items():
     zone_min_avg_dict[src] = min(list(filter(lambda x: x >= 0, map(lambda x: x[1], content)))) #temp fix for negs
 
+# begin running gps supplier
+log = open('output/gpx_loc.txt', 'a+') 
+proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=log)
+
 # declare dictionaries and listsi that need initialization
 folderPath = "/home/pi/Videos"
 video_points = {}
@@ -185,6 +189,13 @@ play_counts = {}
 reqd_counts = {}
 queue = []
 default_queue = [] # this will get modified, but will always be accessible via default_queue
+
+#flags for operating mode
+is_ubs = 0
+predictive = 0
+
+text_file.write("ubs: {0}, predictive: {1}\n".format(is_ubs,predictive))
+text_file.flush()
 
 
 # load priority zones
@@ -198,7 +209,11 @@ ad_list = json.load(ad_list_json)
 for filename in os.listdir(folderPath):
     default_queue.append(filename) 
 
-queue = default_queue.copy() #if rr we don't need to copy, since removed ad gets pushed back
+
+if is_ubs:
+    queue = default_queue.copy()
+else:
+    queue = default_queue #if rr we don't need to copy, since removed ad gets pushed back
 
 # check if there is previous state and load if necessary
 if sf > 0:
@@ -223,10 +238,6 @@ print(ad_list)
 jpype.startJVM(classpath=['TTDM/target/classes'])
 TTDM = jpype.JClass("com.mdm.sdu.mdm.model.taxi.TTDM_Taxi")
 TTDM.train()
-
-# begin running gps supplier
-log = open('output/gpx_loc.txt', 'a+') 
-proc = subprocess.Popen(["python3", "-u", "gpxplayer.py"], stdout=log)
 
 # declare variables to keep state in while loop
 unknown_loc = 0
@@ -265,7 +276,7 @@ while len(queue) > 0: # might want to revisit this condition later
         unknown_loc = 1
     
     # check if moved into a new zone or there are no visited areas yet
-    if len(visited_list) == 0 or visited_list[-1].split('@')[0] != coords:
+    if (len(visited_list) == 0 or visited_list[-1].split('@')[0] != coords) and predictive:
         # move the queue if the sequence moved already
         if len(visited_list) != 0:
             text_file.write("clearing queue. New queue is:\n")
@@ -273,8 +284,12 @@ while len(queue) > 0: # might want to revisit this condition later
 
             text_file.write("{0}\n".format(nextQueue))
             text_file.flush()
-   
-            queue = nextQueue.copy()
+            if is_ubs: 
+                queue = nextQueue.copy()
+            else:
+                queue = nextQueue
+            
+
             nextQueue = []
         
         # append to the visited list if it falls within the threshold
@@ -289,14 +304,14 @@ while len(queue) > 0: # might want to revisit this condition later
     predicted = ""
    
     # predict via trajectory sequence output if known location.
-    if not unknown_loc:
+    if not unknown_loc and predictive:
         idx = "20000005,"
         visited_str = ",".join(visited_list)
         trajectory = jpype.java.lang.String(idx + visited_str)
     
         predicted = TTDM.TTDM_Instance.predictHelper(trajectory)
         text_file.write(idx + visited_str + " predicted: " + str(predicted)+"\n")
-    else:
+    elif predictive:
         visited_list.clear() # cannot have unknown loc in visited list or TTDM will break.
         text_file.write("New location with no history: " + str(coords) + "\n")
 
@@ -307,10 +322,10 @@ while len(queue) > 0: # might want to revisit this condition later
     # We can consider making this depend on arg i.e. if scheduler == "rr"
 
     # if no next queue, or prediction changed, set to update next queue
-    if not nextQueue or predicted != last_pred:
+    if (not nextQueue or predicted != last_pred) and predictive:
         update_next_queue = 1
 
-    if update_next_queue:
+    if update_next_queue and predictive:
         #nextQueue.clear() hopefully no memory issues, but yeah garbage collect
         
         # get what ads can be scheduled for the zone
@@ -325,73 +340,86 @@ while len(queue) > 0: # might want to revisit this condition later
         print(tempQueue)
 
         # we assume that the already scheduled playlist will finish i.e. be optimistic.
-        optimistic_counts = play_counts.copy()
-        
-        for ad in queue:
-            if coords in priority_zones:
-                if ad in priority_zones[coords]:
-                    optimistic_counts[ad] += 1
+        if is_ubs:
+            optimistic_counts = play_counts.copy()
+            
+            for ad in queue:
+                if coords in priority_zones:
+                    if ad in priority_zones[coords]:
+                        optimistic_counts[ad] += 1
+                else:
+                    optimistic_counts[ad] += 0.2
+            
+            # if there is no known zone time, set to 60s
+            if not unknown_loc:
+                zone_time = zone_min_avg_dict[int(loc_long_dict[predicted])]
             else:
-                optimistic_counts[ad] += 0.2
+                zone_time = 60
+            #zone_time = graph_dict[loc_long_dict[coords] + ">" + loc_long_dict[predicted]]   #actually less fair
         
-        # if there is no known zone time, set to 60s
-        if not unknown_loc:
-            zone_time = zone_min_avg_dict[int(loc_long_dict[predicted])]
+            # generate next playlist
+            nextQueue = ubs(tempQueue,optimistic_counts,ad_list,zone_time,next_has_prio_ads)
+            next_has_prio_ads = 0
         else:
-            zone_time = 60
-        #zone_time = graph_dict[loc_long_dict[coords] + ">" + loc_long_dict[predicted]]  #actual has worse fairness
-        
-        # generate next playlist
-        nextQueue = ubs(tempQueue,optimistic_counts,ad_list,zone_time,next_has_prio_ads)
-        next_has_prio_ads = 0
+            if next_has_prio_ads:
+                nextQueue = tempQueue
+            else:
+                nextQueue = default_queue
 
         text_file.write("populated next queue (" + str(predicted) + ")  with:\n")
         text_file.write("{0}\n".format(nextQueue))
-        text_file.write("based on")
-        text_file.write(str(optimistic_counts) + "\n")
-        text_file.flush()
+        if is_ubs:
+            text_file.write("based on")
+            text_file.write(str(optimistic_counts) + "\n")
+            text_file.flush()
 
         update_next_queue = 0
 
-    last_pred = predicted
+    if predictive: 
+        last_pred = predicted
         
     text_file.write("current queue: {0}\n".format(queue))
     text_file.flush()
 
     video = queue.pop(0)
     
-    # for round robin, we can make this depend on an arg later i.e. if scheduler == "rr"
-    # queue.append(video)
-
     play_video(video,folderPath)
 
     upc(video,video_points,play_counts,ad_list,coords) # Utility Point Counter
 
-    # for UBS, generate new queue for current region if previous runs out. Moved for better accuracy
-    # also, generate new queue if prediction is wrong
-    if len(queue) == 0 or wrong_prediction:
-        tempQueue = []
-        if priority_zones.get(coords):
-            tempQueue = priority_zones[coords]
-        else:
-            tempQueue = default_queue
+    if is_ubs:
+        # for UBS, generate new queue for current region if previous runs out. Moved for better accuracy
+        # also, generate new queue if prediction is wrong
+        if len(queue) == 0 or wrong_prediction:
+            tempQueue = []
+            if priority_zones.get(coords):
+                tempQueue = priority_zones[coords]
+            else:
+                tempQueue = default_queue
 
-        #tempQueue = generateNextQueue(coords,default_queue)
-        queue = ubs(tempQueue,play_counts,ad_list,zone_time,coords in priority_zones)
-        if wrong_prediction:
-            text_file.write("current queue update due to wrong prediction\n")
+            #tempQueue = generateNextQueue(coords,default_queue)
+            queue = ubs(tempQueue,play_counts,ad_list,zone_time,coords in priority_zones)
+            if wrong_prediction:
+                text_file.write("current queue update due to wrong prediction\n")
 
-        if len(queue) == 0:
-            text_file.write("current queue update due to running out\n")
+            if len(queue) == 0:
+                text_file.write("current queue update due to running out\n")
 
-        text_file.flush() 
+            text_file.flush() 
+            
+            # over prediction case - when it runs out, update next queue optimistically
+            # comment out to do under prediction case
+            wrong_prediction = 0
+            update_next_queue = 1
+            #next_has_prio_ads = 0
+    else: 
+        queue.append(video) # rr so return it to queue and nothing gets lost
         
-        # over prediction case - when it runs out, update next queue optimistically
-        # comment out to do under prediction case
-        wrong_prediction = 0
-        update_next_queue = 1
-        #next_has_prio_ads = 0
-
+        if predictive and wrong_prediction:
+            if priority_zones.get(coords): # has priority ads
+                queue = priority_zones[coords]
+            else:
+                queue = default_queue
 
     #Utility and points output.
 
