@@ -14,7 +14,21 @@ import functools
 if not os.path.exists('output'):
     os.makedirs('output')
 
-text_file = open("output/Output.txt", "w")
+if not os.path.exists('state'):
+    os.makedirs('state')
+
+dt = datetime.now()
+
+text_file = open("output/Output_{0}.txt".format(dt), "w")
+
+dt2 = datetime.date(dt)
+
+sf = 0
+while os.path.exists("state/state_{0}_{1}.json".format(dt2,sf)):
+    sf += 1
+
+#state_file = open("state/state_{0}_{1}.json".format(dt2,sf), "w")
+
 
 UPPER_LEFT_X = 120.90541
 UPPER_LEFT_Y = 14.785505
@@ -172,13 +186,22 @@ ad_list_json = open('ad_list.json')
 ad_list = json.load(ad_list_json)
 
 for filename in os.listdir(folderPath):
-    default_queue.append(filename)
-    video_points[filename] = 0
+    default_queue.append(filename) 
 
-    # we assume a minimum count of 100. We subdivide into hundreds.
-    reqd_counts[filename] = 100  #set to 1 for initial testing
-
-    play_counts[filename] = 0
+if sf > 0:
+    last_state_json = open("state/state_{0}_{1}.json".format(dt2,sf-1))
+    last_state = json.load(last_state_json)
+    video_points = last_state["video_points"]
+    reqd_counts = last_state["reqd_counts"]
+    play_counts = last_state["play_counts"]
+    last_state_json.close()
+else:
+    for filename in os.listdir(folderPath):
+        video_points[filename] = 0
+        # we assume a minimum count of 100. We subdivide into hundreds.
+        reqd_counts[filename] = 100  #set to 1 for initial testing
+        
+        play_counts[filename] = 0
 
 queue = default_queue.copy() #if rr we don't need to copy, since removed ad gets pushed back
 
@@ -363,7 +386,14 @@ while len(queue) > 0: # might want to revisit this condition later
     text_file.write("Plays: total:{0}, mean:{1}, sd:{2}\n".format(sum(vals),np.mean(vals),np.std(vals)))
 
     text_file.write("\n")
-    text_file.flush() 
+    text_file.flush()
+
+    state_file = open("state/state_{0}_{1}.json".format(dt2,sf), "w")
+    video_points_str = json.dumps(video_points)
+    play_counts_str = json.dumps(play_counts)
+    reqd_counts_str = json.dumps(reqd_counts)
+    state_file.write("{{\"video_points\":{0}, \"play_counts\":{1}, \"reqd_counts\": {2}}}".format(video_points_str,play_counts_str,reqd_counts_str))
+    state_file.close()
 
 text_file.close()
 jpype.shutdownJVM()
