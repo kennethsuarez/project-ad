@@ -60,7 +60,7 @@ UPPER_LEFT_X = 120.90541
 UPPER_LEFT_Y = 14.785505
 DIFF_X = 0.002747
 DIFF_Y = 0.002657
-OPER_TIME = 28,800   # 8 hours (28,800 sec)
+OPER_TIME = 28800   # 8 hours (28,800 sec)
 AD_SLOT_TIME = 5    # 5 second slot
 avail_slots = OPER_TIME/AD_SLOT_TIME    # number of total slots (global time)
 
@@ -102,6 +102,8 @@ for x in location_long_map:
     zone, long_z = x.split()
     loc_long_dict[zone] = long_z
 
+#print(loc_long_dict)
+
 outgoing = {}       # x1$y1 : [[x2$y2 : interval1], [x3$y3 : interval2], ...]
 
 # perform data computation
@@ -138,10 +140,12 @@ priority_zones = json.load(priority_zones_json)
 ad_list_json = open('ad_list.json')
 ad_list = json.load(ad_list_json)
 
-# subtract total play time of each ad to the global time (slot-based)
+# subtract total play time of each ad to the global time (slot-based
+ad_slots_dict = {} # for storing the baselines
 for ad in ad_list:
+    # we add new value to dictionary for baseline ad slots 
     ad_total_time = ad_list[ad]['len'] * ad_list[ad]['count']
-    avail_slots =  avail_slots - ad_total_time / AD_SLOT_TIME
+    ad_slots_dict[ad] = (ad_total_time / AD_SLOT_TIME) * (1/0.2)
 
 #print(ad_lengths)
 
@@ -149,7 +153,7 @@ for ad in ad_list:
 coords = input('Enter coordinates (x$y): ')
 ad_len = float(input('Enter ad length: '))
 ad_name = input('Enter ad name: ')
-ad_count = input('Enter required number of plays: ')
+ad_count = int(input('Enter required number of plays: '))
 
 # for testing
 # coords = "34$86"
@@ -170,8 +174,42 @@ else:
 if past_total + ad_len < outgoing[loc_long_dict[coords]].lb:
 
     # 2nd condition: requested number of plays feasible for the day
-    ad_total_slots = (ad_list[ad]['len'] * ad_list[ad]['count']) / AD_SLOT_TIME
+        
+    #check for baseline number of ads, for new ad.
+    curr_slots  = ((int(ad_len) * int(ad_count)) / AD_SLOT_TIME) * (1/0.2)
     
+    # For each zone we need to subtract the allocated
+    for zone_name, zone_ads in priority_zones.items():
+
+        if loc_long_dict.get(zone_name):
+            zone_slots = (8 * outgoing[loc_long_dict[zone_name]].ave) / AD_SLOT_TIME # very rough hard code
+        else:
+            zone_slots = (8 * 10) / AD_SLOT_TIME
+    
+
+        zone_ads_total = 0
+        for ad in zone_ads:
+            zone_ads_total += ad_list[ad]['len']
+        
+        if zone_name == coords and ad_name not in zone_ads: # only ad to length if that ad didn't exist
+           zone_ads_total += ad_len
+
+        # subtract the ads that were already allocated before
+        for ad in zone_ads:
+            ad_slots_dict[ad] -= (ad_list[ad]['len']/zone_ads_total) * zone_slots
+
+        # if we are in the currently being checked zone, then we also subtract.
+        if zone_name == coords and ad_name not in zone_ads: 
+            # the ad must not already exist in the zone, otherwise we are subtracting twice.
+            curr_slots -= (ad_len/zone_ads_total) * zone_slots
+
+    ad_total_slots = 0
+    for ad in ad_slots_dict:
+        ad_total_slots += ad_slots_dict[ad]
+
+    ad_total_slots += curr_slots
+    print("{0}/{1}".format(ad_total_slots,avail_slots))
+
     if avail_slots > ad_total_slots:
         avail_slots -= ad_total_slots   # deduct allocated slots to available slots
         print("ad {0} was ACCEPTED".format(ad_name))
