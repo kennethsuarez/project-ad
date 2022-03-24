@@ -8,7 +8,6 @@ from scipy.stats import t
 import collections
 import warnings
 
-
 warnings.filterwarnings("ignore",category =RuntimeWarning)
 # disable scipy warnings for the meantime
 # RuntimeWarning: invalid value encountered in multiply
@@ -16,25 +15,28 @@ warnings.filterwarnings("ignore",category =RuntimeWarning)
 
 class Outgoing:
     def __init__(self, loc):
-        self.pairs = [loc]
+        # self.pairs = [loc]   # contains destination location along with interval
+        self.intervals = [loc[1]]
+        self.outliers = []
         self.ave = 0
         self.sd = 0
         self.lb = 0
 
     def addLoc(self, loc):
-        self.pairs.append(loc)
+        # self.pairs.append(loc)    # use for testing - to see time to each dest.
+        self.intervals.append(loc[1])
 
     def getAverage(self):
         total = 0
 
-        for value in self.pairs:
-            interval = int(value[1])    # value[1] contains time interval
+        for value in self.intervals:
+            interval = int(value)
             
             if interval < 0:            # ignore negative time intervals
                 continue
 
             total += interval
-            ave = total/len(self.pairs)
+            ave = total/len(self.intervals)
 
             self.ave = ave
     
@@ -42,15 +44,15 @@ class Outgoing:
         # only call after calling getAverage()
         num = 0
 
-        for value in self.pairs:
-            num += (float(value[1]) - self.ave) ** 2
+        for value in self.intervals:
+            num += (float(value) - self.ave) ** 2
 
-        sd = math.sqrt(num/len(self.pairs))
+        sd = math.sqrt(num/len(self.intervals))
         self.sd = sd
 
     def getLowerBound(self):
         # only call after calling getSD()
-        temp = t.ppf(0.2, len(self.pairs) - 1, loc = self.ave, scale = self.sd)
+        temp = t.ppf(0.2, len(self.intervals) - 1, loc = self.ave, scale = self.sd)
         if temp < 10.0 or self.sd == 0:
             temp = 10.0
         self.lb = temp
@@ -90,7 +92,7 @@ def generateListFromData(data, outgoing, loc_long_dict):
 
             # add outgoing from current point i
             if loc1 in outgoing:
-                outgoing[loc1].addLoc([loc2,interval])
+                outgoing[loc1].addLoc([loc2, interval])
             else:
                 outgoing[loc1] = Outgoing([loc2, interval])
 
@@ -127,7 +129,8 @@ with open(PATH, newline="") as taxi_graph:
 
 # testing key-value pairs
 # for key, value in outgoing.items():
-#     print(str(key) + ", " + "average: " + str(value.ave) + " sd: " + str(value.sd) + " lower bound: " + str(value.lb) + "\n")
+#     print(str(key) + ", " + "average: " + str(value.ave) + " sd: " + str(value.sd) + " lower bound: " + str(value.lb) 
+#         + "\n" + str(value.intervals) + "\n" + str(value.outliers) + "\n")
 
 ################## input #########################
 
