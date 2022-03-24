@@ -7,6 +7,7 @@ import math
 from scipy.stats import t
 import collections
 import warnings
+import numpy as np
 
 warnings.filterwarnings("ignore",category =RuntimeWarning)
 # disable scipy warnings for the meantime
@@ -56,6 +57,24 @@ class Outgoing:
         if temp < 10.0 or self.sd == 0:
             temp = 10.0
         self.lb = temp
+
+    def removeOutliers(self):
+        arr = np.array(self.intervals)
+        
+        q1 = np.quantile(arr, 0.25)
+        q3 = np.quantile(arr, 0.75)
+        med = np.median(arr)
+        
+        iqr = q3-q1
+        
+        upper_bound = q3 + (1.5 * iqr)
+        lower_bound = q1 - (1.5 * iqr)
+        
+        self.outliers = arr[(arr <= lower_bound) | (arr >= upper_bound)]
+
+        self.intervals = [x for x in self.intervals if x > lower_bound and x < upper_bound]
+        # print(str(self.intervals) + "\n")
+        # print('The following are the outliers in the boxplot:{}'.format(outliers))
 
 # initialize important values 
 UPPER_LEFT_X = 120.90541
@@ -116,6 +135,11 @@ with open(PATH, newline="") as taxi_graph:
     generateListFromData(data, outgoing, loc_long_dict)
     #outgoing = collections.OrderedDict(sorted(outgoing.items())) # sort dictionary by key
 
+    # filter outliers
+    for key in outgoing: 
+        if len(outgoing[key].intervals) > 2:
+            outgoing[key].removeOutliers()
+
     # get average of each outgoing locations
     for key in outgoing: 
         outgoing[key].getAverage()
@@ -127,10 +151,10 @@ with open(PATH, newline="") as taxi_graph:
     for key in outgoing:
         outgoing[key].getLowerBound()
 
-# testing key-value pairs
+# testing key-value intervals
 # for key, value in outgoing.items():
 #     print(str(key) + ", " + "average: " + str(value.ave) + " sd: " + str(value.sd) + " lower bound: " + str(value.lb) 
-#         + "\n" + str(value.intervals) + "\n" + str(value.outliers) + "\n")
+#         + "\n" + str(value.intervals) + "\n" + "outliers: " + str(value.outliers) + "\n" )
 
 ################## input #########################
 
