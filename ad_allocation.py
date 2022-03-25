@@ -8,6 +8,7 @@ from scipy.stats import t
 import collections
 import warnings
 import numpy as np
+from datetime import datetime
 
 warnings.filterwarnings("ignore",category =RuntimeWarning)
 # disable scipy warnings for the meantime
@@ -22,6 +23,8 @@ class Outgoing:
         self.ave = 0
         self.sd = 0
         self.lb = 0
+        self.days = []
+        self.avepass = 0
 
     def addLoc(self, loc):
         # self.pairs.append(loc)    # use for testing - to see time to each dest.
@@ -76,6 +79,9 @@ class Outgoing:
         # print(str(self.intervals) + "\n")
         # print('The following are the outliers in the boxplot:{}'.format(outliers))
 
+    def getAveragePassesPerDay(self):
+        self.avepass = np.ceil(len(self.intervals)/len(self.days))
+
 # initialize important values 
 UPPER_LEFT_X = 120.90541
 UPPER_LEFT_Y = 14.785505
@@ -92,6 +98,7 @@ def convertToGrid(coords):
     return str(int(x_grid)) + "$" + str(int(y_grid))
 
 def generateListFromData(data, outgoing, loc_long_dict):
+    dates = []
     for line in data:
         # start from left until length - 1
         # ignore reference value
@@ -105,6 +112,16 @@ def generateListFromData(data, outgoing, loc_long_dict):
             loc2 = loc_long_dict[traj2_data[0]]
 
             # should always be positive
+            startdate = datetime.fromtimestamp(int(traj1_data[1])/1000 - 28800) #why does the data not have the +8
+            startdatestr = startdate.strftime( "%Y-%m-%d")  
+
+            if startdatestr not in dates:
+               # print("new date {1} from {0}".format(int(traj1_data[1])/1000,startdatestr))
+
+                dates.append(startdatestr)
+
+            # bit of edge case - across days? let's just not count those
+
             interval = int((float(traj2_data[1]) - float(traj1_data[1]))/1000)
             if interval < 0:
                 continue    # skip pair if negative 
@@ -114,6 +131,9 @@ def generateListFromData(data, outgoing, loc_long_dict):
                 outgoing[loc1].addLoc([loc2, interval])
             else:
                 outgoing[loc1] = Outgoing([loc2, interval])
+
+            if len(outgoing[loc1].days) == 0:
+                outgoing[loc1].days = dates # careful, technically only 1 dates array
 
 ################################### initial setup ###################################
 location_long_map = open("TTDM/output/location_long_map", "r")
@@ -141,16 +161,20 @@ with open(PATH, newline="") as taxi_graph:
             outgoing[key].removeOutliers()
 
     # get average of each outgoing locations
-    for key in outgoing: 
+    #for key in outgoing: 
         outgoing[key].getAverage()
 
     # get standard deviation of each outgoing locations
-    for key in outgoing: 
+    #for key in outgoing: 
         outgoing[key].getSD()
 
-    for key in outgoing:
+    #for key in outgoing:
         outgoing[key].getLowerBound()
-
+        
+        outgoing[key].getAveragePassesPerDay()
+        #print("average passes for {0} is {1}".format(key, outgoing[key].avepass))
+        #print("from {0} pass(es) over {1} day(s)".format(len(outgoing[key].intervals),len(outgoing[key].days)))
+        #print(outgoing[key].days)
 # testing key-value intervals
 # for key, value in outgoing.items():
 #     print(str(key) + ", " + "average: " + str(value.ave) + " sd: " + str(value.sd) + " lower bound: " + str(value.lb) 
@@ -209,9 +233,12 @@ if past_total + ad_len < outgoing[loc_long_dict[coords]].lb:
     for zone_name, zone_ads in priority_zones.items():
 
         if loc_long_dict.get(zone_name):
-            zone_slots = (8 * outgoing[loc_long_dict[zone_name]].ave) / AD_SLOT_TIME # very rough hard code
+            avepass = outgoing[loc_long_dict[zone_name]].avepass 
+            ave = outgoing[loc_long_dict[zone_name]].ave
+            sd = outgoing[loc_long_dict[zone_name]].sd
+            zone_slots = (avepass * ave - (0*sd) / AD_SLOT_TIME) # change 0 to relevant val.
         else:
-            zone_slots = (8 * 10) / AD_SLOT_TIME
+            zone_slots = (2 * 10) / AD_SLOT_TIME # low estimate of once every hour (assuming 12hr)
     
 
         zone_ads_total = 0
