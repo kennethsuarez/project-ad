@@ -2,14 +2,12 @@ import subprocess
 import os
 import json
 from datetime import datetime
-import time
 import math
 import numpy as np
 import jpype
 import jpype.imports
 from jpype.types import *
 import csv
-import functools
 
 
 UPPER_LEFT_X = 120.90541
@@ -74,7 +72,7 @@ def ubs(given_ad_list,ad_play_counts,ad_list,time,has_prio):
         k = max(utility_gain, key=utility_gain.get)
         playlist.append(k)
         count_in_playlist[k] += incr
-        playlist_duration += ad_list[ad]['len']
+        playlist_duration += ad_list[k]['len']
         print("playlist duration is")
         print(playlist_duration)
 
@@ -191,8 +189,8 @@ queue = []
 default_queue = [] # this will get modified, but will always be accessible via default_queue
 
 #flags for operating mode
-is_ubs = 0
-predictive = 0
+is_ubs = 1
+predictive = 1
 
 text_file.write("ubs: {0}, predictive: {1}\n".format(is_ubs,predictive))
 text_file.flush()
@@ -227,7 +225,7 @@ else:
     for filename in os.listdir(folderPath):
         video_points[filename] = 0
         # we assume a minimum count of 100. We subdivide into hundreds.
-        reqd_counts[filename] = 1  #set to 1 for initial testing
+        reqd_counts[filename] = 100  #set to 1 for initial testing
         
         play_counts[filename] = 0
 
@@ -340,6 +338,8 @@ while len(queue) > 0: # might want to revisit this condition later
         print(tempQueue)
 
         # we assume that the already scheduled playlist will finish i.e. be optimistic.
+        
+        optimistic_counts = {}
         if is_ubs:
             optimistic_counts = play_counts.copy()
             
@@ -396,6 +396,13 @@ while len(queue) > 0: # might want to revisit this condition later
                 tempQueue = priority_zones[coords]
             else:
                 tempQueue = default_queue
+
+            zone_time  = 0
+            # if there is no known zone time, set to 60s
+            if not unknown_loc:
+                zone_time = zone_min_avg_dict[int(loc_long_dict[coords])]
+            else:
+                zone_time = 60
 
             #tempQueue = generateNextQueue(coords,default_queue)
             queue = ubs(tempQueue,play_counts,ad_list,zone_time,coords in priority_zones)
