@@ -93,12 +93,17 @@ def upc(video, video_points,play_counts,ad_list,coords): # could maybe make prio
     priority_multiplier = 1
     play_multiplier = 0.2
 
+    #print(priority_zones) 
     if priority_zones.get(coords):
-        if video in priority_zones[coords]: 
+        
+        #print(coords + " is in pz")
+        if video in priority_zones[coords]:
             text_file.write("in priority fence\n")
             text_file.flush()
             priority_multiplier = 1    # may not be necessary
             play_multiplier = 1
+    #else:
+    #    print(coords + " not in pz")
         
     new_count_utility =  math.log(ubs_utility_func(play_counts[video] + play_multiplier,reqd_counts[video]))
     old_count_utility = math.log(ubs_utility_func(play_counts[video],reqd_counts[video]))
@@ -189,7 +194,7 @@ queue = []
 default_queue = [] # this will get modified, but will always be accessible via default_queue
 
 #flags for operating mode
-is_ubs = 1
+is_ubs = 0
 predictive = 1
 
 text_file.write("ubs: {0}, predictive: {1}\n".format(is_ubs,predictive))
@@ -362,7 +367,7 @@ while len(queue) > 0: # might want to revisit this condition later
             next_has_prio_ads = 0
         else:
             if next_has_prio_ads:
-                nextQueue = tempQueue
+                nextQueue = tempQueue.copy()
             else:
                 nextQueue = default_queue
 
@@ -384,7 +389,7 @@ while len(queue) > 0: # might want to revisit this condition later
     video = queue.pop(0)
     
     play_video(video,folderPath)
-
+    print("upc gets " + coords)
     upc(video,video_points,play_counts,ad_list,coords) # Utility Point Counter
 
     if is_ubs:
@@ -424,7 +429,7 @@ while len(queue) > 0: # might want to revisit this condition later
         
         if predictive and wrong_prediction:
             if priority_zones.get(coords): # has priority ads
-                queue = priority_zones[coords]
+                queue = priority_zones[coords].copy()
             else:
                 queue = default_queue
 
