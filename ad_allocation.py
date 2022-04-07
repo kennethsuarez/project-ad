@@ -91,6 +91,8 @@ OPER_TIME = 28800   # 8 hours (28,800 sec)
 AD_SLOT_TIME = 5    # 5 second slot
 avail_slots = OPER_TIME/AD_SLOT_TIME    # number of total slots (global time)
 
+is_baseline = 0
+
 def convertToGrid(coords):
     lon, lat = coords
     x_grid = (float(lon) - UPPER_LEFT_X) // DIFF_X
@@ -222,40 +224,48 @@ else:
 
 # check if requested ad can be allocated
 # 1st condition: specified zone still has space for new ad
-if past_total + ad_len < outgoing[loc_long_dict[coords]].lb:
+
+capacity = 0
+if is_baseline:
+    capacity = outgoing[loc_long_dict[coords]].ave
+else:
+    capacity = outgoing[loc_long_dict[coords]].lb   
+
+if past_total + ad_len < capacity:
 
     # 2nd condition: requested number of plays feasible for the day
         
     #check for baseline number of ads, for new ad.
     curr_slots  = ((int(ad_len) * int(ad_count)) / AD_SLOT_TIME) * (1/0.2)
     
-    # For each zone we need to subtract the allocated
-    for zone_name, zone_ads in priority_zones.items():
+    if not is_baseline:
+        # For each zone we need to subtract the allocated
+        for zone_name, zone_ads in priority_zones.items():
 
-        if loc_long_dict.get(zone_name):
-            avepass = outgoing[loc_long_dict[zone_name]].avepass 
-            ave = outgoing[loc_long_dict[zone_name]].ave
-            sd = outgoing[loc_long_dict[zone_name]].sd
-            zone_slots = (avepass * ave - (0*sd) / AD_SLOT_TIME) # change 0 to relevant val.
-        else:
-            zone_slots = (2 * 10) / AD_SLOT_TIME # low estimate of once every hour (assuming 12hr)
-    
-
-        zone_ads_total = 0
-        for ad in zone_ads:
-            zone_ads_total += ad_list[ad]['len']
+            if loc_long_dict.get(zone_name):
+                avepass = outgoing[loc_long_dict[zone_name]].avepass 
+                ave = outgoing[loc_long_dict[zone_name]].ave
+                sd = outgoing[loc_long_dict[zone_name]].sd
+                zone_slots = (avepass * ave - (0*sd) / AD_SLOT_TIME) # change 0 to relevant val.
+            else:
+                zone_slots = (2 * 10) / AD_SLOT_TIME # low estimate of once every hour (assuming 12hr)
         
-        if zone_name == coords and ad_name not in zone_ads: # only ad to length if that ad didn't exist
-           zone_ads_total += ad_len
 
-        # subtract the ads that were already allocated before
-        for ad in zone_ads:
-            ad_slots_dict[ad] -= (ad_list[ad]['len']/zone_ads_total) * zone_slots
+            zone_ads_total = 0
+            for ad in zone_ads:
+                zone_ads_total += ad_list[ad]['len']
+            
+            if zone_name == coords and ad_name not in zone_ads: # only ad to length if that ad didn't exist
+               zone_ads_total += ad_len
 
-        # if we are in the currently being checked zone, then we also subtract.
-        if zone_name == coords and ad_name not in zone_ads: 
-            # the ad must not already exist in the zone, otherwise we are subtracting twice.
-            curr_slots -= (ad_len/zone_ads_total) * zone_slots
+            # subtract the ads that were already allocated before
+            for ad in zone_ads:
+                ad_slots_dict[ad] -= (ad_list[ad]['len']/zone_ads_total) * zone_slots
+
+            # if we are in the currently being checked zone, then we also subtract.
+            if zone_name == coords and ad_name not in zone_ads: 
+                # the ad must not already exist in the zone, otherwise we are subtracting twice.
+                curr_slots -= (ad_len/zone_ads_total) * zone_slots
 
     ad_total_slots = 0
     for ad in ad_slots_dict:
