@@ -42,7 +42,7 @@ class Outgoing:
             total += interval
             ave = total/len(self.intervals)
 
-            self.ave = ave
+        self.ave = ave
     
     def getSD(self):
         # only call after calling getAverage()
@@ -198,7 +198,7 @@ ad_slots_dict = {} # for storing the baselines
 for ad in ad_list:
     # we add new value to dictionary for baseline ad slots 
     ad_total_time = ad_list[ad]['len'] * ad_list[ad]['count']
-    ad_slots_dict[ad] = (ad_total_time / AD_SLOT_TIME) * (1/0.2)
+    ad_slots_dict[ad] = np.floor((ad_total_time / AD_SLOT_TIME) * (1/0.2))
 
 #print(ad_lengths)
 
@@ -206,6 +206,7 @@ for ad in ad_list:
 coords = input('Enter coordinates (x$y): ')
 ad_len = float(input('Enter ad length: '))
 ad_name = input('Enter ad name: ')
+ad_name = ad_name + ".mp4"
 ad_count = int(input('Enter required number of plays: '))
 
 # for testing
@@ -231,46 +232,69 @@ if is_baseline:
 else:
     capacity = outgoing[loc_long_dict[coords]].lb   
 
-if past_total + ad_len < capacity:
+if past_total + ad_len <= capacity:
 
     # 2nd condition: requested number of plays feasible for the day
         
-    #check for baseline number of ads, for new ad.
-    curr_slots  = ((int(ad_len) * int(ad_count)) / AD_SLOT_TIME) * (1/0.2)
-    
+    #check for baseline number of ads. Most applicable if new ad.
+    curr_slots  = np.floor(((int(ad_len) * int(ad_count)) / AD_SLOT_TIME) * (1/0.2))
+
     if not is_baseline:
-        # For each zone we need to subtract the allocated
         for zone_name, zone_ads in priority_zones.items():
 
             if loc_long_dict.get(zone_name):
                 avepass = outgoing[loc_long_dict[zone_name]].avepass 
                 ave = outgoing[loc_long_dict[zone_name]].ave
                 sd = outgoing[loc_long_dict[zone_name]].sd
-                zone_slots = (avepass * ave - (0*sd) / AD_SLOT_TIME) # change 0 to relevant val.
+                zone_slots = np.floor((avepass * ave - (0*sd) / AD_SLOT_TIME)) # change 0
             else:
-                zone_slots = (2 * 10) / AD_SLOT_TIME # low estimate of once every hour (assuming 12hr)
+                zone_slots = np.floor((2 * 10) / AD_SLOT_TIME) # low estimate of once every hour (assuming 12hr)
         
-
             zone_ads_total = 0
+
             for ad in zone_ads:
                 zone_ads_total += ad_list[ad]['len']
             
-            if zone_name == coords and ad_name not in zone_ads: # only ad to length if that ad didn't exist
+            if zone_name == coords and ad_name not in zone_ads: # only add to length if that ad wasn't in zone
                zone_ads_total += ad_len
+            
+            ################################################################################################
+            # here is where the problem lies
+            for ad in zone_ads: #subtract past allocations
+                    ad_slots_dict[ad] -= np.floor((ad_list[ad]['len']/zone_ads_total) * zone_slots)
 
-            # subtract the ads that were already allocated before
-            for ad in zone_ads:
-                ad_slots_dict[ad] -= (ad_list[ad]['len']/zone_ads_total) * zone_slots
+            # if we are in the currently inputted zone
+            if zone_name == coords:
+                if ad_name not in zone_ads: # if ad hasn't been subtracted in zone...
+                    curr_slots -= np.floor((ad_len/zone_ads_total) * zone_slots)
+        
+                    if ad_name in ad_slots_dict.keys():
+                        print("ad already exists, curr_slots: " + str(curr_slots))  
+                        ad_slots_dict[ad_name] += curr_slots # integrate current slots already, helps subtract
+                        curr_slots = 0 # don't add twice
+                    else: # totally new ad
+                        if curr_slots < ad_count:
+                            curr_slots = ad_count
+                else: # ad has already been subtracted in zone
+                    ad_slots_dict[ad_name] += curr_slots
+                    curr_slots = 0 
 
-            # if we are in the currently being checked zone, then we also subtract.
-            if zone_name == coords and ad_name not in zone_ads: 
-                # the ad must not already exist in the zone, otherwise we are subtracting twice.
-                curr_slots -= (ad_len/zone_ads_total) * zone_slots
+                
+            ################################################################################################
 
     ad_total_slots = 0
     for ad in ad_slots_dict:
+        min_ad_slots = ad_list[ad]['count']
+        if ad == ad_name:
+            min_ad_slots += ad_count
+        if ad_slots_dict[ad] < min_ad_slots: 
+            ad_slots_dict[ad] = min_ad_slots
+        print(ad + " has: ")
+        print(ad_slots_dict[ad])
         ad_total_slots += ad_slots_dict[ad]
 
+    if curr_slots != 0:
+        print("curr ad (completely new) has: " + str(curr_slots))
     ad_total_slots += curr_slots
     print("{0}/{1}".format(ad_total_slots,avail_slots))
 
@@ -280,7 +304,6 @@ if past_total + ad_len < capacity:
         print("remaining slots: {0}".format(avail_slots))
         print("time left: {0}".format(outgoing[loc_long_dict[coords]].lb - (past_total + ad_len)))
 
-        ad_name += ".mp4"
         # add new ad to priority zones json file
         if ad_name not in priority_zones[coords]:   # only add same ad in zone once
             priority_zones[coords].append(ad_name)   
