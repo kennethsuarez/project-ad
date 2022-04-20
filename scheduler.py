@@ -114,13 +114,17 @@ def upc(video, video_points,play_counts,ad_list,coords): # could maybe make prio
 
     # boost all provisional counts when possible
 
-    # check first if all other ads met targets before boosting to prevent monopoly
+    # check first if all other ads met provisional targets before boosting to prevent monopoly
     targets_met = 1
     for ad in ad_list.keys():
         if play_counts[ad] < reqd_counts[ad]:
-            targets_met = 0 
-            break
-
+            targets_met = 0
+            
+        if play_counts[ad] >= ad_list[ad]['count']:
+            reqd_counts[ad] = 0 # also disable completed ads. Marker to remove priority.
+                                # issue with this is it could be slow if ad list big, though
+                                # shouldn't be too bad since it will be bounded.. at worst 
+                                # 5760 ads that only want 1 slot.
     if targets_met:
         text_file.write("Provisional targets met\n")
         text_file.flush()
@@ -139,9 +143,10 @@ def upc(video, video_points,play_counts,ad_list,coords): # could maybe make prio
                 reqd_counts[ad] += diff 
                 text_file.write("provisional count for {0} is {1}\n".format(ad,reqd_counts[ad]))
                 actual_target_met = 0
-            elif diff == 0:
-                # disable the ad if its contract is done
-                reqd_counts[ad] = 0 # will disable it since utility gain will be extremely low
+            #elif diff == 0:
+            #    # disable the ad if its contract is done
+            #    reqd_counts[ad] = 0 # will disable it since utility gain will be extremely low
+            #    # we can use this 0 as a flag for when doing the priority regions stuff.
 
         if actual_target_met: #if actual targets met then we can restore required plays so all ads can play
             text_file.write("Real targets met\n")
@@ -194,8 +199,8 @@ queue = []
 default_queue = [] # this will get modified, but will always be accessible via default_queue
 
 #flags for operating mode
-is_ubs = 0
-predictive = 1
+is_ubs = 1
+predictive = 0
 
 text_file.write("ubs: {0}, predictive: {1}\n".format(is_ubs,predictive))
 text_file.flush()
@@ -212,6 +217,7 @@ ad_list = json.load(ad_list_json)
 for filename in os.listdir(folderPath):
     default_queue.append(filename) 
 
+original_queue = default_queue.copy()
 
 if is_ubs:
     queue = default_queue.copy()
@@ -229,8 +235,11 @@ if sf > 0:
 else:
     for filename in os.listdir(folderPath):
         video_points[filename] = 0
-        # we assume a minimum count of 100. We subdivide into hundreds.
-        reqd_counts[filename] = 100  #set to 1 for initial testing
+        
+        if ad_list[filename]['count'] > 100:
+            reqd_counts[filename] = 100 
+        else:
+            reqd_counts[filename] = ad_list[filename]['count']  
         
         play_counts[filename] = 0
 
@@ -320,9 +329,6 @@ while len(queue) > 0: # might want to revisit this condition later
 
 
     ###################  Video scheduling module ###################
-    
-    # This is why the outer while loop may be problematic, considering setting it to just while true
-    # We can consider making this depend on arg i.e. if scheduler == "rr"
 
     # if no next queue, or prediction changed, set to update next queue
     if (not nextQueue or predicted != last_pred) and predictive:
@@ -334,10 +340,17 @@ while len(queue) > 0: # might want to revisit this condition later
         # get what ads can be scheduled for the zone
         tempQueue = []
         if priority_zones.get(predicted):
-            tempQueue = priority_zones[predicted]
-            next_has_prio_ads = 1
-        else:
+            tempQueue = priority_zones[predicted].copy()
+            for ad in tempQueue:
+                if reqd_counts[ad] == 0: # this removes already completed ads
+                    tempQueue.remove(ad)
+        
+        if len(tempQueue) == 0:
+            next_has_prio_ads = 0
             tempQueue = default_queue
+        else:
+            next_has_prio_ads = 1
+
 
         print("temp queue is")
         print(tempQueue)
@@ -371,7 +384,7 @@ while len(queue) > 0: # might want to revisit this condition later
             else:
                 nextQueue = default_queue
 
-        text_file.write("populated next queue (" + str(predicted) + ")  with:\n")
+        text_file.write("populated next queue (" + str(predicted) + ")  with:\n") #technically wrong for LSRR when nextQueue is defaultQueue
         text_file.write("{0}\n".format(nextQueue))
         if is_ubs:
             text_file.write("based on")
@@ -390,52 +403,82 @@ while len(queue) > 0: # might want to revisit this condition later
     
     play_video(video,folderPath)
     print("upc gets " + coords)
+
+    old_reqd_count = reqd_counts[video]
     upc(video,video_points,play_counts,ad_list,coords) # Utility Point Counter
 
+    new_ad_done =  old_reqd_count != 0 and reqd_counts[video] == 0
+                
     if is_ubs:
-        # for UBS, generate new queue for current region if previous runs out. Moved for better accuracy
-        # also, generate new queue if prediction is wrong
-        if len(queue) == 0 or wrong_prediction:
+        # for UBS, generate new queue when needed
+        
+        if len(queue) == 0 or wrong_prediction or new_ad_done:
             tempQueue = []
-            if priority_zones.get(coords):
+            if priority_zones.get(coords) and predictive: #only do the zone thing if predictive
                 tempQueue = priority_zones[coords]
-            else:
+                for ad in tempQueue:
+                    if reqd_counts[ad] == 0:
+                        tempQueue.remove(ad) 
+
+            if len(tempQueue) == 0:
                 tempQueue = default_queue
 
             zone_time  = 0
             # if there is no known zone time, set to 60s
-            if not unknown_loc:
+            if not unknown_loc and predictive:
                 zone_time = zone_min_avg_dict[int(loc_long_dict[coords])]
-            else:
+            else: # unknown location or we don't care about locations cause not predictive
                 zone_time = 60
 
             #tempQueue = generateNextQueue(coords,default_queue)
-            queue = ubs(tempQueue,play_counts,ad_list,zone_time,coords in priority_zones)
+            queue = ubs(tempQueue,play_counts,ad_list,zone_time,coords in priority_zones and predictive)
             if wrong_prediction:
                 text_file.write("current queue update due to wrong prediction\n")
 
             if len(queue) == 0:
                 text_file.write("current queue update due to running out\n")
 
+            if new_ad_done:
+                text_file.write("current queue update due to new ad completion\n")
+                # sort of dangerous, given that it optimistic counts could be hurt?
+
             text_file.flush() 
             
             # over prediction case - when it runs out, update next queue optimistically
             # comment out to do under prediction case
             wrong_prediction = 0
-            update_next_queue = 1
+            if not new_ad_done:
+                update_next_queue = 1
             #next_has_prio_ads = 0
-    else: 
-        queue.append(video) # rr so return it to queue and nothing gets lost
-        
+    else:
+        if not new_ad_done:
+            queue.append(video) # return to queue only if it isn't done.
+        else: 
+            if len(queue) == 0: # if the last ad played is done and the queue has become empty
+                queue = default_queue # if already default_queue doesn't change anything 
+
+            # Ensure video is also removed from default queue, for when the ad finishes in zone
+            if video in default_queue:
+                default_queue.remove(video)
+
+            if len(default_queue) == 0: # this means all ads are satisfied
+                default_queue = original_queue.copy()
+
         if predictive and wrong_prediction:
+            tempQueue = [] 
             if priority_zones.get(coords): # has priority ads
-                queue = priority_zones[coords].copy()
-            else:
+                tempQueue = priority_zones[coords].copy()
+                for ad in tempQueue:
+                    if reqd_counts[ad] == 0:
+                        tempQueue.remove(ad) 
+            if len(tempQueue) == 0: 
                 queue = default_queue
+            else:
+                queue = tempQueue
 
     #Utility and points output.
 
-    for video in default_queue:
+    for video in original_queue:
         text_file.write("{0}: {1} pts, {2}/{3} plays\n".format(video, video_points[video],play_counts[video],ad_list[video]['count']))
        
     vals = list(video_points.values())
