@@ -241,14 +241,18 @@ if past_total + ad_len <= capacity:
 
     if not is_baseline:
         for zone_name, zone_ads in priority_zones.items():
+            
+            default_slots = np.floor((2 * 10) / AD_SLOT_TIME)  # low estimate of once every hour (assuming 12hr)
 
             if loc_long_dict.get(zone_name):
                 avepass = outgoing[loc_long_dict[zone_name]].avepass 
                 ave = outgoing[loc_long_dict[zone_name]].ave
                 sd = outgoing[loc_long_dict[zone_name]].sd
-                zone_slots = np.floor((avepass * ave - (0*sd) / AD_SLOT_TIME)) # change 0
+                zone_slots = max(np.floor((avepass*(ave-(0.0*sd))/AD_SLOT_TIME)),default_slots)
+
+                # change 0
             else:
-                zone_slots = np.floor((2 * 10) / AD_SLOT_TIME) # low estimate of once every hour (assuming 12hr)
+                zone_slots = default_slots 
         
             zone_ads_total = 0
 
@@ -298,7 +302,7 @@ if past_total + ad_len <= capacity:
     ad_total_slots += curr_slots
     print("{0}/{1}".format(ad_total_slots,avail_slots))
 
-    if avail_slots > ad_total_slots:
+    if avail_slots >= ad_total_slots:
         avail_slots -= ad_total_slots   # deduct allocated slots to available slots
         print("ad {0} was ACCEPTED".format(ad_name))
         print("remaining slots: {0}".format(avail_slots))

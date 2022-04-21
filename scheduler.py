@@ -200,7 +200,7 @@ default_queue = [] # this will get modified, but will always be accessible via d
 
 #flags for operating mode
 is_ubs = 1
-predictive = 0
+predictive = 1
 
 text_file.write("ubs: {0}, predictive: {1}\n".format(is_ubs,predictive))
 text_file.flush()
@@ -408,11 +408,14 @@ while len(queue) > 0: # might want to revisit this condition later
     upc(video,video_points,play_counts,ad_list,coords) # Utility Point Counter
 
     new_ad_done =  old_reqd_count != 0 and reqd_counts[video] == 0
-                
+    
+    # Special rules for updating current queue
     if is_ubs:
         # for UBS, generate new queue when needed
         
-        if len(queue) == 0 or wrong_prediction or new_ad_done:
+        if len(queue) == 0 or wrong_prediction or new_ad_done: 
+            
+            # Get the list of ads that can be scheduled
             tempQueue = []
             if priority_zones.get(coords) and predictive: #only do the zone thing if predictive
                 tempQueue = priority_zones[coords]
@@ -423,14 +426,16 @@ while len(queue) > 0: # might want to revisit this condition later
             if len(tempQueue) == 0:
                 tempQueue = default_queue
 
+            # Check the zone time of the current zone
             zone_time  = 0
-            # if there is no known zone time, set to 60s
             if not unknown_loc and predictive:
                 zone_time = zone_min_avg_dict[int(loc_long_dict[coords])]
             else: # unknown location or we don't care about locations cause not predictive
                 zone_time = 60
 
             #tempQueue = generateNextQueue(coords,default_queue)
+
+            # has_prio only relevant in predictive
             queue = ubs(tempQueue,play_counts,ad_list,zone_time,coords in priority_zones and predictive)
             if wrong_prediction:
                 text_file.write("current queue update due to wrong prediction\n")
@@ -446,11 +451,12 @@ while len(queue) > 0: # might want to revisit this condition later
             
             # over prediction case - when it runs out, update next queue optimistically
             # comment out to do under prediction case
-            wrong_prediction = 0
-            if not new_ad_done:
-                update_next_queue = 1
-            #next_has_prio_ads = 0
-    else:
+            wrong_prediction = 0 # clear cause queue already refreshed
+            
+            #if not new_ad_done: # if a new ad finishes, don't update next. Actually wrong.
+            #    update_next_queue = 1                                      An ad could be 
+            #next_has_prio_ads = 0                                          eliminated
+    else: # rr
         if not new_ad_done:
             queue.append(video) # return to queue only if it isn't done.
         else: 
