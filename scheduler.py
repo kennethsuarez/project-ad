@@ -200,7 +200,7 @@ default_queue = [] # this will get modified, but will always be accessible via d
 
 #flags for operating mode
 is_ubs = 1
-predictive = 1
+predictive = 0
 
 text_file.write("ubs: {0}, predictive: {1}\n".format(is_ubs,predictive))
 text_file.flush()
@@ -232,6 +232,11 @@ if sf > 0:
     reqd_counts = last_state["reqd_counts"]
     play_counts = last_state["play_counts"]
     last_state_json.close()
+
+    if not is_ubs: # check for completed ads to remove when doing rr.
+        for ad in default_queue:
+            if reqd_counts[ad] == 0:
+                default_queue.remove(ad)
 else:
     for filename in os.listdir(folderPath):
         video_points[filename] = 0
@@ -242,6 +247,7 @@ else:
             reqd_counts[filename] = ad_list[filename]['count']  
         
         play_counts[filename] = 0
+
 
 print(priority_zones)
 print(ad_list)
