@@ -5,7 +5,7 @@ import time
 
 # parse
 
-gpx_file = open('DS2-0420.gpx', 'r')
+gpx_file = open('gpx_test/DS2-0420.gpx', 'r')
 
 gpx = gpxpy.parse(gpx_file)
 
