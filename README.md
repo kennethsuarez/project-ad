@@ -22,9 +22,12 @@ case, since the amount of time used by the ad allocations is closer to the
 actual available time.
 
 # Requirements
-python3
+python3 
+
 JPype
+
 Java SDK 15
+
 omxplayer
 
 # How to get started
